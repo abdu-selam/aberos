@@ -1,6 +1,11 @@
 import React from "react";
 import { Facebook, Mail, Send, Twitter, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Link } from "react-router";
+
 import heroImg from "../assets/img.jpg";
+import Header from "../components/Header";
+import Button from "../components/Button";
 
 export default function Home() {
   const subCompany = [
@@ -23,35 +28,11 @@ export default function Home() {
 
   return (
     <>
-      <header className="bg-amber-800 h-lvh flex flex-col">
-        <section className="flex justify-between items-center bg-amber-950 p-4">
-          <figure className="flex items-center gap-1.5">
-            <img
-              src={heroImg}
-              width={200}
-              alt="Hero image"
-              className="w-8 h-8 rounded-full border-2 border-amber-300 "
-            />
-            <figcaption className="flex flex-col items-start">
-              <h2 className="text-[1.4rem]">Aberos</h2>
-            </figcaption>
-          </figure>
-          <nav className="w-auto">
-            <ul className="flex gap-4">
-              {["Home", "About", "companies"].map((item, i) => (
-                <li key={i} className="text-[1rem]">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <button className="text-[1rem] bg-amber-200 px-2 py-1.5 rounded-lg">
-            contact us
-          </button>
-        </section>
-        <section className="w-[70%] h-full m-auto flex flex-col items-center justify-center gap-3">
-          <h1 className="font-bold text-4xl">Aberos PLC</h1>
-          <p className="text-center">
+      <header className="h-lvh flex flex-col">
+        <Header />
+        <section className=" h-full m-auto flex flex-col items-center justify-center gap-3 bg-[rgba(0,0,0,0.75)] bg-cover relative before:content-[''] before:w-full before:h-full before:bg-[url(./assets/img.jpg)] before:-z-1 before:absolute before:bottom-0">
+          <h1 className="font-bold text-4xl text-back">Aberos PLC</h1>
+          <p className="text-center w-[70%] text-back">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
             veniam sapiente sunt inventore nam facere, minus dicta harum
             necessitatibus nesciunt, rem doloremque! Sapiente optio cum
@@ -92,9 +73,7 @@ export default function Home() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laborum
             numquam .
           </p>
-          <button className="bg-amber-300 px-3 py-1.5 text-xl rounded-lg">
-            See More
-          </button>
+          <Button data="See More" />
         </section>
         <section className="p-8 bg-amber-100">
           <h2 className="text-center text-2xl font-bold mb-4">sub companies</h2>
@@ -110,12 +89,10 @@ export default function Home() {
                   alt=""
                   className="w-75 rounded-lg shadow-[0_0_1rem]"
                 />
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 items-center">
                   <h3 className="text-2xl font-bold text-center">{com.name}</h3>
                   <p className="text-center">{com.desc}</p>
-                  <button className="bg-amber-300 px-3 py-1.5 rounded-lg mx-auto block">
-                    button
-                  </button>
+                  <Button data="button" />
                 </div>
               </section>
             ))}
@@ -142,7 +119,7 @@ export default function Home() {
             ))}
           </ul>
         </section>
-        <section className="p-8">
+        <section className="p-8" id="contact">
           <p className="text-center w-[40%] mx-auto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
             error!
@@ -150,28 +127,48 @@ export default function Home() {
           <form className="w-[70%] mx-auto my-4 grid grid-cols-2 bg-amber-500 p-4 rounded-xl gap-3">
             <div className="flex flex-col gap-1">
               <label htmlFor="fullname">Full Name</label>
-              <input type="text" id="fullname" name="fullname" className="bg-amber-400 px-1 py-1 rounded-lgfocus:outline-none" />
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                className="bg-amber-400 px-1 py-1 rounded-lgfocus:outline-none"
+              />
             </div>
 
             <div className="flex flex-col gap-1">
               <label htmlFor="email">Email</label>
-              <input type="text" id="email" name="email" className="bg-amber-400 px-1 py-1 rounded-lg focus:outline-none"/>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                className="bg-amber-400 px-1 py-1 rounded-lg focus:outline-none"
+              />
             </div>
 
             <div className="col-start-1 col-end-3 flex flex-col gap-1">
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" className="bg-amber-400 px-1 py-1 rounded-lg w-full h-60 focus:outline-none"></textarea>
+              <textarea
+                name="message"
+                id="message"
+                className="bg-amber-400 px-1 py-1 rounded-lg w-full h-60 focus:outline-none"
+              ></textarea>
             </div>
 
-            <button className="bg-amber-300 px-3 py-1.5 rounded-lg mx-auto block col-start-1 col-end-3">Send</button>
+            <Button data="Send" full={true} />
           </form>
         </section>
       </main>
       <footer className="bg-amber-950 grid grid-cols-3 p-8 pb-4 place-items-center gap-4">
         <ul className="flex gap-4">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>companies</li>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <Link to="about">About Us</Link>
+          </li>
+          <li>
+            <a href="">companies</a>
+          </li>
         </ul>
         <ul className="flex gap-4">
           <li>

@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: rgb(37, 99, 235);
+  --color-secondary: rgb(139, 92, 246);
+  --color-back: rgb(249, 250, 251);
+  --color-card: rgb(255, 255, 255);
+  --color-txt: rgb(31, 41, 55);
+  --color-border: rgb(229, 231, 235);
+}
+
+::selection {
+  background-color: red;
+}
+
+html {
+  scroll-behavior: smooth;
+}
