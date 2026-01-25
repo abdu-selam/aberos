@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router";
 import heroImg from "../assets/img.jpg";
 import Button from "./Button";
 import Nav from "./Nav";
 
 export default function Header() {
   return (
-    <section className="flex justify-between items-center bg-back p-4 sticky top-0 z-24">
+    <header className="flex justify-between items-center bg-back px-6 py-3 sticky top-0 z-24 w-vw">
       <figure className="flex items-center gap-1.5">
         <img
           src={heroImg}
@@ -20,8 +19,8 @@ export default function Header() {
       </figure>
       <Nav />
       <a href="#contact">
-        /<Button data="Contact Us" />
+        <Button data="Contact Us" />
       </a>
-    </section>
+    </header>
   );
 }
