@@ -1,16 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: rgb(37, 99, 235);
-  --color-secondary: rgb(139, 92, 246);
-  --color-back: rgb(249, 250, 251);
-  --color-card: rgb(255, 255, 255);
-  --color-txt: rgb(31, 41, 55);
-  --color-border: rgb(229, 231, 235);
+  /* Brand Core */
+  --color-primary: #101828; 
+  --color-secondary: #8b5cf6; 
+  /* Surfaces */
+  --color-back: #f9fafb; 
+  --color-card: #ffffff; 
+
+  /* Text */
+  --color-heading: #0f172a; 
+  --color-text: #334155; 
+  --color-muted: #64748b;      
+  /* Borders & Lines */
+  --color-border: #e5e7eb;
+
+  /* Status */
+  --color-success: #16a34a;
+  --color-warning: #eab308;
+  --color-error: #dc2626;
+  --color-accent: #22d3ee; 
 }
 
+
 ::selection {
-  background-color: red;
+  background-color: var(--color-accent);
+  color: var(--color-card);
+  --color-primary: #101828; 
+  --color-secondary: #8b5cf6; 
+  /* Surfaces */
+  --color-back: #f9fafb; 
+  --color-card: #ffffff; 
+
+  /* Text */
+  --color-heading: #0f172a; 
+  --color-text: #334155; 
+  --color-muted: #64748b;      
+  /* Borders & Lines */
+  --color-border: #e5e7eb;
+
+  /* Status */
+  --color-success: #16a34a;
+  --color-warning: #eab308;
+  --color-error: #dc2626;
+  --color-accent: #22d3ee; 
 }
 
 html {

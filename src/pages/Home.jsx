@@ -1,5 +1,5 @@
-import React from "react";
-import { Facebook, Mail, Send, Twitter, Linkedin } from "lucide-react";
+import React, { useState } from "react";
+import { Facebook, Mail, Send, Twitter, Linkedin, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 
@@ -9,215 +9,208 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 
 export default function Home() {
+
   const subCompany = [
     {
-      name: "Mall",
-      desc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.Inventore fugit, natus iste rem, velit laborum numquam repellendus corrupti animi cumque repellat vel iure repudiandae, at tempora laudantium quas similique eius.`,
+      name: "Manufacturing",
+      desc: "High-quality industrial production with modern facilities and skilled professionals.",
       img: heroImg,
     },
     {
-      name: "Mall",
-      desc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.Inventore fugit, natus iste rem, velit laborum numquam repellendus corrupti animi cumque repellat vel iure repudiandae, at tempora laudantium quas similique eius.`,
+      name: "Real Estate",
+      desc: "Premium commercial and residential spaces designed for modern living.",
       img: heroImg,
     },
     {
-      name: "Mall",
-      desc: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.Inventore fugit, natus iste rem, velit laborum numquam repellendus corrupti animi cumque repellat vel iure repudiandae, at tempora laudantium quas similique eius.`,
+      name: "Retail Mall",
+      desc: "A vibrant shopping experience bringing global and local brands together.",
       img: heroImg,
     },
   ];
 
   return (
     <>
-      <Header />
-      <section className="h-dvh flex flex-col">
-        <section className="w-full h-full m-auto flex items-center px-8 justify-center bg-cover bg-[url(./assets/img.jpg)] relative before:content-[''] before:w-full before:h-full before:bg-[rgba(0,0,0,0.75)]  before:-z-10 z-0 before:absolute before:bottom-0 before:left-0">
-          <section className="flex flex-col gap-4 w-dvw">
-            <h1 className="font-bold text-4xl text-back">Aberos PLC</h1>
-            <p className="w-[70%] text-back">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              veniam sapiente sunt inventore nam facere, minus dicta harum
+      <Header active="home" />
+
+      <section className="relative flex justify-center items-center min-h-dvh bg-[url(./assets/img.jpg)] bg-cover bg-center">
+        <div className="absolute inset-0 bg-primary/80" />
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center  text-back">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col gap-6 justify-center items-center md:items-start"
+          >
+            <h1 className="text-5xl font-extrabold leading-tight">
+              Aberos <span className="text-secondary">PLC</span>
+            </h1>
+
+            <p className="text-lg text-back/80 max-w-xl text-center md:text-start">
+              Building sustainable businesses across manufacturing, real estate,
+              and retail — shaping the future of industry.
             </p>
-            <div className="flex gap-1.5">
-              <Link to='/about'>
-                <Button data={'Learn More'}></Button>
+
+            <div className="flex gap-4">
+              <Link to="/about">
+                <Button data="Learn More" />
               </Link>
               <a href="#video">
-                <Button data={'Watch Video'} border={true}></Button>
+                <Button data="Watch Video" border />
               </a>
             </div>
-          </section>
-          <div className="w-full">
-            <img
-              src={factoryImg}
-              alt=""
-              className="w-full rounded-full" />
-          </div>
-        </section>
+          </motion.div>
+
+          <motion.img
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            src={factoryImg}
+            alt="Factory"
+            className="max-w-lg md:max-w-full rounded-3xl shadow-2xl"
+          />
+        </div>
       </section>
-      <section className="w-[70%] my-12 mx-auto" id="video">
-        <h2 className="text-center font-bold text-xl pb-1.5">Watch The Video</h2>
-        <p className="mb-8 mx-auto text-center text-xl w-[70%]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,
-        </p>
-        <iframe src="https://www.youtube.com/embed/bWzN8NuZWF8?si=JPcoASEX1nYVAyf6&controls=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-          className="w-full aspect-video rounded-2xl shadow-[0_0_2rem_black] border"
-        ></iframe>
+
+      <section id="video" className="py-24 bg-back">
+        <div className="max-w-5xl mx-auto text-center px-6">
+          <h2 className="text-4xl font-bold text-primary mb-4">
+            Inside Our Company
+          </h2>
+          <p className="text-lg text-text/70 mb-10">
+            Discover how Aberos PLC operates across multiple industries.
+          </p>
+
+          <iframe
+            className="w-full aspect-video rounded-3xl shadow-xl border"
+            src="https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1"
+            allowFullScreen
+          />
+        </div>
       </section>
-      <main>
-        <section className="flex flex-col items-center p-4">
-          <h2 className="font-bold text-xl p-1.5">About Us</h2>
-          <p className="w-[70%] text-center text-[16px] pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            illum, maxime consectetur aut modi obcaecati voluptates, doloribus
-            porro qui ipsa esse aliquid, blanditiis tempora voluptatibus
-            corporis id doloremque cum praesentium!
-            dolor sit amet consectetur adipisicing elit. Accusantium
-            illum, maxime consectetur aut modi obcaecati voluptates, doloribus
-            porro qui ipsa esse aliquid, blanditiis tempora voluptatibus
-            corporis id doloremque cum praesentium!
+
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-8">
+          <h2 className="text-3xl font-bold text-primary mb-6 text-center md:text-start">About Us</h2>
+          <p className="text-text/80 max-w-3xl leading-relaxed mb-6 text-center md:text-start">
+            Aberos PLC is a diversified company committed to excellence,
+            innovation, and sustainable growth across its subsidiaries.
           </p>
-          <section className="flex w-[80%] justify-center gap-6 my-2 pb-4">
-            {[heroImg, heroImg, heroImg].map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt=""
-                className="w-50 rounded-lg shadow-[0.2rem_0.2rem_0.5rem_rgba(0,0,0,0.6)]"
-              />
-            ))}
-          </section>
-          <p className="w-[70%] text-center pb-1.5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laborum
-            numquam .
-          </p>
-          <Link to='/about'>
-            <Button data="See More" />
+
+          <Link to="/about" className="block w-max mx-auto md:mx-0">
+            <Button data="Read More" />
           </Link>
-        </section>
-        <section className="p-8 bg-cover bg-[url(./assets/img.jpg)] relative before:content-[''] before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)]  before:-z-10 z-0 before:absolute before:bottom-0 before:left-0">
-          <h2 className="text-center text-2xl font-bold mb-1.5">sub companies</h2>
-          <p className="w-3/5 text-center mx-auto mb-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla beatae nesciunt sit eum minima suscipit veritatis explicabo unde consequatur rerum adipisci odit, distinctio, quo quasi dignissimos velit placeat eius. Eligendi.</p>
-          <section className="flex gap-12">
+        </div>
+      </section>
+
+      <section className="py-24 bg-back">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-center text-4xl font-bold text-primary mb-4">
+            Our Subsidiaries
+          </h2>
+          <p className="text-center text-text/70 max-w-3xl mx-auto mb-16">
+            Each company operates independently while sharing a unified vision
+            of excellence.
+          </p>
+
+          <div className="flex flex-wrap gap-10 content-center justify-center">
             {subCompany.map((com, i) => (
-              <section
+              <motion.div
                 key={i}
-                className={`flex flex-col w-full bg-[rgba(255,255,255,0.4)] p-2 rounded-2xl backdrop-blur-sm mx-auto items-center shadow-[0_0_0.4rem_white] gap-4 border-2 border-white`}
+                whileHover={{ y: -8 }}
+                className="bg-card rounded-3xl w-80 shadow-lg border overflow-hidden"
               >
                 <img
                   src={com.img}
-                  width={200}
-                  alt=""
-                  className="w-full rounded-lg shadow-[0_0_1rem]"
+                  alt={com.name}
+                  className="h-48 w-full object-cover"
                 />
-                <div className="flex flex-col gap-1.5 items-center">
-                  <h3 className="text-xl font-bold text-center">{com.name}</h3>
-                  <p className="text-center">{com.desc}</p>
-                  <Button data="button" full={true} />
+
+                <div className="p-6 flex flex-col gap-4">
+                  <h3 className="text-2xl font-semibold text-primary">
+                    {com.name}
+                  </h3>
+                  <p className="text-text/70">{com.desc}</p>
+
+                  <Button data="Explore" icon={<ArrowRight />} />
                 </div>
-              </section>
+              </motion.div>
             ))}
-          </section>
-          <section className="py-4">
-            <h2 className="text-center text-2xl font-bold mb-4">Why Us</h2>
-            <ul className="grid grid-cols-2 gap-4 py-4">
-              {[1, 2, 3, 4, 5, 6].map((item, i) => (
-                <li
-                  key={1}
-                  className={`bg-[rgba(255,255,255,0.6)] backdrop-blur-sm w-full shadow-[-0.2rem_0.2rem_0.2rem_rgba(0,0,0,0.3)] 
-              p-3 rounded-lg relative flex gap-2
-              `}
-                >
-                  <Facebook className="bg-amber-50 p-2 rounded-lg block w-15 h-auto row-span-2" />
-                  <div className="flex flex-col items-start">
-                    <h4 className="text-lg font-bold">demo whish</h4>
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Odit, corrupti.
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </section>
-        <section className="p-8" id="contact">
-          <h2 className="text-center text-2xl font-bold mb-1.5">Contact Us</h2>
-          <p className="text-center w-[40%] mx-auto pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            error!
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-8">
+          <h2 className="text-center text-4xl font-bold text-primary mb-16">
+            Why Choose Us
+          </h2>
+
+          <div className="grid mx-auto max-w-121 md:max-w-full md:grid-cols-2 gap-10">
+            {[1, 2, 3, 4].map((_, i) => (
+              <div
+                key={i}
+                className="p-8 rounded-3xl border shadow-sm hover:shadow-md transition"
+              >
+                <h4 className="text-xl font-semibold text-primary mb-3">
+                  Trusted Expertise
+                </h4>
+                <p className="text-text/70">
+                  We combine experience, innovation, and integrity in everything
+                  we do.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-24 bg-primary text-back">
+        <div className="max-w-5xl mx-auto px-8">
+          <h2 className="text-center text-4xl font-bold mb-4">Contact Us</h2>
+          <p className="text-center text-back/70 mb-12">
+            Let’s talk about your next big idea.
           </p>
-          <form className="w-[70%] mx-auto my-4 grid grid-cols-2 bg-amber-500 p-4 rounded-xl gap-3">
-            <div className="flex flex-col gap-1">
-              <label htmlFor="fullname">Full Name</label>
-              <input
-                type="text"
-                id="fullname"
-                name="fullname"
-                className="bg-amber-400 px-1 py-1 rounded-lg focus:outline-none"
-                placeholder="Your Full Name"
-              />
-            </div>
 
-            <div className="flex flex-col gap-1">
-              <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                className="bg-amber-400 px-1 py-1 rounded-lg focus:outline-none"
-                placeholder="Your Email Address"
-              />
+          <form className="bg-back text-text p-8 max-w-206 mx-auto rounded-3xl grid md:grid-cols-2 gap-6">
+            <input
+              className="border rounded-xl px-4 py-3"
+              placeholder="Full Name"
+            />
+            <input
+              className="border rounded-xl px-4 py-3"
+              placeholder="Email"
+            />
+            <textarea
+              className="border rounded-xl px-4 py-3 md:col-span-2 h-40"
+              placeholder="Your Message"
+            />
+            <div className="md:col-span-2">
+              <Button data="Send Message" full />
             </div>
-
-            <div className="col-start-1 col-end-3 flex flex-col gap-1">
-              <label htmlFor="message">Message</label>
-              <textarea
-                name="message"
-                id="message"
-                className="bg-amber-400 px-1 py-1 rounded-lg w-full h-60 focus:outline-none"
-                placeholder="Your message"
-              ></textarea>
-            </div>
-
-            <Button data="Send" full={true} />
           </form>
-        </section>
-      </main>
-      <footer className="bg-amber-950 grid grid-cols-3 p-8 pb-4 place-items-center gap-4">
-        <ul className="flex gap-4">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <a href="">companies</a>
-          </li>
-        </ul>
-        <ul className="flex gap-4">
-          <li>
+        </div>
+      </section>
+
+      <footer className="bg-black text-back py-12">
+        <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-3 gap-8 items-center">
+          <ul className="flex gap-6">
+            <li className="opacity-70"><Link to="/">Home</Link></li>
+            <li className="opacity-70"><Link to="/about">About</Link></li>
+            <li className="opacity-70"><a href="#contact">Contact</a></li>
+          </ul>
+
+          <ul className="flex gap-6 justify-center">
             <Facebook />
-          </li>
-          <li>
-            <Mail />
-          </li>
-          <li>
-            <Send />
-          </li>
-          <li>
             <Twitter />
-          </li>
-          <li>
             <Linkedin />
-          </li>
-        </ul>
-        <ul className="flex gap-4">
-          <li>Manufacture</li>
-          <li>Mall</li>
-        </ul>
-        <p className="col-start-1 col-end-4">Lorem ipsum dolor sit amet.</p>
+            <Mail />
+          </ul>
+
+          <p className="text-sm text-back/60 text-right">
+            &copy; {new Date().getFullYear()} Aberos PLC
+          </p>
+        </div>
       </footer>
     </>
   );
