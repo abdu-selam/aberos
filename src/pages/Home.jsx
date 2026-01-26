@@ -5,6 +5,7 @@ import { Link } from "react-router";
 
 import heroImg from "../assets/img.jpg";
 import factoryImg from "../assets/factory.png";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
@@ -17,26 +18,52 @@ export default function Home() {
   const subCompany = [
     {
       name: "Manufacturing",
-      desc: "High-quality industrial production with modern facilities and skilled professionals.",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.",
       img: heroImg,
+      link: 'manufacture'
     },
     {
       name: "Real Estate",
-      desc: "Premium commercial and residential spaces designed for modern living.",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.",
       img: heroImg,
+      link: 'restaurant'
     },
     {
-      name: "Retail Mall",
-      desc: "A vibrant shopping experience bringing global and local brands together.",
+      name: "Aberos Mall",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.",
       img: heroImg,
+      link: 'mall'
     },
   ];
+
+  const whyUs = [
+    {
+      title: 'Lorem ipsum',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!'
+    },
+    {
+      title: 'Lorem ipsum',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!'
+    },
+    {
+      title: 'Lorem ipsum',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!'
+    },
+    {
+      title: 'Lorem ipsum',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!'
+    },
+  ]
 
   return (
     <>
       <Header active={page} />
 
-      <section className="relative flex justify-center items-center min-h-dvh bg-[url(./assets/img.jpg)] bg-cover bg-center">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative flex justify-center items-center min-h-dvh bg-[url(./assets/hero-back.png)] bg-fixed bg-cover bg-center">
         <div className="absolute inset-0 bg-primary/80" />
 
         <div className="relative z-10 h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center  text-back">
@@ -51,8 +78,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg text-back/80 max-w-xl text-center md:text-start">
-              Building sustainable businesses across manufacturing, real estate,
-              and retail — shaping the future of industry.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.
             </p>
 
             <div className="flex gap-4">
@@ -74,40 +100,77 @@ export default function Home() {
             className="max-w-lg md:max-w-full rounded-3xl shadow-2xl"
           />
         </div>
-      </section>
+      </motion.section>
 
-      <section id="video" className="py-24 bg-back">
+      <motion.section
+        id="video"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-24 bg-back"
+      >
         <div className="max-w-5xl mx-auto text-center px-6">
-          <h2 className="text-4xl font-bold text-primary mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-primary mb-4"
+          >
             Inside Our Company
-          </h2>
-          <p className="text-lg text-text/70 mb-10">
-            Discover how Aberos PLC operates across multiple industries.
-          </p>
+          </motion.h2>
 
-          <iframe
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-lg text-text/70 mb-10"
+          >
+            Discover how Aberos PLC operates across multiple industries.
+          </motion.p>
+
+          <motion.iframe
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
             className="w-full aspect-video rounded-3xl shadow-xl border"
             src="https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1"
             allowFullScreen
           />
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-24 bg-white">
+      <motion.section
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-24 bg-white"
+      >
         <div className="max-w-6xl mx-auto px-8">
-          <h2 className="text-3xl font-bold text-primary mb-6 text-center md:text-start">About Us</h2>
+          <h2 className="text-3xl font-bold text-primary mb-6 text-center md:text-start">
+            About Us
+          </h2>
           <p className="text-text/80 max-w-3xl leading-relaxed mb-6 text-center md:text-start">
-            Aberos PLC is a diversified company committed to excellence,
-            innovation, and sustainable growth across its subsidiaries.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.
           </p>
 
           <Link to="/about" className="block w-max mx-auto md:mx-0">
             <Button data="Read More" />
           </Link>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-24 bg-back">
+      <motion.section
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-24 bg-back"
+      >
         <div className="max-w-7xl mx-auto px-8">
           <h2 className="text-center text-4xl font-bold text-primary mb-4">
             Our Subsidiaries
@@ -117,10 +180,26 @@ export default function Home() {
             of excellence.
           </p>
 
-          <div className="flex flex-wrap gap-10 content-center justify-center">
+          <motion.div
+            whileInView="show"
+            initial="hidden"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
+            className="flex flex-wrap gap-10 content-center justify-center"
+          >
             {subCompany.map((com, i) => (
-              <div
+              <motion.div
                 key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  show: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 className="bg-card rounded-3xl w-80 shadow-[0_4px_6px_-1px] border overflow-hidden hover:shadow-[0_20px_25px_-5px] transition-all duration-300"
               >
                 <img
@@ -134,41 +213,70 @@ export default function Home() {
                     {com.name}
                   </h3>
                   <p className="text-text/70">{com.desc}</p>
-
-                  <Button data="Explore" icon={<ArrowRight />} />
+                  <Link to={`/companies#${com.link}`}>
+                    <Button data="Explore" />
+                  </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-24 bg-white">
+      <motion.section
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="py-24 bg-white"
+      >
         <div className="max-w-6xl mx-auto px-8">
           <h2 className="text-center text-4xl font-bold text-primary mb-16">
             Why Choose Us
           </h2>
 
-          <div className="grid mx-auto max-w-121 md:max-w-full md:grid-cols-2 gap-10">
-            {[1, 2, 3, 4].map((_, i) => (
-              <div
+          <motion.div
+            whileInView="show"
+            initial="hidden"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: { staggerChildren: 0.12 },
+              },
+            }}
+            className="grid mx-auto max-w-121 md:max-w-full md:grid-cols-2 gap-10"
+          >
+            {whyUs.map((obj, i) => (
+              <motion.div
                 key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.4 }}
                 className="p-8 rounded-3xl border shadow-sm hover:shadow-md transition"
               >
                 <h4 className="text-xl font-semibold text-primary mb-3">
-                  Trusted Expertise
+                  {obj.title}
                 </h4>
                 <p className="text-text/70">
-                  We combine experience, innovation, and integrity in everything
-                  we do.
+                  {obj.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="contact" className="py-24 bg-primary text-back">
+      <motion.section
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        id="contact"
+        className="py-24 bg-primary text-back"
+      >
         <div className="max-w-5xl mx-auto px-8">
           <h2 className="text-center text-4xl font-bold mb-4">Contact Us</h2>
           <p className="text-center text-back/70 mb-12">
@@ -176,7 +284,8 @@ export default function Home() {
           </p>
         </div>
         <ContactForm />
-      </section>
+      </motion.section>
+
       <Footer page={page} />
     </>
   );

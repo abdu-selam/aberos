@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../components/Button";
+import { motion } from "framer-motion";
 
 function ContactForm() {
     const [loading, setLoading] = useState(false);
@@ -15,10 +16,11 @@ function ContactForm() {
         try {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
             if (!re.test(formRef.current.email.value)) {
-                alert('Email is not valid email')
-                setLoading(false)
-                return
+                alert('Email is not valid email');
+                setLoading(false);
+                return;
             }
+
             await emailjs.sendForm(
                 import.meta.env.VITE_SERVICE_KEY,
                 import.meta.env.VITE_TEMPLATE_KEY,
@@ -37,7 +39,15 @@ function ContactForm() {
     };
 
     return (
-        <form ref={formRef} onSubmit={sendEmail} className="bg-back text-text p-8 max-w-206 mx-auto rounded-3xl grid md:grid-cols-2 gap-6">
+        <motion.form
+            ref={formRef}
+            onSubmit={sendEmail}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="bg-back text-text p-8 max-w-206 mx-auto rounded-3xl grid md:grid-cols-2 gap-6"
+        >
             <input
                 className="border rounded-xl px-4 py-3 focus:outline-none focus:border-2"
                 placeholder="Full Name"
@@ -62,8 +72,8 @@ function ContactForm() {
             <div className="md:col-span-2">
                 <Button data="Send Message" full />
             </div>
-        </form>
-    )
+        </motion.form>
+    );
 }
 
-export default ContactForm
+export default ContactForm;

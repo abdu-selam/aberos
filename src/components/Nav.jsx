@@ -1,17 +1,44 @@
 import React from "react";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 
 export default function Nav({ active, state }) {
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
       className={`sm:w-auto fixed sm:static border sm:border-none bg-back sm:bg-transparent w-60 top-18 rounded-2xl p-4 ${
         state == "close" ? "-right-full opacity-0" : "right-5 opacity-100"
       } transition-opacity duration-500 sm:opacity-100`}
     >
-      <ul className="flex sm:gap-6 flex-col sm:flex-row gap-3">
+      <motion.ul
+        initial="hidden"
+        animate="show"
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.12,
+            },
+          },
+        }}
+        className="flex sm:gap-6 flex-col sm:flex-row gap-3"
+      >
         {["Home", "About", "companies"].map((item, i) => (
-          <li
+          <motion.li
             key={i}
+            variants={{
+              hidden: { opacity: 0, y: 15 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.4, ease: "easeOut" },
+              },
+            }}
             className={`text-[1rem] text-txt ${
               i != 2 ? "border-b" : ""
             } w-1/2 sm:w-full sm:border-none`}
@@ -37,9 +64,9 @@ export default function Nav({ active, state }) {
             >
               {item}
             </Link>
-          </li>
+          </motion.li>
         ))}
-      </ul>
-    </nav>
+      </motion.ul>
+    </motion.nav>
   );
 }
