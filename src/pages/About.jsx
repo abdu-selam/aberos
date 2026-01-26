@@ -1,110 +1,89 @@
 import React from "react";
+import Header from '../components/Header'
+import ContactForm from "../components/ContactForm";
+import Footer from '../components/Footer'
 
 const About = () => {
+  const page = 'about'
+  const subCompanies = [
+    {
+      name: "Manufacturing",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
+    },
+    {
+      name: "Real Estate",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
+    },
+    {
+      name: "Retail Mall",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
+    },
+  ];
+
   return (
-    <div className="bg-gray-50 text-gray-800">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Our Company
-          </h1>
-          <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-            Building experiences, spaces, and flavors that bring people together.
-          </p>
-        </div>
-      </section>
-
-      {/* History Section */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6">Our History</h2>
-          <p className="text-lg leading-relaxed text-gray-600 max-w-4xl">
-            Founded with a passion for quality and innovation, our company began
-            as a small operation with a big dream — to create spaces and
-            experiences that inspire. Over the years, we have grown into a
-            diversified group with expertise in manufacturing, retail, and
-            hospitality, always guided by our commitment to excellence and
-            customer satisfaction.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-          <div className="p-8 rounded-2xl shadow-sm border">
-            <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-            <p className="text-gray-600 leading-relaxed">
-              To deliver high-quality products and unforgettable experiences
-              through innovation, integrity, and a deep understanding of our
-              customers’ needs.
+    <>
+      <Header active={page} />
+      <main>
+        <section className="bg-linear-to-r from-primary to-secondary text-white py-15">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              About Aberos PLC
+            </h1>
+            <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dolorum.
             </p>
           </div>
-          <div className="p-8 rounded-2xl shadow-sm border">
-            <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
-            <p className="text-gray-600 leading-relaxed">
-              To become a trusted leader across industries, shaping the future
-              of living, shopping, and dining through sustainable growth and
-              creative excellence.
+        </section>
+
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-6">Our History</h2>
+            <p className="text-lg leading-relaxed text-gray-600 max-w-4xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eius accusantium iure harum odit. Quidem incidunt repudiandae saepe ipsa itaque soluta veniam quibusdam cum ex voluptas? Natus similique saepe assumenda architecto asperiores excepturi repudiandae eum repellat atque voluptatum aperiam praesentium inventore, veniam iure totam esse officiis commodi ipsum. Nobis, distinctio.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Sub Companies */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Our Businesses
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Floor Factory */}
-            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
-              <h3 className="text-xl font-semibold mb-3">Floor Factory</h3>
+        <section className="bg-white py-16">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+            <div className="p-8 rounded-2xl shadow-sm border">
+              <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                Specializing in premium flooring solutions, Floor Factory
-                combines durability, design, and craftsmanship to create
-                beautiful foundations for homes and businesses.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.
               </p>
             </div>
-
-            {/* Mall */}
-            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
-              <h3 className="text-xl font-semibold mb-3">Shopping Mall</h3>
+            <div className="p-8 rounded-2xl shadow-sm border">
+              <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                Our mall is a vibrant retail destination, bringing together top
-                brands, entertainment, and community spaces under one roof.
-              </p>
-            </div>
-
-            {/* Restaurant */}
-            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
-              <h3 className="text-xl font-semibold mb-3">Restaurant</h3>
-              <p className="text-gray-600 leading-relaxed">
-                A place where flavors come alive — our restaurant delivers
-                exceptional dining experiences with carefully crafted menus and
-                warm hospitality.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer CTA */}
-      <section className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h3 className="text-2xl font-semibold mb-4">
-            Growing Together, Building the Future
-          </h3>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            We believe in long-term partnerships, innovation, and creating value
-            for our customers and communities.
-          </p>
-        </div>
-      </section>
-    </div>
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              Our Businesses
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {subCompanies.map((comp, i) => (
+                <div key={i} className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+                  <h3 className="text-xl font-semibold mb-3">{comp.name}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {comp.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      section
+
+      <Footer page={page} />
+    </>
   );
 };
 

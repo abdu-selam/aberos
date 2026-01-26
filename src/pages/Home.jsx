@@ -1,14 +1,18 @@
-import React, { useState } from "react";
-import { Facebook, Mail, Send, Twitter, Linkedin, ArrowRight } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 
 import heroImg from "../assets/img.jpg";
 import factoryImg from "../assets/factory.png";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import ContactForm from "../components/ContactForm";
 import Button from "../components/Button";
 
 export default function Home() {
+  const page = 'home'
+
 
   const subCompany = [
     {
@@ -30,7 +34,7 @@ export default function Home() {
 
   return (
     <>
-      <Header active="home" />
+      <Header active={page} />
 
       <section className="relative flex justify-center items-center min-h-dvh bg-[url(./assets/img.jpg)] bg-cover bg-center">
         <div className="absolute inset-0 bg-primary/80" />
@@ -115,10 +119,9 @@ export default function Home() {
 
           <div className="flex flex-wrap gap-10 content-center justify-center">
             {subCompany.map((com, i) => (
-              <motion.div
+              <div
                 key={i}
-                whileHover={{ y: -8 }}
-                className="bg-card rounded-3xl w-80 shadow-lg border overflow-hidden"
+                className="bg-card rounded-3xl w-80 shadow-[0_4px_6px_-1px] border overflow-hidden hover:shadow-[0_20px_25px_-5px] transition-all duration-300"
               >
                 <img
                   src={com.img}
@@ -134,7 +137,7 @@ export default function Home() {
 
                   <Button data="Explore" icon={<ArrowRight />} />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -171,47 +174,10 @@ export default function Home() {
           <p className="text-center text-back/70 mb-12">
             Let’s talk about your next big idea.
           </p>
-
-          <form className="bg-back text-text p-8 max-w-206 mx-auto rounded-3xl grid md:grid-cols-2 gap-6">
-            <input
-              className="border rounded-xl px-4 py-3"
-              placeholder="Full Name"
-            />
-            <input
-              className="border rounded-xl px-4 py-3"
-              placeholder="Email"
-            />
-            <textarea
-              className="border rounded-xl px-4 py-3 md:col-span-2 h-40"
-              placeholder="Your Message"
-            />
-            <div className="md:col-span-2">
-              <Button data="Send Message" full />
-            </div>
-          </form>
         </div>
+        <ContactForm />
       </section>
-
-      <footer className="bg-black text-back py-12">
-        <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-3 gap-8 items-center">
-          <ul className="flex gap-6">
-            <li className="opacity-70"><Link to="/">Home</Link></li>
-            <li className="opacity-70"><Link to="/about">About</Link></li>
-            <li className="opacity-70"><a href="#contact">Contact</a></li>
-          </ul>
-
-          <ul className="flex gap-6 justify-center">
-            <Facebook />
-            <Twitter />
-            <Linkedin />
-            <Mail />
-          </ul>
-
-          <p className="text-sm text-back/60 text-right">
-            &copy; {new Date().getFullYear()} Aberos PLC
-          </p>
-        </div>
-      </footer>
+      <Footer page={page} />
     </>
   );
 }
