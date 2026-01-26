@@ -61,7 +61,7 @@ function Companies() {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     className='bg-white/10 border border-white/20 backdrop-blur-md sticky top-18 w-max px-6 py-2 mx-auto rounded-lg'
                 >
-                    <ul className='flex justify-center gap-6 text-muted font-medium'>
+                    <ul className='flex justify-center gap-6 text-primary font-medium'>
                         {subCompanies.map((com, i) => (
                             <li key={i} className='hover:text-secondary transition'>
                                 <a href={`#${com.link}`}>
@@ -77,7 +77,7 @@ function Companies() {
                     initial={{ opacity: 0, y: 40 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="py-16 bg-back"
+                    className="py-8 bg-back"
                 >
                     <div className="max-w-5xl mx-auto text-center px-6">
                         <motion.h2

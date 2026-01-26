@@ -46,7 +46,7 @@ function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="bg-back text-text p-8 max-w-206 mx-auto rounded-3xl grid md:grid-cols-2 gap-6"
+            className="bg-back text-text p-8 max-w-150 w-[80vw] mx-auto rounded-3xl grid md:grid-cols-2 gap-6"
         >
             <input
                 className="border rounded-xl px-4 py-3 focus:outline-none focus:border-2"

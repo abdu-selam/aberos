@@ -63,7 +63,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative flex justify-center items-center min-h-dvh bg-[url(./assets/hero-back.png)] bg-fixed bg-cover bg-center">
+        className="relative flex justify-center items-center w-vw min-h-dvh bg-[url(./assets/hero-back.png)] bg-fixed bg-cover bg-center">
         <div className="absolute inset-0 bg-primary/80" />
 
         <div className="relative z-10 h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center  text-back">
@@ -200,7 +200,7 @@ export default function Home() {
                   show: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="bg-card rounded-3xl w-80 shadow-[0_4px_6px_-1px] border overflow-hidden hover:shadow-[0_20px_25px_-5px] transition-all duration-300"
+                className="bg-card rounded-3xl w-80 shadow-lg border border-[rgba(0,0,0,0.2)] overflow-hidden hover:shadow-xl transition-all duration-300"
               >
                 <img
                   src={com.img}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import heroImg from "../assets/img.jpg";
 import Button from "./Button";
 import Nav from "./Nav";
@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 export default function Header({ active }) {
   const [open, setOpen] = useState("close");
   const [cross, setCross] = useState("not");
+  const [lang, setLang] = useState('en')
+  const langRef = useRef()
 
   const menuBar = () => {
     if (open == "close") {
@@ -61,14 +63,16 @@ export default function Header({ active }) {
 
         <Nav active={active} state={open} />
 
-        <motion.a
-          href="#contact"
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.25 }}
+          className="flex"
         >
-          <Button data="Contact Us" />
-        </motion.a>
+          <p onClick={()=>setLang('am')} className={`${lang == 'am' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>አ</p>
+          <p onClick={()=>setLang('ar')} className={`${lang == 'ar' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>A</p>
+          <p onClick={()=>setLang('en')} className={`${lang == 'en' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>E</p>
+        </motion.div>
       </div>
     </motion.header>
   );
