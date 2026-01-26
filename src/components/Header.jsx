@@ -70,7 +70,7 @@ export default function Header({ active }) {
           className="flex"
         >
           <p onClick={()=>setLang('am')} className={`${lang == 'am' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>አ</p>
-          <p onClick={()=>setLang('ar')} className={`${lang == 'ar' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>A</p>
+          <p onClick={()=>setLang('ar')} className={`${lang == 'ar' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>ع</p>
           <p onClick={()=>setLang('en')} className={`${lang == 'en' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>E</p>
         </motion.div>
       </div>
