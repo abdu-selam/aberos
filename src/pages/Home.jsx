@@ -66,7 +66,7 @@ export default function Home() {
         className="relative flex justify-center items-center w-vw min-h-dvh bg-[url(./assets/hero-back.png)] bg-fixed bg-cover bg-center">
         <div className="absolute inset-0 bg-primary/80" />
 
-        <div className="relative z-10 h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center  text-back">
+        <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center  text-back">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export default function Home() {
               Aberos <span className="text-secondary">PLC</span>
             </h1>
 
-            <p className="text-lg text-back/80 max-w-xl text-center md:text-start">
+            <p className="text-sm text-back/80 w-full max-w-xl text-center md:text-start">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.
             </p>
 
@@ -97,7 +97,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             src={factoryImg}
             alt="Factory"
-            className="max-w-lg md:max-w-full rounded-3xl shadow-2xl"
+            className="max-w-lg md:max-w-full w-full rounded-3xl shadow-2xl"
           />
         </div>
       </motion.section>
