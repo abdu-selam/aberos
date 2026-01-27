@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import Button from "./Button"
+import { a } from "framer-motion/client";
 
 export default function Nav({ active, state }) {
   return (
@@ -11,7 +13,7 @@ export default function Nav({ active, state }) {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className={`sm:w-auto fixed sm:static border sm:border-none bg-back sm:bg-transparent w-60 top-18 rounded-2xl p-4 ${
+      className={`sm:w-full fixed sm:static border sm:border-none bg-back sm:bg-transparent w-60 top-18 rounded-2xl p-4 ${
         state == "close" ? "-right-full opacity-0" : "right-5 opacity-100"
       } transition-opacity duration-500 sm:opacity-100`}
     >
@@ -26,9 +28,9 @@ export default function Nav({ active, state }) {
             },
           },
         }}
-        className="flex sm:gap-6 flex-col sm:flex-row gap-3"
+        className="flex sm:gap-6 justify-center flex-col sm:flex-row gap-3"
       >
-        {["Home", "About", "companies"].map((item, i) => (
+        {["Home", "About", "companies", "contact us"].map((item, i) => (
           <motion.li
             key={i}
             variants={{
@@ -40,11 +42,12 @@ export default function Nav({ active, state }) {
               },
             }}
             className={`text-[1rem] text-txt ${
-              i != 2 ? "border-b" : ""
-            } w-1/2 sm:w-full sm:border-none`}
+              i != 3 ? "border-b" : ""
+            } w-1/2 sm:w-max sm:border-none`}
           >
+            {i != 3? 
             <Link
-              to={`/${item.toLowerCase()}`}
+              to={`/${item.toLowerCase()}#top`}
               className={`
                 relative inline-block pb-1
                 transition-all duration-300 ease-out
@@ -63,7 +66,12 @@ export default function Nav({ active, state }) {
               `}
             >
               {item}
-            </Link>
+            </Link> : 
+            <a href="#contact"
+                className="bg-primary text-back px-2 pb-1 rounded-sm"
+            >
+              {item}
+            </a> }
           </motion.li>
         ))}
       </motion.ul>
