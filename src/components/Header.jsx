@@ -1,14 +1,16 @@
 import React, { useState, useRef } from "react";
 import heroImg from "../assets/img.jpg";
-import Button from "./Button";
 import Nav from "./Nav";
 import { motion } from "framer-motion";
+import useStore from "../store/useStore";
+import { header } from "../data/translation";
 
 export default function Header({ active }) {
+  const lang = useStore((state) => state.lang);
+  const setLang = useStore((state) => state.setLang);
   const [open, setOpen] = useState("close");
   const [cross, setCross] = useState("not");
-  const [lang, setLang] = useState('en')
-  const langRef = useRef()
+  const headerData = header
 
   const menuBar = () => {
     if (open == "close") {
@@ -41,7 +43,7 @@ export default function Header({ active }) {
             className="w-12 h-12 rounded-full border-2 border-border"
           />
           <figcaption className="flex flex-col items-start">
-            <h2 className="text-[1.4rem] text-txt">Aberos</h2>
+            <h2 className="text-[1.4rem] text-txt">{headerData[lang]['name']}</h2>
           </figcaption>
         </motion.figure>
 
@@ -69,9 +71,24 @@ export default function Header({ active }) {
           transition={{ duration: 0.45, delay: 0.25 }}
           className="flex"
         >
-          <p onClick={()=>setLang('am')} className={`${lang == 'am' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>አ</p>
-          <p onClick={()=>setLang('ar')} className={`${lang == 'ar' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>ع</p>
-          <p onClick={()=>setLang('en')} className={`${lang == 'en' ? 'hidden':''} bg-primary px-2 rounded-sm mx-1 text-back`}>E</p>
+          <p
+            onClick={() => setLang("am")}
+            className={`${lang == "am" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
+          >
+            አ
+          </p>
+          <p
+            onClick={() => setLang("ar")}
+            className={`${lang == "ar" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
+          >
+            ع
+          </p>
+          <p
+            onClick={() => setLang("en")}
+            className={`${lang == "en" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
+          >
+            E
+          </p>
         </motion.div>
       </div>
     </motion.header>

@@ -58,7 +58,12 @@ function Companies() {
           <Header active={page} />
     
       <main className="pt-17">
-        <section className="bg-linear-to-r from-primary to-secondary text-white py-20">
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="bg-linear-to-r from-primary to-secondary text-white py-15"
+        >
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
               Our Companies
@@ -68,7 +73,7 @@ function Companies() {
               dolorum.
             </p>
           </div>
-        </section>
+        </motion.section>
 
         <main className="py-12">
           <motion.nav

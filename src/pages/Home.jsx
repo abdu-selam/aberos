@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
+import useStore from "../store/useStore";
 
 import heroImg from "../assets/img.jpg";
-import factoryImg from "../assets/factory.png";
+import factoryImg from "../assets/mall.png";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,6 +12,7 @@ import ContactForm from "../components/ContactForm";
 import Button from "../components/Button";
 
 export default function Home() {
+  const lang = useStore((state=>state.lang))
   const page = "home";
 
   const subCompany = [
@@ -67,7 +68,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-primary/80" />
 
-          <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center  text-back">
+          <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center justify-center  text-back">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,7 +100,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               src={factoryImg}
               alt="Factory"
-              className="max-w-lg md:max-w-full w-full rounded-3xl shadow-2xl"
+              className="max-w-xl w-full mx-auto rounded-3xl shadow-2xl"
             />
           </div>
         </motion.section>
