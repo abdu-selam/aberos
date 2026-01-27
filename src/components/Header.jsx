@@ -25,7 +25,7 @@ export default function Header({ active }) {
       initial={{ opacity: 0, y: -25 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="h-max min-w-full bg-back sticky top-0 z-24"
+      className="h-max min-w-full bg-back fixed top-0 z-24"
     >
       <div className="flex justify-between items-center px-6 py-1 w-vw max-w-7xl mx-auto">
         <motion.figure

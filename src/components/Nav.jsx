@@ -47,7 +47,7 @@ export default function Nav({ active, state }) {
           >
             {i != 3? 
             <Link
-              to={`/${item.toLowerCase()}#top`}
+              to={`/${item.toLowerCase()}`}
               className={`
                 relative inline-block pb-1
                 transition-all duration-300 ease-out

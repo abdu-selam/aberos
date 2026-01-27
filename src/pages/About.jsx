@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Button from "../components/Button";
 import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
 
 const About = () => {
   const page = "about";
@@ -13,17 +13,17 @@ const About = () => {
     {
       name: "Manufacturing",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
-      link: 'manufacture'
+      link: "manufacture",
     },
     {
       name: "Real Estate",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
-      link: 'restaurant'
+      link: "restaurant",
     },
     {
       name: "Retail Mall",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
-      link: 'mall'
+      link: "mall",
     },
   ];
 
@@ -31,7 +31,7 @@ const About = () => {
     <>
       <Header active={page} />
 
-      <main>
+      <main className="pt-17">
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,8 @@ const About = () => {
               About Aberos PLC
             </h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dolorum.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+              dolorum.
             </p>
           </div>
         </motion.section>
@@ -58,7 +59,13 @@ const About = () => {
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold mb-6">Our History</h2>
             <p className="text-lg leading-relaxed text-gray-600 max-w-4xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eius accusantium iure harum odit. Quidem incidunt repudiandae saepe ipsa itaque soluta veniam quibusdam cum ex voluptas? Natus similique saepe assumenda architecto asperiores excepturi repudiandae eum repellat atque voluptatum aperiam praesentium inventore, veniam iure totam esse officiis commodi ipsum. Nobis, distinctio.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eius
+              accusantium iure harum odit. Quidem incidunt repudiandae saepe
+              ipsa itaque soluta veniam quibusdam cum ex voluptas? Natus
+              similique saepe assumenda architecto asperiores excepturi
+              repudiandae eum repellat atque voluptatum aperiam praesentium
+              inventore, veniam iure totam esse officiis commodi ipsum. Nobis,
+              distinctio.
             </p>
           </div>
         </motion.section>
@@ -84,7 +91,10 @@ const About = () => {
                   {i === 0 ? "Our Mission" : "Our Vision"}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laborum praesentium fugiat corrupti! Perspiciatis quae dolore
+                  repudiandae enim sunt quam debitis vitae quia, nobis iure
+                  tempora.
                 </p>
               </motion.div>
             ))}
@@ -125,33 +135,35 @@ const About = () => {
                   className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-[rgba(0,0,0,0.1)] hover:border-[rgba(0,0,0,0.2)]"
                 >
                   <h3 className="text-xl font-semibold mb-3">{comp.name}</h3>
-                  <p className="text-gray-600 leading-relaxed pb-4">{comp.desc}</p>
+                  <p className="text-gray-600 leading-relaxed pb-4">
+                    {comp.desc}
+                  </p>
                   <Link to={`/companies#${comp.link.toLowerCase()}`}>
-                    <Button data='See More' />
+                    <Button data="See More" />
                   </Link>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </motion.section>
-      </main>
 
-      <motion.section
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        id="contact"
-        className="py-24 bg-primary text-back"
-      >
-        <div className="max-w-5xl mx-auto px-8">
-          <h2 className="text-center text-4xl font-bold mb-4">Contact Us</h2>
-          <p className="text-center text-back/70 mb-12">
-            Let’s talk about your next big idea.
-          </p>
-        </div>
-        <ContactForm />
-      </motion.section>
+        <motion.section
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          id="contact"
+          className="py-24 bg-primary text-back"
+        >
+          <div className="max-w-5xl mx-auto px-8">
+            <h2 className="text-center text-4xl font-bold mb-4">Contact Us</h2>
+            <p className="text-center text-back/70 mb-12">
+              Let’s talk about your next big idea.
+            </p>
+          </div>
+          <ContactForm />
+        </motion.section>
+      </main>
       <Footer page={page} />
     </>
   );
