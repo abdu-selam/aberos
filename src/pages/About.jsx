@@ -54,7 +54,7 @@ const About = () => {
           initial={{ opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="py-16"
+          className="py-16 bg-[#eeeeee]"
         >
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold mb-6">Our History</h2>
@@ -107,7 +107,7 @@ const About = () => {
           initial={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="py-16"
+          className="py-16 bg-[#eeeeee]"
         >
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12">

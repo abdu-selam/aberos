@@ -55,8 +55,8 @@ function Companies() {
 
   return (
     <>
-          <Header active={page} />
-    
+      <Header active={page} />
+
       <main className="pt-17">
         <motion.section
           initial={{ opacity: 0, y: 40 }}
@@ -75,12 +75,12 @@ function Companies() {
           </div>
         </motion.section>
 
-        <main className="py-12">
+        <main className="bg-text">
           <motion.nav
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="bg-white/10 border border-white/20 backdrop-blur-md sticky top-18 w-max px-6 py-2 mx-auto rounded-lg"
+            className="bg-white/50 border mix-blend-difference border-white/20 backdrop-blur-md sticky top-18 w-max px-6 py-2 mx-auto rounded-lg"
           >
             <ul className="flex justify-center gap-6 text-primary font-medium">
               {subCompanies.map((com, i) => (
@@ -96,7 +96,7 @@ function Companies() {
             initial={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="py-8 bg-back"
+            className="py-8 bg-text"
           >
             <div className="max-w-5xl mx-auto text-center px-6">
               <motion.h2
@@ -104,7 +104,7 @@ function Companies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="text-4xl font-bold text-primary mb-4"
+                className="text-4xl font-bold text-back mb-4"
               >
                 Inside Our Company
               </motion.h2>
@@ -113,7 +113,7 @@ function Companies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-lg text-text/70 mb-10"
+                className="text-lg text-back/70 mb-10"
               >
                 Discover how Aberos PLC operates across multiple industries.
               </motion.p>
@@ -128,58 +128,63 @@ function Companies() {
               />
             </div>
           </motion.section>
+          <section className="bg-card pb-12">
+            {subCompanies.map((com, i) => (
+              <section
+                key={i}
+                className={` ${i % 2 == 1 ? "bg-primary/10" : "bg-back"}`}
+              >
+                <motion.section
+                  id={com.link}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: -40 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className={`max-w-5xl mx-auto px-6 py-16 space-y-6`}
+                >
+                  <h2 className="text-3xl font-bold text-primary mb-4">
+                    {com.name}
+                  </h2>
+                  <p className="text-text/80 mb-6">{com.desc1}</p>
 
-          {subCompanies.map((com, i) => (
-            <motion.section
-              id={com.link}
-              key={i}
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="max-w-5xl mx-auto px-6 py-16 space-y-6"
-            >
-              <h2 className="text-3xl font-bold text-primary mb-4">
-                {com.name}
-              </h2>
-              <p className="text-text/80 mb-6">{com.desc1}</p>
-
-              <motion.iframe
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="w-full max-w-4xl mx-auto aspect-video rounded-3xl shadow-xl border mb-6"
-                src={com.video}
-                allowFullScreen
-              />
-
-              <p className="text-text/80 mb-6">{com.desc2}</p>
-
-              <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
-                {com.imgs.map((img, j) => (
-                  <img
-                    key={j}
-                    src={img}
-                    alt={`${com.name} image ${j + 1}`}
-                    className="rounded-xl shadow-md object-cover w-2/5 max-w-56 h-auto"
+                  <motion.iframe
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="w-full max-w-4xl mx-auto aspect-video rounded-3xl shadow-xl border mb-6"
+                    src={com.video}
+                    allowFullScreen
                   />
-                ))}
-              </div>
 
-              <p className="text-text/80 mb-6">{com.desc3}</p>
+                  <p className="text-text/80 mb-6">{com.desc2}</p>
 
-              <div className="w-full  max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-md border">
-                <iframe
-                  src={com.map}
-                  className="w-full h-full"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </motion.section>
-          ))}
+                  <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
+                    {com.imgs.map((img, j) => (
+                      <img
+                        key={j}
+                        src={img}
+                        alt={`${com.name} image ${j + 1}`}
+                        className="rounded-xl shadow-md object-cover w-2/5 max-w-56 h-auto"
+                      />
+                    ))}
+                  </div>
+
+                  <p className="text-text/80 mb-6">{com.desc3}</p>
+
+                  <div className="w-full  max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-md border">
+                    <iframe
+                      src={com.map}
+                      className="w-full h-full"
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                </motion.section>
+              </section>
+            ))}
+          </section>
         </main>
         <motion.section
           whileInView={{ opacity: 1 }}
@@ -196,8 +201,7 @@ function Companies() {
           <ContactForm />
         </motion.section>
       </main>
-            <Footer page={page} />
-      
+      <Footer page={page} />
     </>
   );
 }

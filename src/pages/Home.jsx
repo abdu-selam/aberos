@@ -111,7 +111,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="py-24 bg-back"
+          className="py-24 bg-text"
         >
           <div className="max-w-5xl mx-auto text-center px-6">
             <motion.h2
@@ -119,7 +119,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-4xl font-bold text-primary mb-4"
+              className="text-4xl font-bold text-back mb-4"
             >
               Inside Our Company
             </motion.h2>
@@ -129,7 +129,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-lg text-text/70 mb-10"
+              className="text-lg text-card mb-10"
             >
               Discover how Aberos PLC operates across multiple industries.
             </motion.p>
@@ -173,7 +173,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="py-24 bg-back"
+          className="py-24 bg-primary/10"
         >
           <div className="max-w-7xl mx-auto px-8">
             <h2 className="text-center text-4xl font-bold text-primary mb-4">
