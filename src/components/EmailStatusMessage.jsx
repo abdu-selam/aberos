@@ -27,7 +27,7 @@ export default function EmailStatusMessage({ type = "success", message, onClose 
 
 <AnimatePresence>
   <motion.div
-    className="fixed inset-0 z-50 flex items-start justify-center pt-10"
+    className="fixed left-[50%] -translate-x-[50%] z-100 flex items-start justify-center top-10"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}

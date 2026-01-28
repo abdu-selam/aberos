@@ -104,15 +104,15 @@ function ContactForm() {
           <div className="md:col-span-2 w-full border border-back/20 rounded-lg">
             <Button data={contact[lang]["btn"]} full={true} />
           </div>
-          {status && (
-            <EmailStatusMessage
-              type={status.type}
-              message={status.message}
-              onClose={() => setStatus(null)}
-            />
-          )}
         </div>
       </motion.form>
+      {status && (
+        <EmailStatusMessage
+          type={status.type}
+          message={status.message}
+          onClose={() => setStatus(null)}
+        />
+      )}
     </motion.section>
   );
 }
