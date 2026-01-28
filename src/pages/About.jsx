@@ -6,26 +6,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import ContactForm from "../components/ContactForm";
+import { about } from "../data/translation";
+import useStore from "../store/useStore";
 
 const About = () => {
   const page = "about";
-  const subCompanies = [
-    {
-      name: "Manufacturing",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
-      link: "manufacture",
-    },
-    {
-      name: "Real Estate",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
-      link: "restaurant",
-    },
-    {
-      name: "Retail Mall",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum praesentium fugiat corrupti! Perspiciatis quae dolore repudiandae enim sunt quam debitis vitae quia, nobis iure tempora.",
-      link: "mall",
-    },
-  ];
+  const lang = useStore((state)=>state.lang)
+  const subCompanies = about[lang]['business']['busines'];
 
   return (
     <>
@@ -40,11 +27,10 @@ const About = () => {
         >
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              About Aberos PLC
+              {about[lang]['hero']['title']} Aberos PLC
             </h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
-              dolorum.
+              {about[lang]['hero']['desc']}
             </p>
           </div>
         </motion.section>
@@ -57,15 +43,9 @@ const About = () => {
           className="py-16 bg-[#eeeeee]"
         >
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold mb-6">Our History</h2>
+            <h2 className="text-3xl font-bold mb-6">{about[lang]['history']['title']}</h2>
             <p className="text-lg leading-relaxed text-gray-600 max-w-4xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eius
-              accusantium iure harum odit. Quidem incidunt repudiandae saepe
-              ipsa itaque soluta veniam quibusdam cum ex voluptas? Natus
-              similique saepe assumenda architecto asperiores excepturi
-              repudiandae eum repellat atque voluptatum aperiam praesentium
-              inventore, veniam iure totam esse officiis commodi ipsum. Nobis,
-              distinctio.
+              {about[lang]['history']['desc']}
             </p>
           </div>
         </motion.section>
@@ -78,7 +58,7 @@ const About = () => {
           className="bg-white py-16"
         >
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-            {[1, 2].map((_, i) => (
+            {[about[lang]['mission'], about[lang]['vision']].map((item, i) => (
               <motion.div
                 key={i}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -88,20 +68,16 @@ const About = () => {
                 className="p-8 rounded-2xl shadow-sm border"
               >
                 <h3 className="text-2xl font-semibold mb-4">
-                  {i === 0 ? "Our Mission" : "Our Vision"}
+                  {item.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laborum praesentium fugiat corrupti! Perspiciatis quae dolore
-                  repudiandae enim sunt quam debitis vitae quia, nobis iure
-                  tempora.
+                  {item.desc}
                 </p>
               </motion.div>
             ))}
           </div>
         </motion.section>
 
-        {/* Businesses */}
         <motion.section
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
@@ -111,7 +87,7 @@ const About = () => {
         >
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Our Businesses
+              {about[lang]['business']['title']}
             </h2>
 
             <motion.div
@@ -139,30 +115,14 @@ const About = () => {
                     {comp.desc}
                   </p>
                   <Link to={`/companies#${comp.link.toLowerCase()}`}>
-                    <Button data="See More" />
+                    <Button data={comp.btn} />
                   </Link>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </motion.section>
-
-        <motion.section
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          id="contact"
-          className="py-24 bg-primary text-back"
-        >
-          <div className="max-w-5xl mx-auto px-8">
-            <h2 className="text-center text-4xl font-bold mb-4">Contact Us</h2>
-            <p className="text-center text-back/70 mb-12">
-              Let’s talk about your next big idea.
-            </p>
-          </div>
-          <ContactForm />
-        </motion.section>
+        <ContactForm />
       </main>
       <Footer page={page} />
     </>

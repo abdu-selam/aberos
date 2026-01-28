@@ -10,7 +10,7 @@ export default function Header({ active }) {
   const setLang = useStore((state) => state.setLang);
   const [open, setOpen] = useState("close");
   const [cross, setCross] = useState("not");
-  const headerData = header
+  const headerData = header[lang]
 
   const menuBar = () => {
     if (open == "close") {
@@ -43,7 +43,7 @@ export default function Header({ active }) {
             className="w-12 h-12 rounded-full border-2 border-border"
           />
           <figcaption className="flex flex-col items-start">
-            <h2 className="text-[1.4rem] text-txt">{headerData[lang]['name']}</h2>
+            <h2 className="text-[1.4rem] text-txt">{headerData['name']}</h2>
           </figcaption>
         </motion.figure>
 
@@ -63,7 +63,7 @@ export default function Header({ active }) {
           ></div>
         </div>
 
-        <Nav active={active} state={open} />
+        <Nav active={active} state={open} data={headerData['navs']}/>
 
         <motion.div
           initial={{ opacity: 0, y: 15 }}

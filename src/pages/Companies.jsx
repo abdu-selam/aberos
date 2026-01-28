@@ -186,20 +186,7 @@ function Companies() {
             ))}
           </section>
         </main>
-        <motion.section
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          id="contact"
-          className="py-24 bg-primary text-back"
-        >
-          <div className="max-w-5xl mx-auto px-8 text-center mb-12">
-            <h2 className="text-4xl font-bold">Contact Us</h2>
-            <p className="text-back/70">Let’s talk about your next big idea.</p>
-          </div>
-          <ContactForm />
-        </motion.section>
+        <ContactForm />
       </main>
       <Footer page={page} />
     </>

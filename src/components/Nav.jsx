@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Button from "./Button"
 import { a } from "framer-motion/client";
 
-export default function Nav({ active, state }) {
+export default function Nav({ active, state, data }) {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -30 }}
@@ -30,7 +30,7 @@ export default function Nav({ active, state }) {
         }}
         className="flex sm:gap-6 justify-center flex-col sm:flex-row gap-3"
       >
-        {["Home", "About", "companies", "contact us"].map((item, i) => (
+        {data.map((item, i) => (
           <motion.li
             key={i}
             variants={{
@@ -47,12 +47,12 @@ export default function Nav({ active, state }) {
           >
             {i != 3? 
             <Link
-              to={`/${item.toLowerCase()}`}
+              to={`/${item.link}`}
               className={`
                 relative inline-block pb-1
                 transition-all duration-300 ease-out
                 ${
-                  active == item.toLowerCase()
+                  active == item.link
                     ? "text-txt opacity-100"
                     : "opacity-50"
                 }
@@ -65,12 +65,12 @@ export default function Nav({ active, state }) {
                 hover:after:w-full
               `}
             >
-              {item}
+              {item.name}
             </Link> : 
             <a href="#contact"
                 className="bg-primary text-back px-2 pb-1 rounded-sm"
             >
-              {item}
+              {item.name}
             </a> }
           </motion.li>
         ))}
