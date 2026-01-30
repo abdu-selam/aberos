@@ -8,11 +8,13 @@ import Button from "../components/Button";
 import ContactForm from "../components/ContactForm";
 import { about } from "../data/translation";
 import useStore from "../store/useStore";
+import usePageMeta from "../hooks/usePageMeta";
 
 const About = () => {
   const page = "about";
-  const lang = useStore((state)=>state.lang)
-  const subCompanies = about[lang]['business']['busines'];
+  const lang = useStore((state) => state.lang);
+  const subCompanies = about[lang]["business"]["busines"];
+  usePageMeta("About Aberos PLC", "This is aberos plc");
 
   return (
     <>
@@ -27,10 +29,10 @@ const About = () => {
         >
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {about[lang]['hero']['title']} Aberos PLC
+              {about[lang]["hero"]["title"]} Aberos PLC
             </h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              {about[lang]['hero']['desc']}
+              {about[lang]["hero"]["desc"]}
             </p>
           </div>
         </motion.section>
@@ -43,9 +45,11 @@ const About = () => {
           className="py-16 bg-[#eeeeee]"
         >
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold mb-6">{about[lang]['history']['title']}</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              {about[lang]["history"]["title"]}
+            </h2>
             <p className="text-lg leading-relaxed text-gray-600 max-w-4xl">
-              {about[lang]['history']['desc']}
+              {about[lang]["history"]["desc"]}
             </p>
           </div>
         </motion.section>
@@ -58,7 +62,7 @@ const About = () => {
           className="bg-white py-16"
         >
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-            {[about[lang]['mission'], about[lang]['vision']].map((item, i) => (
+            {[about[lang]["mission"], about[lang]["vision"]].map((item, i) => (
               <motion.div
                 key={i}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -67,12 +71,8 @@ const About = () => {
                 viewport={{ once: true }}
                 className="p-8 rounded-2xl shadow-sm border"
               >
-                <h2 className="text-2xl font-semibold mb-4">
-                  {item.title}
-                </h2>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.desc}
-                </p>
+                <h2 className="text-2xl font-semibold mb-4">{item.title}</h2>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -87,7 +87,7 @@ const About = () => {
         >
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12">
-              {about[lang]['business']['title']}
+              {about[lang]["business"]["title"]}
             </h2>
 
             <motion.div

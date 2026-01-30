@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import Button from "../components/Button";
 import { home } from "../data/translation";
+import usePageMeta from "../hooks/usePageMeta";
 
 export default function Home() {
   const lang = useStore((state) => state.lang);
@@ -21,6 +22,8 @@ export default function Home() {
   const subCompany = home[lang]["companies"]["each"];
 
   const whyUs = home[lang]["whyUs"]["items"];
+
+  usePageMeta('Aberos PLC','This is about aberos plc')
 
   return (
     <>

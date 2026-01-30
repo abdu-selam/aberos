@@ -5,9 +5,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import heroImg from "../assets/img.jpg";
+import usePageMeta from "../hooks/usePageMeta";
 
 function Companies() {
   const page = "companies";
+  usePageMeta("Aberos Sub Companies", "About aberos plc");
   const subCompanies = [
     {
       name: "Mall",
