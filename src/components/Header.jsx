@@ -29,7 +29,7 @@ export default function Header({ active }) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="h-max min-w-full bg-back fixed top-0 z-24"
     >
-      <div className="flex justify-between items-center px-6 py-1 w-vw max-w-7xl mx-auto">
+      <section className="flex justify-between items-center px-6 py-1 w-vw max-w-7xl mx-auto">
         <motion.figure
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -47,8 +47,9 @@ export default function Header({ active }) {
           </figcaption>
         </motion.figure>
 
-        <div
+        <button
           onClick={menuBar}
+          aria-label="Open menu"
           className={`flex ${cross == "not" ? "gap-1" : ""} flex-col order-1 sm:hidden`}
         >
           <div
@@ -61,36 +62,36 @@ export default function Header({ active }) {
               cross == "not" ? "" : "rotate-45 -translate-y-3"
             }`}
           ></div>
-        </div>
+        </button>
 
         <Nav active={active} state={open} data={headerData['navs']}/>
 
-        <motion.div
+        <motion.section
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.25 }}
           className="flex"
         >
-          <p
+          <button
             onClick={() => setLang("am")}
             className={`${lang == "am" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
           >
             አማ
-          </p>
-          <p
+          </button>
+          <button
             onClick={() => setLang("ar")}
             className={`${lang == "ar" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
           >
             عr
-          </p>
-          <p
+          </button>
+          <button
             onClick={() => setLang("en")}
             className={`${lang == "en" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
           >
             En
-          </p>
-        </motion.div>
-      </div>
+          </button>
+        </motion.section>
+      </section>
     </motion.header>
   );
 }

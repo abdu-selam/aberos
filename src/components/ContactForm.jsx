@@ -79,18 +79,24 @@ function ContactForm() {
             repeat: Infinity,
           }}
         ></motion.div>
-        <div className="bg-[#0a061c] text-text  p-6 sm:p-8  w-full rounded-xl grid md:grid-cols-2 gap-6 ">
+        <div className="bg-[#0a061c] text-text  p-6 sm:p-8  w-full rounded-xl grid md:grid-cols-2 gap-6 relative">
+          
+          <label htmlFor="name" className="absolute"></label>
           <input
             className="border w-full rounded-xl px-4 py-3 focus:outline-none focus:bg-back/10 text-back"
             placeholder={contact[lang]["name"]}
             name="name"
             required
             type="text"
+            id="name"
           />
+
+          <label htmlFor="email" className="absolute"></label>
           <input
             className="border rounded-xl px-4 py-3 focus:outline-none focus:bg-back/10 text-back"
             name="email"
             type="email"
+            id="email"
             placeholder={contact[lang]["email"]}
             required
           />
@@ -102,7 +108,7 @@ function ContactForm() {
             required
           />
           <div className="md:col-span-2 w-full border border-back/20 rounded-lg">
-            <Button data={contact[lang]["btn"]} full={true} />
+            <Button data={contact[lang]["btn"]} full={true} style={'bg-back text-primary shadow-[0_0_1rem_rgba(255,255,255,0.6)]'}/>
           </div>
         </div>
       </motion.form>

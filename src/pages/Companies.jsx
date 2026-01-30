@@ -125,6 +125,7 @@ function Companies() {
                 className="w-full aspect-video rounded-3xl shadow-xl border"
                 src={subCompanies[0].video}
                 allowFullScreen
+                title="Video Describing how Aberos plc structured"
               />
             </div>
           </motion.section>
@@ -142,9 +143,9 @@ function Companies() {
                   viewport={{ once: true }}
                   className={`max-w-5xl mx-auto px-6 py-16 space-y-6`}
                 >
-                  <h2 className="text-3xl font-bold text-primary mb-4">
+                  <h3 className="text-3xl font-bold text-primary mb-4">
                     {com.name}
-                  </h2>
+                  </h3>
                   <p className="text-text/80 mb-6">{com.desc1}</p>
 
                   <motion.iframe
@@ -155,6 +156,7 @@ function Companies() {
                     className="w-full max-w-4xl mx-auto aspect-video rounded-3xl shadow-xl border mb-6"
                     src={com.video}
                     allowFullScreen
+                    title={`Video that describe about ${com.name}`}
                   />
 
                   <p className="text-text/80 mb-6">{com.desc2}</p>
@@ -179,6 +181,7 @@ function Companies() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
+                      title={`Map of the subcompany called ${com.name}`}
                     ></iframe>
                   </div>
                 </motion.section>

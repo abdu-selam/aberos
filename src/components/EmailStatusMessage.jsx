@@ -26,13 +26,13 @@ export default function EmailStatusMessage({ type = "success", message, onClose 
   return (
 
 <AnimatePresence>
-  <motion.div
+  <motion.section
     className="fixed left-[50%] -translate-x-[50%] z-100 flex items-start justify-center top-10"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
   >
-    <motion.div
+    <motion.section
       ref={boxRef}
       initial={{ y: -30, opacity: 0, scale: 0.95 }}
       animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -63,11 +63,11 @@ export default function EmailStatusMessage({ type = "success", message, onClose 
         </h3>
       </div>
 
-      <p className="px-4 py-3 text-sm leading-relaxed bg-back text-primary">
+      <p  role="alert" className="px-4 py-3 text-sm leading-relaxed bg-back text-primary">
         {message}
       </p>
-    </motion.div>
-  </motion.div>
+    </motion.section>
+  </motion.section>
 </AnimatePresence>
 
   );

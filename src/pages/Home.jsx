@@ -35,7 +35,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-primary/80" />
 
           <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center justify-center  text-back">
-            <motion.div
+            <motion.article
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -57,7 +57,7 @@ export default function Home() {
                   <Button data={home[lang]["hero"]["btns"][1]} border />
                 </a>
               </div>
-            </motion.div>
+            </motion.article>
 
             <motion.img
               initial={{ opacity: 0, scale: 0.9 }}
@@ -107,6 +107,7 @@ export default function Home() {
               className="w-full aspect-video rounded-3xl shadow-xl border"
               src={home[lang]["video"]["link"]}
               allowFullScreen
+              title="Introduction to aberos plc"
             />
           </div>
         </motion.section>
@@ -147,7 +148,7 @@ export default function Home() {
               {home[lang]["companies"]["desc"]}
             </p>
 
-            <motion.div
+            <motion.article
               whileInView="show"
               initial="hidden"
               viewport={{ once: true }}
@@ -160,7 +161,7 @@ export default function Home() {
               className="flex flex-wrap gap-10 content-center justify-center"
             >
               {subCompany.map((com, i) => (
-                <motion.div
+                <motion.section
                   key={i}
                   variants={{
                     hidden: { opacity: 0, y: 30 },
@@ -184,9 +185,9 @@ export default function Home() {
                       <Button data={com.btn} />
                     </Link>
                   </div>
-                </motion.div>
+                </motion.section>
               ))}
-            </motion.div>
+            </motion.article>
           </div>
         </motion.section>
 
@@ -202,7 +203,7 @@ export default function Home() {
               {home[lang]["whyUs"]["title"]}
             </h2>
 
-            <motion.div
+            <motion.article
               whileInView="show"
               initial="hidden"
               viewport={{ once: true }}
@@ -215,7 +216,7 @@ export default function Home() {
               className="grid mx-auto max-w-121 md:max-w-full md:grid-cols-2 gap-10"
             >
               {whyUs.map((obj, i) => (
-                <motion.div
+                <motion.section
                   key={i}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
@@ -224,13 +225,13 @@ export default function Home() {
                   transition={{ duration: 0.4 }}
                   className="p-8 rounded-3xl border shadow-sm hover:shadow-md transition"
                 >
-                  <h4 className="text-xl font-semibold text-primary mb-3">
+                  <h3 className="text-xl font-semibold text-primary mb-3">
                     {obj.title}
-                  </h4>
+                  </h3>
                   <p className="text-text/70">{obj.desc}</p>
-                </motion.div>
+                </motion.section>
               ))}
-            </motion.div>
+            </motion.article>
           </div>
         </motion.section>
         <ContactForm />

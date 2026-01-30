@@ -67,9 +67,9 @@ const About = () => {
                 viewport={{ once: true }}
                 className="p-8 rounded-2xl shadow-sm border"
               >
-                <h3 className="text-2xl font-semibold mb-4">
+                <h2 className="text-2xl font-semibold mb-4">
                   {item.title}
-                </h3>
+                </h2>
                 <p className="text-gray-600 leading-relaxed">
                   {item.desc}
                 </p>

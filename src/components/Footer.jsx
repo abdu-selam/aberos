@@ -40,18 +40,26 @@ function Footer({ page }) {
         </ul>
 
         <ul className="flex gap-6 justify-center">
-          <a href="#">
-            <Facebook className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
-          </a>
-          <a href="#">
-            <Twitter className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
-          </a>
-          <a href="#">
-            <Linkedin className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
-          </a>
-          <a href="#">
-            <Mail className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
-          </a>
+          <li>
+            <a href="#facebook">
+              <Facebook className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            </a>
+          </li>
+          <li>
+            <a href="#tweeter">
+              <Twitter className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            </a>
+          </li>
+          <li>
+            <a href="#linkedin">
+              <Linkedin className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            </a>
+          </li>
+          <li>
+            <a href="#mail">
+              <Mail className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            </a>
+          </li>
         </ul>
 
         <p className="text-sm text-back/60 text-center">
