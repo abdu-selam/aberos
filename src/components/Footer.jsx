@@ -41,23 +41,23 @@ function Footer({ page }) {
 
         <ul className="flex gap-6 justify-center">
           <li>
-            <a href="#facebook">
-              <Facebook className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            <a href="#facebook" aria-label="Aberos facebook page">
+              <Facebook aria-hidden className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
             </a>
           </li>
           <li>
-            <a href="#tweeter">
-              <Twitter className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            <a href="#tweeter" aria-label="Twitter Aberos page">
+              <Twitter aria-hidden className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
             </a>
           </li>
           <li>
-            <a href="#linkedin">
-              <Linkedin className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            <a href="#linkedin" aria-label="Linked in aberos page">
+              <Linkedin aria-hidden className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
             </a>
           </li>
           <li>
-            <a href="#mail">
-              <Mail className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
+            <a href="#mail" aria-label="Aberos email account">
+              <Mail aria-hidden className="text-muted transition-all duration-500  hover:-translate-y-2 rounded-sm box-content p-1 hover:bg-back hover:text-primary" />
             </a>
           </li>
         </ul>

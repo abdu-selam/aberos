@@ -53,8 +53,8 @@ export default function Nav({ active, state, data }) {
                 transition-all duration-300 ease-out
                 ${
                   active == item.link
-                    ? "text-txt opacity-100"
-                    : "opacity-50"
+                    ? "text-txt"
+                    : "text-secondary"
                 }
                 hover:opacity-100
                 hover:-translate-y-1.5
