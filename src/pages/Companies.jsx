@@ -127,6 +127,8 @@ function Companies() {
                 className="w-full aspect-video rounded-3xl shadow-xl border"
                 src={subCompanies[0].video}
                 allowFullScreen
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 title="Video Describing how Aberos plc structured"
               />
             </div>
@@ -158,6 +160,8 @@ function Companies() {
                     className="w-full max-w-4xl mx-auto aspect-video rounded-3xl shadow-xl border mb-6"
                     src={com.video}
                     allowFullScreen
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     title={`Video that describe about ${com.name}`}
                   />
 
@@ -182,6 +186,7 @@ function Companies() {
                       className="w-full h-full"
                       allowFullScreen
                       loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       referrerPolicy="no-referrer-when-downgrade"
                       title={`Map of the subcompany called ${com.name}`}
                     ></iframe>
