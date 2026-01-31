@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ContactForm from "../components/ContactForm";
 import heroImg from "../assets/img.jpg";
 import usePageMeta from "../hooks/usePageMeta";
+const ContactForm = React.lazy(() => import("./pages/ContactForm"));
 
 function Companies() {
   const page = "companies";

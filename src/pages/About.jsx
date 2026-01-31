@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import ContactForm from "../components/ContactForm";
 import { about } from "../data/translation";
 import useStore from "../store/useStore";
 import usePageMeta from "../hooks/usePageMeta";
+const ContactForm = React.lazy(() => import("./pages/ContactForm"));
 
 const About = () => {
   const page = "about";

@@ -8,10 +8,11 @@ import heroImg1 from "../assets/mall.png";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ContactForm from "../components/ContactForm";
 import Button from "../components/Button";
 import { home } from "../data/translation";
-import usePageMeta from "../hooks/usePageMeta";
+
+const ContactForm = React.lazy(() => import("./pages/ContactForm"));
+
 
 export default function Home() {
   const lang = useStore((state) => state.lang);
