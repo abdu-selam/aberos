@@ -8,7 +8,7 @@ import Button from "../components/Button";
 import { about } from "../data/translation";
 import useStore from "../store/useStore";
 import usePageMeta from "../hooks/usePageMeta";
-const ContactForm = React.lazy(() => import("./pages/ContactForm"));
+const ContactForm = React.lazy(() => import("../components/ContactForm"));
 
 const About = () => {
   const page = "about";

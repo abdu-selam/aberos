@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import { home } from "../data/translation";
 
-const ContactForm = React.lazy(() => import("./pages/ContactForm"));
+const ContactForm = React.lazy(() => import("../components/ContactForm"));
 
 
 export default function Home() {
