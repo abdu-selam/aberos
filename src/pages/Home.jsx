@@ -53,7 +53,7 @@ export default function Home() {
               </p>
 
               <div className="flex gap-4">
-                <Link to="/about">
+                <Link to="/about" aria-label="Learn more about Aberos PLC company overview">
                   <Button data={home[lang]["hero"]["btns"][0]} />
                 </Link>
                 <a href="#video">
@@ -130,7 +130,7 @@ export default function Home() {
               {home[lang]["about"]["desc"]}
             </p>
 
-            <Link to="/about" className="block w-max mx-auto md:mx-0">
+            <Link to="/about" className="block w-max mx-auto md:mx-0" aria-label="Learn more about Aberos PLC company overview">
               <Button data={home[lang]["about"]["btn"]} />
             </Link>
           </div>
