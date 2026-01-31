@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import heroImg from "../assets/img.jpg";
+import logo from '../assets/logo.avif'
 import Nav from "./Nav";
 import { motion } from "framer-motion";
 import useStore from "../store/useStore";
@@ -37,7 +38,7 @@ export default function Header({ active }) {
           className="flex items-center gap-1.5 w-max"
         >
           <img
-            src={heroImg}
+            src={logo}
             width={200}
             alt="Hero image"
             className="w-12 h-12 rounded-full border-2 border-border"
