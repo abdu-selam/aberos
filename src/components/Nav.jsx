@@ -28,7 +28,7 @@ export default function Nav({ active, state, data }) {
             },
           },
         }}
-        className="flex sm:gap-6 justify-center flex-col sm:flex-row gap-3"
+        className="flex sm:gap-6 justify-center items-center flex-col sm:flex-row gap-3"
       >
         {data.map((item, i) => (
           <motion.li
@@ -53,8 +53,8 @@ export default function Nav({ active, state, data }) {
                 transition-all duration-300 ease-out
                 ${
                   active == item.link
-                    ? "text-txt"
-                    : "text-secondary"
+                    ? "text-text text-lg"
+                    : "text-text/70"
                 }
                 hover:-translate-y-1.5
               `}

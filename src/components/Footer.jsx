@@ -11,7 +11,7 @@ function Footer({ page }) {
   return (
     <footer className="bg-black text-back py-12">
       <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-3 gap-6 items-center">
-        <ul className="flex justify-center gap-3">
+        <ul className="flex items-center justify-center gap-3">
           {navs.slice(0, 3).map((item, i) => (
             <li key={i} className={`text-[1rem] text-txt`}>
               <Link
@@ -23,8 +23,8 @@ function Footer({ page }) {
                           hover:-translate-y-2
                           ${
                             page == item.link
-                              ? "text-txt"
-                              : "text-secondary"
+                              ? "text-back text-lg"
+                              : "text-back/60"
                           }
                         `}
               >
