@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import ScrollToTop from "./components/ScrollToTop";
+import React from "react";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Companies from "./pages/Companies";
+const Home = React.lazy(() => import("./pages/Home"));
+const About = React.lazy(() => import("./pages/About"));
+const Companies = React.lazy(() => import("./pages/Companies"));
 
 function App() {
   return (
