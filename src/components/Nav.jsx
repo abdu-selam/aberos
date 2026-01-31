@@ -56,13 +56,7 @@ export default function Nav({ active, state, data }) {
                     ? "text-txt"
                     : "text-secondary"
                 }
-                hover:opacity-100
                 hover:-translate-y-1.5
-                after:content-['']
-                after:absolute after:left-0 after:-bottom-0.5
-                after:h-0.5 after:w-0 after:bg-txt
-                after:transition-all after:duration-300
-                hover:after:w-full
               `}
             >
               {item.name}

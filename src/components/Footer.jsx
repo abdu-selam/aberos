@@ -21,15 +21,10 @@ function Footer({ page }) {
                           transition-all duration-300 ease-out
                           hover:opacity-100
                           hover:-translate-y-2
-                          after:content-['']
-                          after:absolute after:left-0 after:-bottom-0.5
-                          after:h-0.5 after:w-0 after:bg-txt
-                          after:transition-all after:duration-300
-                          hover:after:w-full
                           ${
                             page == item.link
-                              ? "text-txt opacity-100"
-                              : "opacity-50"
+                              ? "text-txt"
+                              : "text-secondary"
                           }
                         `}
               >
