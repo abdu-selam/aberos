@@ -9,7 +9,9 @@ import heroImg1 from "../assets/mall.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
+const Video = React.lazy(() => import("../components/Video"));
 import { home } from "../data/translation";
+
 
 const ContactForm = React.lazy(() => import("../components/ContactForm"));
 
@@ -101,19 +103,7 @@ export default function Home() {
               {home[lang]["video"]["desc"]}
             </motion.p>
 
-
-            <motion.iframe
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="w-full aspect-video rounded-3xl shadow-xl border"
-              src={home[lang]["video"]["link"]}
-              allowFullScreen
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              title="Introduction to aberos plc"
-            />
+            <Video src={home[lang]["video"]["link"]} title={"Introduction to aberos plc"}/>
           </div>
         </motion.section>
 

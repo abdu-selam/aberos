@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import heroImg from "../assets/img.jpg";
 import usePageMeta from "../hooks/usePageMeta";
+const Video = React.lazy(() => import("../components/Video"));
 const ContactForm = React.lazy(() => import("../components/ContactForm"));
 
 function Companies() {
@@ -119,17 +120,10 @@ function Companies() {
               >
                 Discover how Aberos PLC operates across multiple industries.
               </motion.p>
-              <motion.iframe
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="w-full aspect-video rounded-3xl shadow-xl border"
+
+              <Video
                 src={subCompanies[0].video}
-                allowFullScreen
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                title="Video Describing how Aberos plc structured"
+                title={"Video Describing how Aberos plc structured"}
               />
             </div>
           </motion.section>
@@ -152,17 +146,12 @@ function Companies() {
                   </h3>
                   <p className="text-text/80 mb-6">{com.desc1}</p>
 
-                  <motion.iframe
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                    className="w-full max-w-4xl mx-auto aspect-video rounded-3xl shadow-xl border mb-6"
+                  <Video
                     src={com.video}
-                    allowFullScreen
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     title={`Video that describe about ${com.name}`}
+                    style={
+                      "w-full max-w-4xl mx-auto aspect-video rounded-3xl shadow-xl border mb-6"
+                    }
                   />
 
                   <p className="text-text/80 mb-6">{com.desc2}</p>
@@ -189,7 +178,7 @@ function Companies() {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       referrerPolicy="no-referrer-when-downgrade"
                       title={`Map of the subcompany called ${com.name}`}
-                    ></iframe>
+                    />
                   </div>
                 </motion.section>
               </section>
