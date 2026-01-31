@@ -73,7 +73,7 @@ export const home = {
     video: {
       title: "Inside Our Company",
       desc: "Discover how Aberos PLC operates across multiple industries.",
-      link: "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+      link: "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
     },
     about: {
       title: "About Us",
@@ -134,7 +134,7 @@ export const home = {
     video: {
       title: "داخل شركتنا",
       desc: "اكتشف كيف تعمل شركة Aberos PLC في مختلف الصناعات.",
-      link: "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+      link: "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
     },
     about: {
       title: "معلومات عنا",
@@ -195,7 +195,7 @@ export const home = {
     video: {
       title: "በኩባንያችን ውስጥ",
       desc: "አበሮስ ኃ.የተ.የግ.ማ. በተለያዩ ኢንዱስትሪዎች ውስጥ እንዴት እንደሚሰራ ልማወቅ ቪዲዮውን ይመልክቱ",
-      link: "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+      link: "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
     },
     about: {
       title: "ስለ እኛ",
@@ -439,7 +439,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "manufacture",
       },
@@ -453,7 +453,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "restaurant",
       },
@@ -467,7 +467,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "mall",
       },
@@ -508,7 +508,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "manufacture",
       },
@@ -522,7 +522,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "restaurant",
       },
@@ -536,7 +536,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "mall",
       },
@@ -577,7 +577,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "manufacture",
       },
@@ -591,7 +591,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "restaurant",
       },
@@ -605,7 +605,7 @@ export const companies = {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam incidunt exercitationem pariatur",
         imgs: ["heroImg", "heroImg", "heroImg", "heroImg"],
         video:
-          "https://www.youtube.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+          "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.1115485527807!2d38.18581715226174!3d7.848281200886689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b30903777ac633%3A0xa08a798dca44bc0b!2sAtot%20hotel%20%26%20Restaurant!5e0!3m2!1sen!2set!4v1769427552240!5m2!1sen!2set",
         link: "mall",
       },
