@@ -63,7 +63,7 @@ function ContactForm() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
-        className={`w-[90vw] max-w-175 h-max relative mx-auto rounded-xl z-10`}
+        className={`w-[90vw] max-w-175 h-max relative mx-auto rounded-xl z-10 animate-custom`}
       >
         <motion.div
           className="absolute bg-[conic-gradient(from_var(--angle),rgba(0,0,0,0),rgba(255,255,255,1),rgba(255,255,255,0.7),rgba(255,255,255,0.2))] w-[101%] h-[101%] top-[-0.5%] left-[-0.5%] shadow-[0_0_1rem_rgba(255,255,255,0.5)] rounded-xl -z-1"

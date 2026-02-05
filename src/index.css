@@ -31,3 +31,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+.animate-custom {
+  animation: custom 1s ease-in-out infinite alternate;
+}
+
+@keyframes custom {
+  100% {
+    translate: 0 10px;
+  }
+}
