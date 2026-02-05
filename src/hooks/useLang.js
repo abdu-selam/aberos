@@ -3,6 +3,7 @@ import { useEffect } from "react";
 const useLang = (lang) => {
   useEffect(() => {
     const html = document.querySelector("html");
+    
     if (lang === "ar") {
       html.setAttribute("dir", "rtl");
     } else {
@@ -11,4 +12,4 @@ const useLang = (lang) => {
   }, [lang]);
 };
 
-export default useLang
+export default useLang;

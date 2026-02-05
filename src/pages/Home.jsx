@@ -94,7 +94,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-4xl font-bold text-back mb-4"
             >
-              {home[lang]["video"]["title"]}
+              {home[lang]["about"]["title"]}
             </motion.h2>
 
             <motion.p
@@ -104,31 +104,14 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-lg text-card mb-10"
             >
-              {home[lang]["video"]["desc"]}
+              {home[lang]["about"]["desc"]}
             </motion.p>
 
-            <Video src={home[lang]["video"]["link"]} title={"Introduction to aberos plc"}/>
-          </div>
-        </motion.section>
-
-        <motion.section
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="py-24 bg-white"
-        >
-          <div className="max-w-6xl mx-auto px-8">
-            <h2 className="text-3xl font-bold text-primary mb-6 text-center md:text-start">
-              {home[lang]["about"]["title"]}
-            </h2>
-            <p className="text-text/80 max-w-3xl leading-relaxed mb-6 text-center md:text-start">
-              {home[lang]["about"]["desc"]}
-            </p>
-
-            <Link to="/about" className="block w-max mx-auto md:mx-0" aria-label="Learn more about Aberos PLC company overview">
+            <Link to="/about" className="block w-max mx-auto md:mx-0 mb-5" aria-label="Learn more about Aberos PLC company overview">
               <Button data={home[lang]["about"]["btn"]} seo={"About Aberos PLC"}/>
             </Link>
+
+            <Video src={home[lang]["video"]["link"]} title={"Introduction to aberos plc"}/>
           </div>
         </motion.section>
 
