@@ -53,11 +53,11 @@ export const header = {
         link: "about",
       },
       {
-        name: "ድርጅቶች",
+        name: "ድርጅቶቻችን",
         link: "companies",
       },
       {
-        name: "መልክት አሎት?",
+        name: "በዚህ ያግኙን",
         link: "contact",
       },
     ],
@@ -67,7 +67,7 @@ export const header = {
 export const home = {
   en: {
     hero: {
-      title: 'Aberos',
+      title: "Aberos",
       desc: "Your journey starts here.Discover what we do, how we do it, and how we can help you achieve more.",
       btns: ["Learn More", "Watch Video"],
     },
@@ -92,7 +92,7 @@ export const home = {
           btn: "Explore",
         },
         {
-          title: "Real Estate",
+          title: "SMES - Small and Midium Enterprises",
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.",
           link: "restaurant",
           btn: "Explore",
@@ -109,20 +109,20 @@ export const home = {
       title: "Why Choose Us",
       items: [
         {
-          title: "Lorem ipsum",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!",
+          title: "Reliability You Can Trust",
+          desc: "We deliver consistent results by honoring commitments and maintaining high standards in every engagement.",
         },
         {
-          title: "Lorem ipsum",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!",
+          title: "Professional Excellence",
+          desc: "Our work is guided by experience, discipline, and a strong commitment to quality across all operations.",
         },
         {
-          title: "Lorem ipsum",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!",
+          title: "Society-Centered Approach ",
+          desc: "We place people and communities at the heart of our work, aiming to create positive, responsible, and lasting impact beyond business.",
         },
         {
-          title: "Lorem ipsum",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam facere quibusdam, quidem deleniti veritatis nobis nesciunt voluptatem vero in!",
+          title: "Vision for Sustainable Growth",
+          desc: "We focus on long-term success through responsible practices, innovation, and continuous improvement.",
         },
       ],
     },
@@ -136,7 +136,7 @@ export const home = {
     video: {
       title: "داخل شركتنا",
       desc: "اكتشف كيف تعمل شركة Aberos PLC في مختلف الصناعات.",
-      link: "https://www.youtube-nocookie.com/embed/irsXeL7IByA?si=TGWcj-xC6hQNFlYt"
+      link: "https://www.youtube-nocookie.com/embed/irsXeL7IByA?si=TGWcj-xC6hQNFlYt",
     },
     about: {
       title: "معلومات عنا",
@@ -191,14 +191,14 @@ export const home = {
   },
   am: {
     hero: {
-      title: 'አበሮስ',
+      title: "አበሮስ",
       desc: "ጉዞዎ እዚህ ይጀምራል።ስለ እኛ ይወቁ፣እንዴት እንደምንሰራ ይረዱ እና የበለጠ አብረን እንደግ! ",
       btns: ["በደንብ ለማወቅ", "ቪዲዮ ይመልከቱ"],
     },
     video: {
       title: "በእኛ ኩባንያ ውስጥ",
       desc: "አበሮስ ኃ.የተ.የግ.ማ. በተለያዩ ኢንዱስትሪዎች ውስጥ እንዴት እንደሚሰራ ለማወቅ ቪዲዮውን ይመልክቱ",
-      link: "https://www.youtube-nocookie.com/embed/kj6ZRoYnXXg?si=hs0l3QQfnZqqDNTg"
+      link: "https://www.youtube-nocookie.com/embed/kj6ZRoYnXXg?si=hs0l3QQfnZqqDNTg",
     },
     about: {
       title: "ስለ እኛ",
@@ -210,19 +210,19 @@ export const home = {
       desc: "እያንዳንዱ ኩባንያ ራሱን ችሎ የሚሰራ ሲሆን አንድ የሆነ ራዕይን ይዞ ይንቀሳቀሳል",
       each: [
         {
-          title: "Manufacturing",
+          title: "አምራች ፋብሪካዎች ",
           desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ትልቅ ምክንያቶች እዚህ ሁላችን",
           link: "manufacture",
           btn: "በደንብ ለማወቅ",
         },
         {
-          title: "Real Estate",
+          title: " ዝቅተኛና መካከለኛ ቢዝነሶች ",
           desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ትልቅ ምክንያቶች እዚህ ሁላችን",
           link: "restaurant",
           btn: "በደንብ ለማወቅ",
         },
         {
-          title: "Aberos Mall",
+          title: "አበሮስ የገበያ ማዕከል",
           desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ትልቅ ምክንያቶች እዚህ ሁላችን",
           link: "mall",
           btn: "በደንብ ለማወቅ",
@@ -230,23 +230,23 @@ export const home = {
       ],
     },
     whyUs: {
-      title: "Why Choose Us",
+      title: "ለምን እኛን ይመርጡናል?",
       items: [
         {
-          title: "ሎሬም፣ ipsum",
-          desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ትልቅ ምክንያቶች እዚህ ሁላችንም ልዩነት መፍጠር እንችላለን። ",
+          title: "አስተማማኝነት",
+          desc: "በቁርጠኝነት በእያንዳንዱ ተሳትፎ ከፍተኛ ደረጃዎችን በመጠበቅ ተከታታይ ውጤቶችን እናቀርባለን። ",
         },
         {
-          title: "ሎሬም፣ ipsum",
-          desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ትልቅ ምክንያቶች እዚህ ሁላችንም ልዩነት መፍጠር እንችላለን። ",
+          title: "ሙያዊ ብቃት",
+          desc: "የእኛ ስራ በተሞክሮ፣ በዲሲፕሊን እና በሁሉም ስራዎች ጥራት ባለው ጠንካራ  ልምድ ይመራል።",
         },
         {
-          title: "ሎሬም፣ ipsum",
-          desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ትልቅ ምክንያቶች እዚህ ሁላችንም ልዩነት መፍጠር እንችላለን። ",
+          title: "ማህበረሰቡን ያማከለ",
+          desc: "ሰዎችን እና ማህበረሰቦችን የስራችን አካል አድርገን እናስቀምጣለን፣ ይህም ከንግድ ባለፈ አወንታዊ፣ ኃላፊነት የሚሰማው እና ዘላቂ ተጽእኖ ለመፍጠር ያስችለናል።",
         },
         {
-          title: "ሎሬም፣ ipsum",
-          desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ትልቅ ምክንያቶች እዚህ ሁላችንም ልዩነት መፍጠር እንችላለን። ",
+          title: "ለዘላቂ ዕድገትን ከራዕይ ጋር",
+          desc: "ኃላፊነት በተሞላባቸው ልምምዶች፣ ፈጠራዎች እና ቀጣይነት ባለው መሻሻል የረጅም ጊዜ ስኬት ላይ እናተኩራለን።",
         },
       ],
     },

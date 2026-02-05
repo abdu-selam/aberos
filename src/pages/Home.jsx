@@ -4,9 +4,9 @@ import { Link } from "react-router";
 import useStore from "../store/useStore";
 
 import heroImg from "../assets/mall.avif";
-import mallImg from "../assets/img.avif";
-import restaurantImg from "../assets/img.avif";
-import factoryImg from "../assets/img.avif";
+import mallImg from "../assets/mall.jpg";
+import ssme from "../assets/smes.jpg";
+import manufacture from "../assets/manufacture.jpg";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -15,16 +15,22 @@ const Video = React.lazy(() => import("../components/Video"));
 import { home } from "../data/translation";
 import useLang from "../hooks/useLang";
 
-
 const ContactForm = React.lazy(() => import("../components/ContactForm"));
-
 
 export default function Home() {
   const lang = useStore((state) => state.lang);
-  useLang(lang)
+  const setLang = useStore((state) => state.setLang);
+  console.log(localStorage.getItem("lang"))
+  const langFromLocal = localStorage.getItem("lang");
+  if (!langFromLocal) {
+    localStorage.setItem("lang", lang);
+  } else {
+    setLang(langFromLocal)
+  };
+  useLang(lang);
   const page = "home";
 
-  const compImgs = [factoryImg, mallImg, restaurantImg]
+  const compImgs = [manufacture, ssme, mallImg];
 
   const subCompany = home[lang]["companies"]["each"];
 
@@ -42,39 +48,37 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-primary/80" />
 
-          <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center justify-center  text-back">
+          <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-8 grid gap-16 items-center justify-center  text-back">
             <motion.article
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col gap-6 justify-center items-center md:items-start"
+              className="flex flex-col gap-6 justify-center items-center"
             >
-              <h1 className="text-5xl font-extrabold text-center leading-tight">
-                {home[lang].hero.title} <span className="text-secondary">PLC</span>
+              <h1 className="text-9xl font-extrabold text-center leading-tight">
+                {home[lang].hero.title}{" "}
+                <span className="text-secondary">{lang == "en"? 'PLC.': lang == 'am' ? 'ኃ.ተ.ግ.ማ.': 'PLC.'}</span>
               </h1>
 
-              <p className="text-sm text-back/80 w-full max-w-xl text-center md:text-start">
+              <p className="text-xl text-back/80 w-full max-w-xl text-center">
                 {home[lang]["hero"]["desc"]}
               </p>
 
               <div className="flex gap-4">
-                <Link to="/about" aria-label="Learn more about Aberos PLC company overview">
-                  <Button data={home[lang]["hero"]["btns"][0]} seo={"About Aberos PLC"}/>
+                <Link
+                  to="/about"
+                  aria-label="Learn more about Aberos PLC company overview"
+                >
+                  <Button
+                    data={home[lang]["hero"]["btns"][0]}
+                    seo={"About Aberos PLC"}
+                  />
                 </Link>
                 <a href="#video">
                   <Button data={home[lang]["hero"]["btns"][1]} border />
                 </a>
               </div>
             </motion.article>
-
-            <motion.img
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              src={heroImg}
-              alt="Factory"
-              className="max-w-xl w-full mx-auto rounded-3xl shadow-2xl"
-            />
           </div>
         </motion.section>
 
@@ -107,11 +111,21 @@ export default function Home() {
               {home[lang]["about"]["desc"]}
             </motion.p>
 
-            <Link to="/about" className="block w-max mx-auto md:mx-0 mb-5" aria-label="Learn more about Aberos PLC company overview">
-              <Button data={home[lang]["about"]["btn"]} seo={"About Aberos PLC"}/>
+            <Link
+              to="/about"
+              className="block w-max mx-auto md:mx-0 mb-5"
+              aria-label="Learn more about Aberos PLC company overview"
+            >
+              <Button
+                data={home[lang]["about"]["btn"]}
+                seo={"About Aberos PLC"}
+              />
             </Link>
 
-            <Video src={home[lang]["video"]["link"]} title={"Introduction to aberos plc"}/>
+            <Video
+              src={home[lang]["video"]["link"]}
+              title={"Introduction to aberos plc"}
+            />
           </div>
         </motion.section>
 
@@ -143,31 +157,30 @@ export default function Home() {
               className="flex flex-wrap gap-10 content-center justify-center"
             >
               {subCompany.map((com, i) => (
-                <motion.section
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    show: { opacity: 1, y: 0 },
-                  }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="bg-card rounded-3xl w-80 shadow-lg border border-[rgba(0,0,0,0.2)] overflow-hidden hover:shadow-xl transition-all duration-300"
-                >
-                  <img
-                    src={compImgs[i]}
-                    alt={com.title}
-                    className="h-48 w-full object-cover"
-                  />
+                <Link key={i} to={`/companies#${com.link}`}>
+                  <motion.section
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      show: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="bg-card rounded-3xl w-80 shadow-lg border border-[rgba(0,0,0,0.2)] overflow-hidden hover:shadow-[0_0_0.3rem_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-[1.02] hover:border-[rgba(0,0,0,0.6)]"
+                  >
+                    <img
+                      src={compImgs[i]}
+                      alt={com.title}
+                      className="h-48 w-full object-cover"
+                    />
 
-                  <div className="p-6 flex flex-col gap-4">
-                    <h3 className="text-2xl font-semibold text-primary">
-                      {com.title}
-                    </h3>
-                    <p className="text-text/70">{com.desc}</p>
-                    <Link to={`/companies#${com.link}`}>
+                    <div className="p-6 flex flex-col gap-4">
+                      <h3 className="text-2xl font-semibold text-primary">
+                        {com.title}
+                      </h3>
+                      <p className="text-text/70">{com.desc}</p>
                       <Button data={com.btn} />
-                    </Link>
-                  </div>
-                </motion.section>
+                    </div>
+                  </motion.section>
+                </Link>
               ))}
             </motion.article>
           </div>

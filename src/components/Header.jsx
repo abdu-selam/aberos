@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import logo from '../assets/logo.avif'
+import logo from "../assets/logo.avif";
 import Nav from "./Nav";
 import { motion } from "framer-motion";
 import useStore from "../store/useStore";
@@ -10,7 +10,7 @@ export default function Header({ active }) {
   const setLang = useStore((state) => state.setLang);
   const [open, setOpen] = useState("close");
   const [cross, setCross] = useState("not");
-  const headerData = header[lang]
+  const headerData = header[lang];
 
   const menuBar = () => {
     if (open == "close") {
@@ -22,6 +22,11 @@ export default function Header({ active }) {
     }
   };
 
+  const langChanger = (lang) => {
+    localStorage.setItem("lang", lang);
+    location.reload();
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -25 }}
@@ -30,22 +35,24 @@ export default function Header({ active }) {
       className="h-max min-w-full bg-back fixed top-0 z-24"
     >
       <section className="flex justify-between items-center px-6 py-1 w-vw max-w-7xl mx-auto">
-        <motion.figure
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center gap-1.5 w-max"
-        >
-          <img
-            src={logo}
-            width={200}
-            alt="Hero image"
-            className="w-12 h-12 rounded-full border-2 border-border"
-          />
-          <figcaption className="flex flex-col items-start">
-            <h2 className="text-[1.4rem] text-txt">{headerData['name']}</h2>
-          </figcaption>
-        </motion.figure>
+        <a href="/">
+          <motion.figure
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center gap-1.5 w-max"
+          >
+            <img
+              src={logo}
+              width={200}
+              alt="Hero image"
+              className="w-12 h-12 rounded-full border-2 border-border"
+            />
+            <figcaption className="flex flex-col items-start">
+              <h2 className="text-[1.4rem] text-txt">{headerData["name"]}</h2>
+            </figcaption>
+          </motion.figure>
+        </a>
 
         <button
           onClick={menuBar}
@@ -64,7 +71,7 @@ export default function Header({ active }) {
           ></div>
         </button>
 
-        <Nav active={active} state={open} data={headerData['navs']}/>
+        <Nav active={active} state={open} data={headerData["navs"]} />
 
         <motion.section
           initial={{ opacity: 0, y: 15 }}
@@ -73,19 +80,19 @@ export default function Header({ active }) {
           className="flex"
         >
           <button
-            onClick={() => setLang("am")}
+            onClick={() => langChanger("am")}
             className={`${lang == "am" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
           >
             አማ
           </button>
           <button
-            onClick={() => setLang("ar")}
+            onClick={() => langChanger("ar")}
             className={`${lang == "ar" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
           >
             عr
           </button>
           <button
-            onClick={() => setLang("en")}
+            onClick={() => langChanger("en")}
             className={`${lang == "en" ? "hidden" : ""} bg-primary px-2 rounded-sm mx-1 text-back`}
           >
             En
