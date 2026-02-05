@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import { Link } from "react-router";
 import useStore from "../store/useStore";
 
-import heroImg from "../assets/img.jpg";
-import heroImg1 from "../assets/mall.png";
+import heroImg from "../assets/mall.png";
+import mallImg from "../assets/img.jpg";
+import restaurantImg from "../assets/img.jpg";
+import factoryImg from "../assets/img.jpg";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 const Video = React.lazy(() => import("../components/Video"));
 import { home } from "../data/translation";
+import useLang from "../hooks/useLang";
 
 
 const ContactForm = React.lazy(() => import("../components/ContactForm"));
@@ -18,9 +21,10 @@ const ContactForm = React.lazy(() => import("../components/ContactForm"));
 
 export default function Home() {
   const lang = useStore((state) => state.lang);
+  useLang(lang)
   const page = "home";
 
-  const compImgs = [heroImg, heroImg, heroImg]
+  const compImgs = [factoryImg, mallImg, restaurantImg]
 
   const subCompany = home[lang]["companies"]["each"];
 
@@ -67,7 +71,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              src={heroImg1}
+              src={heroImg}
               alt="Factory"
               className="max-w-xl w-full mx-auto rounded-3xl shadow-2xl"
             />

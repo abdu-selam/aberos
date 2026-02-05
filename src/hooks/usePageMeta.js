@@ -1,4 +1,3 @@
-// src/hooks/usePageMeta.js
 import { useEffect } from "react";
 
 const usePageMeta = (title, description)=> {

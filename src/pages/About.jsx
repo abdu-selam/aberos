@@ -8,11 +8,13 @@ import Button from "../components/Button";
 import { about } from "../data/translation";
 import useStore from "../store/useStore";
 import usePageMeta from "../hooks/usePageMeta";
+import useLang from "../hooks/useLang";
 const ContactForm = React.lazy(() => import("../components/ContactForm"));
 
 const About = () => {
   const page = "about";
   const lang = useStore((state) => state.lang);
+  useLang(lang)
   const subCompanies = about[lang]["business"]["busines"];
   usePageMeta("About Aberos PLC", "This is aberos plc");
 
