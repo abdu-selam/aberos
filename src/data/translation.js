@@ -67,7 +67,8 @@ export const header = {
 export const home = {
   en: {
     hero: {
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Incidunt, id dolores consequatur voluptatum facilis expedita.",
+      title: 'Aberos',
+      desc: "Your journey starts here.Discover what we do, how we do it, and how we can help you achieve more.",
       btns: ["Learn More", "Watch Video"],
     },
     video: {
@@ -189,12 +190,13 @@ export const home = {
   },
   am: {
     hero: {
-      desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ ",
+      title: 'አበሮስ',
+      desc: "ጉዞዎ እዚህ ይጀምራል።ስለ እኛ ይወቁ፣እንዴት እንደምንሰራ ይረዱ እና የበለጠ አብረን እንደግ! ",
       btns: ["በደንብ ለማወቅ", "ቪዲዮ ይመልከቱ"],
     },
     video: {
-      title: "በኩባንያችን ውስጥ",
-      desc: "አበሮስ ኃ.የተ.የግ.ማ. በተለያዩ ኢንዱስትሪዎች ውስጥ እንዴት እንደሚሰራ ልማወቅ ቪዲዮውን ይመልክቱ",
+      title: "በእኛ ኩባንያ ውስጥ",
+      desc: "አበሮስ ኃ.የተ.የግ.ማ. በተለያዩ ኢንዱስትሪዎች ውስጥ እንዴት እንደሚሰራ ለማወቅ ቪዲዮውን ይመልክቱ",
       link: "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
     },
     about: {

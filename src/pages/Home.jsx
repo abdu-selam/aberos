@@ -50,7 +50,7 @@ export default function Home() {
               className="flex flex-col gap-6 justify-center items-center md:items-start"
             >
               <h1 className="text-5xl font-extrabold text-center leading-tight">
-                Aberos <span className="text-secondary">PLC</span>
+                {home[lang].hero.title} <span className="text-secondary">PLC</span>
               </h1>
 
               <p className="text-sm text-back/80 w-full max-w-xl text-center md:text-start">
