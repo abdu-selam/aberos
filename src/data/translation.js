@@ -74,7 +74,7 @@ export const home = {
     video: {
       title: "Inside Our Company",
       desc: "Discover how Aberos PLC operates across multiple industries.",
-      link: "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+      link: "https://www.youtube-nocookie.com/embed/N1y42E4cWkU?si=kISzNm9b9_cITJiy",
     },
     about: {
       title: "About Us",
@@ -197,7 +197,7 @@ export const home = {
     video: {
       title: "በእኛ ኩባንያ ውስጥ",
       desc: "አበሮስ ኃ.የተ.የግ.ማ. በተለያዩ ኢንዱስትሪዎች ውስጥ እንዴት እንደሚሰራ ለማወቅ ቪዲዮውን ይመልክቱ",
-      link: "https://www.youtube-nocookie.com/embed/bWzN8NuZWF8?controls=0&modestbranding=1",
+      link: "https://www.youtube-nocookie.com/embed/N1y42E4cWkU?si=kISzNm9b9_cITJiy",
     },
     about: {
       title: "ስለ እኛ",
