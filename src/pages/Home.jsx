@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router";
 import useStore from "../store/useStore";
 
-import heroImg from "../assets/mall.png";
-import mallImg from "../assets/img.jpg";
-import restaurantImg from "../assets/img.jpg";
-import factoryImg from "../assets/img.jpg";
+import heroImg from "../assets/mall.avif";
+import mallImg from "../assets/img.avif";
+import restaurantImg from "../assets/img.avif";
+import factoryImg from "../assets/img.avif";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -38,7 +38,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative flex justify-center items-center w-vw min-h-dvh bg-[url(./assets/hero-back.png)] bg-fixed bg-cover bg-center"
+          className="relative flex justify-center items-center w-vw min-h-dvh bg-[url(./assets/hero-back.avif)] bg-fixed bg-cover bg-center"
         >
           <div className="absolute inset-0 bg-primary/80" />
 

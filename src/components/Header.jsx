@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import heroImg from "../assets/img.jpg";
 import logo from '../assets/logo.avif'
 import Nav from "./Nav";
 import { motion } from "framer-motion";

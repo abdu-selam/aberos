@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import heroImg from "../assets/img.jpg";
+import heroImg from "../assets/img.avif";
 import usePageMeta from "../hooks/usePageMeta";
 import { companies } from "../data/translation";
 import useStore from "../store/useStore";
