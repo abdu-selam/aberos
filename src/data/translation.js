@@ -78,7 +78,7 @@ export const home = {
     },
     about: {
       title: "About Us",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id dolores consequatur voluptatum facilis expedita.",
+      desc: "Aberos PLC is a forward-looking company committed to delivering reliable solutions and creating long-term value for its partners, clients, and stakeholders.",
       btn: "Read More",
     },
     companies: {
@@ -201,7 +201,7 @@ export const home = {
     },
     about: {
       title: "ስለ እኛ",
-      desc: "ሎሬም፣ ipsum dolor sit amet consectetur adipisicing elit። ነገሮች በእውነት ነፃ የሆኑ ደስታ በረሃዎች ናቸው፣ ይገፉ፣ እንደዛ እንደሆነ አላውቅም፣ ቢሮዎች እራሳቸው እነዚህ",
+      desc: "አበሮስ ኃ.የተ.የግ.ማ. አስተማማኝ መፍትሄዎችን ለማቅረብ እና ለአጋሮቹ፣ ደንበኞቹ እና ባለድርሻ አካላት የረጅም ጊዜ እሴት ለመፍጠር ቁርጠኛ የሆነ ወደፊት የሚሄድ ኩባንያ ነው።",
       btn: "የበለጠ ልማወቅ",
     },
     companies: {
