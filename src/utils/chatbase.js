@@ -20,6 +20,7 @@ export default function chatBot() {
     script.src = "https://www.chatbase.co/embed.min.js";
     script.id = import.meta.env.VITE_CHAT_KEY;
     script.domain = "www.chatbase.co";
+    
     document.body.appendChild(script);
   };
   if (document.readyState === "complete") {
