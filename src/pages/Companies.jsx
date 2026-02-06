@@ -25,7 +25,7 @@ function Companies() {
 
   return (
     <>
-      <Header active={page} />
+      <Header active={page}/>
 
       <main className="pt-17">
         <motion.section
