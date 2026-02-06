@@ -55,12 +55,12 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="flex flex-col gap-6 justify-center items-center"
             >
-              <h1 className="text-9xl font-extrabold text-center leading-tight">
+              <h1 className="text-[min(12vw,8rem)]  font-extrabold text-center leading-tight">
                 {home[lang].hero.title}{" "}
                 <span className="text-secondary">{lang == "en"? 'PLC.': lang == 'am' ? 'ኃ.ተ.ግ.ማ.': 'PLC.'}</span>
               </h1>
 
-              <p className="text-xl text-back/80 w-full max-w-xl text-center">
+              <p className="sm:text-xl text-back/80 w-full max-w-xl text-center">
                 {home[lang]["hero"]["desc"]}
               </p>
 
