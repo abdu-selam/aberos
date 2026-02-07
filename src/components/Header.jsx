@@ -5,12 +5,23 @@ import { motion } from "framer-motion";
 import useStore from "../store/useStore";
 import { header } from "../data/translation";
 
-export default function Header({ active }) {
+export default function Header({ active, comp }) {
   const lang = useStore((state) => state.lang);
-  const setLang = useStore((state) => state.setLang);
   const [open, setOpen] = useState("close");
   const [cross, setCross] = useState("not");
   const headerData = header[lang];
+  const menuRef = useRef();
+
+  document.addEventListener("scroll", () => {
+    setOpen("close");
+    setCross("not");
+  });
+
+  document.body.addEventListener("click", (e) => {
+    if (e.target == menuRef.current) return;
+    setOpen("close");
+    setCross("not");
+  });
 
   const menuBar = () => {
     if (open == "close") {
@@ -56,8 +67,9 @@ export default function Header({ active }) {
 
         <button
           onClick={menuBar}
+          ref={menuRef}
           aria-label="Open menu"
-          className={`flex ${cross == "not" ? "gap-1" : ""} flex-col order-1 sm:hidden`}
+          className={`flex ${cross == "not" ? "gap-1" : ""} flex-col order-1 md:hidden`}
         >
           <div
             className={`w-7 h-1 transition-all origin-left duration-500 bg-primary ${
@@ -71,7 +83,12 @@ export default function Header({ active }) {
           ></div>
         </button>
 
-        <Nav active={active} state={open} data={headerData["navs"]} />
+        <Nav
+          active={active}
+          state={open}
+          data={headerData["navs"]}
+          comp={comp}
+        />
 
         <motion.section
           initial={{ opacity: 0, y: 15 }}

@@ -14,7 +14,14 @@ const ContactForm = React.lazy(() => import("../components/ContactForm"));
 const About = () => {
   const page = "about";
   const lang = useStore((state) => state.lang);
-  useLang(lang)
+  const setLang = useStore((state) => state.setLang);
+  const langFromLocal = localStorage.getItem("lang");
+  if (!langFromLocal) {
+    localStorage.setItem("lang", lang);
+  } else {
+    setLang(langFromLocal);
+  }
+  useLang(lang);
   const subCompanies = about[lang]["business"]["busines"];
   usePageMeta("About Aberos PLC", "This is aberos plc");
 

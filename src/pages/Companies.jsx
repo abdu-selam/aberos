@@ -13,7 +13,14 @@ const ContactForm = React.lazy(() => import("../components/ContactForm"));
 
 function Companies() {
   const lang = useStore((state) => state.lang);
-  useLang(lang)
+  const setLang = useStore((state) => state.setLang);
+  const langFromLocal = localStorage.getItem("lang");
+  if (!langFromLocal) {
+    localStorage.setItem("lang", lang);
+  } else {
+    setLang(langFromLocal);
+  }
+  useLang(lang);
   const page = "companies";
   usePageMeta("Aberos Sub Companies", "About aberos plc");
   const data = companies[lang];
@@ -25,7 +32,7 @@ function Companies() {
 
   return (
     <>
-      <Header active={page}/>
+      <Header active={page} comp={data.navs} />
 
       <main className="pt-17">
         <motion.section
@@ -46,21 +53,6 @@ function Companies() {
         </motion.section>
 
         <main className="bg-text">
-          <motion.nav
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="bg-white/50 border mix-blend-difference border-white/20 backdrop-blur-md sticky top-18 w-max px-6 py-2 mx-auto rounded-lg"
-          >
-            <ul className="flex justify-center gap-6 text-primary font-medium">
-              {data.navs.map((com, i) => (
-                <li key={i} className="hover:text-secondary transition">
-                  <a href={`#${com.link}`}>{com.name}</a>
-                </li>
-              ))}
-            </ul>
-          </motion.nav>
-
           <motion.section
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 40 }}

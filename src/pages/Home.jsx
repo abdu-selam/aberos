@@ -20,7 +20,6 @@ const ContactForm = React.lazy(() => import("../components/ContactForm"));
 export default function Home() {
   const lang = useStore((state) => state.lang);
   const setLang = useStore((state) => state.setLang);
-  console.log(localStorage.getItem("lang"))
   const langFromLocal = localStorage.getItem("lang");
   if (!langFromLocal) {
     localStorage.setItem("lang", lang);
