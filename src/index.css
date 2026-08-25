@@ -1,43 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Core */
-  --color-primary: #101828; 
-  --color-secondary: #8b5cf6; 
-  /* Surfaces */
-  --color-back: #f9fafb; 
-  --color-card: #ffffff; 
+  --color-primary: #101828;
+  --color-secondary: #8b5cf6;
 
-  /* Text */
-  --color-heading: #0f172a; 
-  --color-text: #334155; 
-  --color-muted: #64748b;      
-  /* Borders & Lines */
+  --color-back: #f9fafb;
+  --color-card: #ffffff;
+
+  --color-heading: #0f172a;
+  --color-text: #334155;
+  --color-muted: #64748b;
+
   --color-border: #e5e7eb;
 
-  /* Status */
   --color-success: #16a34a;
   --color-warning: #eab308;
   --color-error: #dc2626;
-  --color-accent: #22d3ee; 
+  --color-accent: #22d3ee;
 }
 
+@layer base {
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-card);
+  }
 
-::selection {
-  background-color: var(--color-accent);
-  color: var(--color-card);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.animate-custom {
-  animation: custom 1s ease-in-out infinite alternate;
-}
-
-@keyframes custom {
-  100% {
-    translate: 0 10px;
+  html {
+    scroll-behavior: smooth;
   }
 }
