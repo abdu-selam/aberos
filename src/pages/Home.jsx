@@ -4,8 +4,6 @@ import Header from '../components/Header'
 const Home = () => {
   return (
     <>
-      {/* Header */}
-      <Header />
       {/* Hero */}
       {/* stat and deacription */}
       {/* overview */}
