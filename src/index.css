@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #101828;
-  --color-secondary: #8b5cf6;
+  --color-back: #e8f3f1;
+  --color-text: #001010;
+  --color-accent: #00a98b;
 
-  --color-back: #f9fafb;
-  --color-card: #ffffff;
-
-  --color-heading: #0f172a;
-  --color-text: #334155;
-  --color-muted: #64748b;
-
-  --color-border: #e5e7eb;
-
-  --color-success: #16a34a;
-  --color-warning: #eab308;
-  --color-error: #dc2626;
-  --color-accent: #22d3ee;
+  --color-back-dark: #001010;
+  --color-text-dark: #e8f3f1;
+  --color-accent-dark: #00a98b;
 }
 
 @layer base {
   ::selection {
-    background-color: var(--color-accent);
-    color: var(--color-card);
+    @apply bg-text text-back;
+  }
+
+  .dark ::selection {
+    @apply bg-text-dark text-back-dark;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-back dark:bg-back-dark min-h-dvh;
+  }
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
