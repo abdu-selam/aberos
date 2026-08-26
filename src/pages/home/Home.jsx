@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "../../components/Header";
 import Hero from "./layers/Hero";
+import Overview from "./layers/Overview";
 
 const Home = () => {
   return (
     <>
       <main>
-        <Hero />
-        {/* Hero */}
+        <div>
+          <Hero />
+          <Overview />
+        </div>
         {/* stat and deacription */}
         {/* overview */}
         {/* why us */}

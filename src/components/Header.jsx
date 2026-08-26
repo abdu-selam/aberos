@@ -32,24 +32,24 @@ const Header = () => {
           <nav className="max-pc:hidden">
             <Navs />
           </nav>
-          <div className="flex items-center gap-2 pc:hidden">
+          <div className="flex items-center gap-2">
             <LuMenu
               onClick={(e) => {
                 e.stopPropagation();
                 setMenu(true);
               }}
-              className="text-back text-2xl bg-textp-1 rounded-full"
+              className="pc:hidden text-back text-2xl bg-textp-1 rounded-full"
             />
+            <button>
+              <a
+                className="block bg-text  p-1.5 rounded-full hover:bg-accent group transition duration-300"
+                href={"item.link"}
+                target="_blank"
+              >
+                <FaLinkedin className="fill-back group-hover:fill-text transition duration-300" />
+              </a>
+            </button>
           </div>
-          <button>
-            <a
-              className="block bg-text  p-1.5 rounded-full hover:bg-accent group transition duration-300"
-              href={"item.link"}
-              target="_blank"
-            >
-              <FaLinkedin className="fill-back group-hover:fill-text transition duration-300" />
-            </a>
-          </button>
         </header>
       </div>
       {menu && (
@@ -57,7 +57,7 @@ const Header = () => {
           onClick={(e) => {
             e.stopPropagation();
           }}
-          className={`pc:hidden fixed bg-back  backdrop-blur-md p-4 h-dvh right-0 top-0 shadow-[0_0_0.5rem] shadow-text/20 w-6/10 min-w-50 z-1000`}
+          className={`pc:hidden fixed bg-back  backdrop-blur-md p-4 h-dvh right-0 top-0 shadow-[0_0_0.5rem] shadow-text/20 w-7/10 min-w-50 z-1000`}
         >
           <div className="flex items-center justify-between py-4">
             <p className="text-text text-xl font-bold">
