@@ -8,6 +8,9 @@
   --color-back-dark: #001010;
   --color-text-dark: #e8f3f1;
   --color-accent-dark: #00a98b;
+
+  --breakpoint-pc: 50rem;
+  --spacing-max-width: 120rem;
 }
 
 @layer base {

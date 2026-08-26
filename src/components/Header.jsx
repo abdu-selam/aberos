@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <div className="p-2 sticky top-0 z-10">
-        <header className="bg-text/10 backdrop-blur-md p-2 px-4 max-w-360 mx-auto rounded-lg flex justify-between items-center border border-text/40 dark:border-text-dark/40">
+        <header className="bg-back dark:bg-back-dark transition duration-300 backdrop-blur-md p-2 px-4 max-w-max-width mx-auto rounded-lg flex justify-between items-center border border-text/20 dark:border-text-dark/20">
           <Link to="/">
             <Logo />
           </Link>
@@ -58,10 +58,10 @@ const Header = () => {
       </div>
       {menu && (
         <nav
-          className={`sm:hidden fixed bg-text/10 dark:bg-text-dark/10 backdrop-blur-md p-4 h-dvh right-0 top-0 shadow-[0_0_0.5rem] shadow-text/20 dark:shadow-text-dark/20 w-6/10 min-w-50`}
+          className={`sm:hidden fixed bg-text dark:bg-text-dark backdrop-blur-md p-4 h-dvh right-0 top-0 shadow-[0_0_0.5rem] shadow-text/20 dark:shadow-text-dark/20 w-6/10 min-w-50 z-1000`}
         >
           <div className="flex items-center justify-between py-4">
-            <p className="text-text text-xl dark:text-text-dark font-bold">
+            <p className="text-back text-xl dark:text-back-dark font-bold">
               Aberos PLC.
             </p>
             <FaX
