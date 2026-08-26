@@ -42,7 +42,7 @@ const Hero = () => {
           </div>
           <Button className="">Our Companies</Button>
         </section>
-        <div className="max-w-75 flex self-end flex-col gap-3">
+        <div className="max-w-55 flex self-end flex-col gap-3">
           <p className="text-sm ">
             We bring together diverse businesses and bold ideas to create value.
           </p>

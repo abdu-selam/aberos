@@ -1,13 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-back: #e8f3f1;
-  --color-text: #001010;
-  --color-accent: #05a98b;
-
-  --color-back-dark: #001010;
-  --color-text-dark: #e8f3f1;
-  --color-accent-dark: #00a98b;
+  --color-back: #001010;
+  --color-text: #e8f3f1;
+  --color-accent: #00a98b;
 
   --breakpoint-pc: 50rem;
   --spacing-max-width: 120rem;
@@ -18,8 +14,12 @@
     @apply bg-text text-back;
   }
 
+  * {
+    @apply text-text;
+  }
+
   .dark ::selection {
-    @apply bg-text-dark text-back-dark;
+    @apply bg-text text-back;
   }
 
   html {
@@ -27,13 +27,13 @@
   }
 
   body {
-    @apply bg-back dark:bg-back-dark min-h-dvh;
+    @apply bg-back min-h-dvh;
   }
 }
 
 @layer components {
   .nav-less-item {
-    @media (width < 40rem) {
+    @media (width < 50rem) {
       @apply hover:translate-x-2 p-2 w-full block rounded-lg px-4;
     }
   }
