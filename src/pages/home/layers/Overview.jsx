@@ -1,4 +1,5 @@
 import image from "../../../assets/hero-bg.webp";
+import MoltenMetal from "../../../components/effects/MoltenMetal";
 
 const Overview = () => {
   const images = [image, image, image, image];
@@ -22,7 +23,10 @@ const Overview = () => {
   ];
 
   return (
-    <section className="p-4 pt-16">
+    <section className="p-4 pt-16 relative">
+      <div className="absolute top-0 left-0 w-full h-full -z-1">
+        <MoltenMetal color2="#00a98b" color1="#ffffff" color3="#ffffff" opacity={0.5} />
+      </div>
       <div className="flex flex-col items-center gap-2 py-6">
         <h2 className="sm:text-[1.8rem] min-[30rem]:text-[1.6rem] text-[1.4rem] font-bold text-center *:text-accent">
           <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
@@ -67,7 +71,7 @@ const Overview = () => {
       <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 mx-auto max-w-5xl">
         {stats.map((item, i) => (
           <li
-            className="flex flex-col gap-2 items-center border border-text/20 p-4 rounded-2xl"
+            className="flex flex-col gap-2 items-center border border-text/20 p-4 rounded-2xl bg-back/10 backdrop-blur-md"
             key={i}
           >
             <p className="text-4xl font-bold">{item.amount}+</p>

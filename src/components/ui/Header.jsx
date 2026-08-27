@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaMoon, FaSun, FaLinkedin } from "react-icons/fa";
-import { browserTheme } from "../utils/helpers";
+import { browserTheme } from "../../utils/helpers";
 import Logo from "./Logo";
 import Navs from "./Navs";
 import { LuMenu } from "react-icons/lu";

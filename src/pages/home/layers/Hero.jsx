@@ -1,6 +1,6 @@
 import { FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import heroBg from "../../../assets/hero-bg.webp";
-import Button from "../../../components/Button";
+import Button from "../../../components/ui/Button";
 
 const Hero = () => {
   const links = [
