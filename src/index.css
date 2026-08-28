@@ -33,7 +33,7 @@
 
 @layer components {
   .nav-less-item {
-    @media (width < 50rem) {
+    @media (width < 40rem) {
       @apply hover:translate-x-2 p-2 w-full block rounded-lg px-4;
     }
   }

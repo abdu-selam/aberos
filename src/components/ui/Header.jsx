@@ -25,14 +25,14 @@ const Header = () => {
   return (
     <>
       <div className="p-2 sticky top-0 z-10">
-        <header className="bg-back transition duration-300 backdrop-blur-md p-2 px-6 max-w-max-width mx-auto rounded-lg flex justify-between items-center border border-text/20">
-          <Link to="/">
+        <header className="sm:bg-back/20 transition duration-300 sm:backdrop-blur-md sm:p-2 px-6 max-w-max-width mx-auto rounded-lg flex justify-between items-center sm:border border-text/20 sm:w-max">
+          <Link className="sm:hidden p-2 w-max" to="/">
             <Logo />
           </Link>
-          <nav className="max-pc:hidden">
+          <nav className="max-sm:hidden">
             <Navs />
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="flex bg-back20 backdrop-blur-md items-center gap-2 sm:hidden p-2">
             <LuMenu
               onClick={(e) => {
                 e.stopPropagation();
@@ -40,15 +40,6 @@ const Header = () => {
               }}
               className="pc:hidden text-back text-2xl bg-textp-1 rounded-full"
             />
-            <button>
-              <a
-                className="block bg-text  p-1.5 rounded-full hover:bg-accent group transition duration-300"
-                href={"item.link"}
-                target="_blank"
-              >
-                <FaLinkedin className="fill-back group-hover:fill-text transition duration-300" />
-              </a>
-            </button>
           </div>
         </header>
       </div>
@@ -57,7 +48,7 @@ const Header = () => {
           onClick={(e) => {
             e.stopPropagation();
           }}
-          className={`pc:hidden fixed bg-back  backdrop-blur-md p-4 h-dvh right-0 top-0 shadow-[0_0_0.5rem] shadow-text/20 w-7/10 min-w-50 z-1000`}
+          className={`sm:hidden fixed bg-back  backdrop-blur-md p-4 h-dvh right-0 top-0 shadow-[0_0_0.5rem] shadow-text/20 w-7/10 min-w-50 max-w-80 z-1000`}
         >
           <div className="flex items-center justify-between py-4">
             <p className="text-text text-xl font-bold">
