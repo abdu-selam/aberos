@@ -24,21 +24,21 @@ const Header = () => {
 
   return (
     <>
+      <Link className="absolute p-2 w-max" to="/">
+        <Logo />
+      </Link>
       <div className="p-2 sticky top-0 z-10">
-        <header className="sm:bg-back/20 transition duration-300 sm:backdrop-blur-md sm:p-2 px-6 max-w-max-width mx-auto rounded-lg flex justify-between items-center sm:border border-text/20 sm:w-max">
-          <Link className="sm:hidden p-2 w-max" to="/">
-            <Logo />
-          </Link>
+        <header className="sm:bg-back/20 transition duration-300 sm:backdrop-blur-md sm:p-2 sm:px-6 max-w-max-width mx-auto rounded-lg flex justify-end sm:justify-between items-center sm:border border-text/20 sm:w-max">
           <nav className="max-sm:hidden">
             <Navs />
           </nav>
-          <div className="flex bg-back20 backdrop-blur-md items-center gap-2 sm:hidden p-2">
+          <div className="flex bg-back20 backdrop-blur-md items-center gap-2 sm:hidden p-1">
             <LuMenu
               onClick={(e) => {
                 e.stopPropagation();
                 setMenu(true);
               }}
-              className="pc:hidden text-back text-2xl bg-textp-1 rounded-full"
+              className="pc:hidden text-back text-xl bg-textp-1 rounded-full"
             />
           </div>
         </header>
