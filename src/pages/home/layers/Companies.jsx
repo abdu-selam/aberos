@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import image from "../../../assets/hero-bg.webp";
 import {
   motion,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";

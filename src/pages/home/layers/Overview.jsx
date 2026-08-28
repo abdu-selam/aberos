@@ -1,10 +1,21 @@
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import image from "../../../assets/hero-bg.webp";
+import bgOne from "../../../assets/bg-2.webp";
+import bgTwo from "../../../assets/bg-3.webp";
+import bgThree from "../../../assets/bg-4.webp";
+import bgFour from "../../../assets/bg-5.webp";
 import MoltenMetal from "../../../components/effects/MoltenMetal";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef, useState } from "react";
 
 const Overview = () => {
-  const images = [image, image, image, image, image];
-  const curr = 2;
+  const images = [image, bgOne, bgTwo, bgThree, bgFour];
+  const [curr, setCurr] = useState(0);
   const stats = [
     {
       name: "Years of Experience",
@@ -23,56 +34,119 @@ const Overview = () => {
       amount: 25,
     },
   ];
+  const wrapperRef = useRef();
+  const [scrollWidth, setScrollWidth] = useState(0);
+
+  const { scrollYProgress } = useScroll({
+    target: wrapperRef,
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const index = Math.round(latest * 4);
+    if (index === 5 || index < 0) return;
+    setCurr(index);
+  });
 
   return (
     <section className="pt-8 relative">
-      <div className="flex flex-col items-start gap-2 pt-6 px-4">
-        <h2 className="text-[min(5vw,2.5rem)] font-bold text-center *:text-accent">
-          <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
-          <span className="whitespace-nowrap">Creating Impact.</span>
-        </h2>
-        <p className="max-w-150">
-          We are a dynamic group of companies united by a commitment to
-          innovation, quality, and progress.
-        </p>
-      </div>
-      <ul className="flex overflow-x-hidden scroll-hidden items-center justify-center gap-4 min-[60rem]:mx-auto py-4 relative">
-        {images.map((item, i) => (
-          <li
-            key={i}
-            className={`${
-              i === 2
-                ? "w-8/10 max-w-110 opacity-100"
-                : Math.abs(2 - i) === 1
-                  ? "w-6/10 max-w-82.5 opacity-60"
-                  : "w-4/10 max-w-55 opacity-40"
-            } shrink-0 aspect-9/13 
-            overflow-hidden flex items-center justify-center
-            relative
+      <div ref={wrapperRef} className="h-[300dvh]">
+        <div className="flex flex-col items-start gap-2 pt-6 px-4">
+          <h2 className="text-[min(5vw,2.5rem)] font-bold text-center *:text-accent">
+            <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
+            <span className="whitespace-nowrap">Creating Impact.</span>
+          </h2>
+          <p className="max-w-150">
+            We are a dynamic group of companies united by a commitment to
+            innovation, quality, and progress.
+          </p>
+        </div>
+        <ul className="flex items-center justify-center gap-4 min-[60rem]:mx-auto py-4 sticky top-1/4 transform-3d perspective-distant">
+          {images.map((item, i) => {
+            const logicFor2 =
+              curr + 1 === i ||
+              curr - 4 === i ||
+              curr - 1 === i ||
+              (curr === 0 && i === 4);
+
+            const order =
+              curr === i
+                ? 2
+                : curr + 1 === i || (curr === 4 && i === 0)
+                  ? 3
+                  : curr + 2 === i ||
+                      (curr === 3 && i === 0) ||
+                      (curr === 4 && i === 1)
+                    ? 4
+                    : curr - 1 === i || (curr === 0 && i === 4)
+                      ? 1
+                      : 0;
+
+            let rotateY = 0;
+            switch (order) {
+              case 1:
+                rotateY = -30;
+                break;
+              case 3:
+                rotateY = 30;
+                break;
+              case 0:
+                rotateY = -45;
+                break;
+              case 4:
+                rotateY = 45;
+                break;
+            }
+
+            return (
+              <motion.li
+                animate={{
+                  opacity: order == 2 ? 1 : logicFor2 ? 0.6 : 0.4,
+                  rotateY,
+                }}
+                transition={{
+                  opacity: {
+                    duration: 0.3,
+                  },
+                  rotateY: {
+                    duration: 0.4,
+                    delay: 0.1,
+                  },
+                }}
+                key={i}
+                className={`${
+                  curr === i
+                    ? "w-8/10 max-w-110"
+                    : logicFor2
+                      ? "w-6/10 max-w-82.5"
+                      : "w-4/10 max-w-55"
+                } shrink-0 aspect-9/13 
+            overflow-hidden flex items-center justify-center transition duration-300
+            relative order-${order}
             `}
-          >
-            <figure className="h-full w-full relative">
-              <img className="w-full h-full object-cover" src={item} alt="" />
-              {curr === i && (
-                <figcaption className="absolute w-full bottom-0 p-4 bg-linear-0 from-back/70 from-60% to-transparent flex flex-col gap-3">
-                  <h3 className="text-lg font-bold">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </h3>
-                  <p className="text-sm opacity-80">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Cupiditate officia ipsum unde illo consequatur debitis.
-                  </p>
-                </figcaption>
-              )}
-            </figure>
-          </li>
-        ))}
-      </ul>
-      <div className="flex justify-end px-4">
-        <p className="max-w-150 w-9/10 pb-4">
-          Together, we build strong businesses and create opportunities that
-          move industries forward.
-        </p>
+              >
+                <figure className="h-full w-full relative">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={item}
+                    alt=""
+                  />
+                  {curr === i && (
+                    <figcaption className="absolute w-full bottom-0 p-4 bg-linear-0 from-back/70 from-60% to-transparent flex flex-col gap-3">
+                      <h3 className="text-lg font-bold">
+                        Lorem ipsum dolor sit amet consectetur.
+                      </h3>
+                      <p className="text-sm opacity-80">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Cupiditate officia ipsum unde illo consequatur
+                        debitis.
+                      </p>
+                    </figcaption>
+                  )}
+                </figure>
+              </motion.li>
+            );
+          })}
+        </ul>
       </div>
       <h2 className="px-4 sm:text-[1.8rem] min-[30rem]:text-[1.6rem] text-[1.4rem] font-bold text-center *:text-accent">
         <span className="whitespace-nowrap">Our Story,</span>{" "}
