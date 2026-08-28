@@ -37,6 +37,10 @@
       @apply hover:translate-x-2 p-2 w-full block rounded-lg px-4;
     }
   }
+
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {
