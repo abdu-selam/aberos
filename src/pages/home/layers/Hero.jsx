@@ -19,7 +19,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative h-[calc(100dvh-4.2rem)] text-text-dark">
+    <div className="relative h-[calc(100dvh-3.6rem)] text-text-dark">
       <img
         src={heroBg}
         className="absolute -z-1 w-full h-dvh bottom-0 object-cover object-center"

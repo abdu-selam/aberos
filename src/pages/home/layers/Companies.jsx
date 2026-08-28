@@ -1,40 +1,98 @@
+import { useEffect, useRef, useState } from "react";
 import image from "../../../assets/hero-bg.webp";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 const Companies = () => {
+  const companyData = [
+    {
+      title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      image,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
+      location: "Lorem, ipsum dolor.",
+    },
+    {
+      title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      image,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
+      location: "Lorem, ipsum dolor.",
+    },
+    {
+      title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      image,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
+      location: "Lorem, ipsum dolor.",
+    },
+  ];
+
+  const wrapperRef = useRef();
+  const [scrollWidth, setScrollWidth] = useState(0);
+
+  const { scrollYProgress, scrollY } = useScroll({
+    target: wrapperRef,
+  });
+
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.99 / 2, 1 / 2, 1.99 / 2, 1],
+    ["0vw", "0vw", `-100vw`, `-100vw`, "-200vw"],
+  );
+  const xProg = useTransform(scrollYProgress, [0, 1], ["-100%", "-1%"]);
+
   return (
-    <section className="bg-text">
-      <h2 className="text-[min(5vw,1.5rem)] w-full lg:text-3xl px-4 pt-4 pb-12 font-bold *:text-accent">
+    <section className="bg-text min-h-dvh">
+      <h2 className="text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent">
         <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
         <span className="whitespace-nowrap">Creating Impact.</span>
       </h2>
-      <div className="w-full max-w-5xl mx-auto relative p-4 ">
-        <h3 className="text-lg min-[25rem]:text-xl sm:text-3xl w-7/10 max-w-100 absolute z-1 -top-10 text-back">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </h3>
-        <figure className="relative left-10 w-full max-w-lg mx-auto">
-          <img
-            className="w-[calc(100%-2.5rem)] aspect-9/13 object-cover"
-            src={image}
-            alt=""
-          />
-          <fgcaption className="absolute bottom-2 left-5 shadow shadow-back">
-            Lorem, ipsum dolor.
-          </fgcaption>
-        </figure>
-        <div className="relative pl-10 flex justify-end text-sm">
-          <p className="max-w-120 text-back">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui?
-            Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui?
-            Dicta.
-          </p>
-        </div>
+      <div ref={wrapperRef} className="relative h-[300vh]">
+        <motion.ul
+          style={{ x }}
+          className="flex w-max transition duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] sticky top-30"
+        >
+          {companyData.map((item, i) => (
+            <li
+              className="w-screen flex items-center justify-center shrink-0"
+              key={i}
+            >
+              <div className="w-full max-w-5xl mx-auto relative p-4">
+                <h3 className="text-lg min-[25rem]:text-xl sm:text-3xl w-7/10 max-w-100 absolute z-1 -top-10 text-back">
+                  {item.title}
+                </h3>
+                <figure className="relative left-10 w-full max-w-lg mx-auto">
+                  <img
+                    className="w-[calc(100%-2.5rem)] aspect-9/13 object-cover"
+                    src={item.image}
+                    alt=""
+                  />
+                  <figcaption className="absolute bottom-2 left-5 shadow shadow-back">
+                    {item.location}
+                  </figcaption>
+                </figure>
+                <div className="relative pl-10 flex justify-end text-sm">
+                  <p className="max-w-120 text-back">{item.description}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </motion.ul>
       </div>
-      <div className="p-4 relative">
+      <motion.div
+        style={{
+          x: xProg,
+        }}
+        className="py-4 pr-4 sticky bottom-4 transition duration-100"
+      >
         <div className="w-full h-0.5 bg-back"></div>
-        <div className="absolute w-5 h-5 bg-accent top-1/2 right-4 -translate-y-1/2 rotate-45"></div>
-      </div>
+        <div className="absolute bg-back top-1/2 right-4 -translate-y-1/2 w-5 aspect-square flex items-center justify-center rotate-45"></div>
+      </motion.div>
     </section>
   );
 };
