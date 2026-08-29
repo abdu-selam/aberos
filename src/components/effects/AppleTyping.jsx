@@ -10,6 +10,7 @@ const AppleTyping = ({
   y = 10,
   delay = 0,
   margin = "0px 0px 0px 0px",
+  animate = false,
 }) => {
   return (
     <>
@@ -20,10 +21,18 @@ const AppleTyping = ({
             y: toBottom ? -y : y,
             opacity: 0,
           }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
+          whileInView={
+            !animate && {
+              y: 0,
+              opacity: 1,
+            }
+          }
+          animate={
+            animate && {
+              y: 0,
+              opacity: 1,
+            }
+          }
           transition={{
             delay: (duration / 3) * i + delay,
             duration,
@@ -31,7 +40,7 @@ const AppleTyping = ({
           viewport={{
             once,
             amount,
-            margin
+            margin,
           }}
           className={`${className} inline-block`}
         >

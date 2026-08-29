@@ -61,7 +61,7 @@ const Companies = () => {
   return (
     <section className="bg-text min-h-dvh">
       <h2
-        className={`text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent *:font-runalto ${height}`}
+        className={`text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent *:font-runalto ${height} max-w-max-width mx-auto`}
       >
         <AppleTyping text="Shaping Growth. Creating Impact." />
       </h2>

@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <>
-      <Link className="pl-4 fixed p-2 w-max z-10 mix-blend-difference" to="/">
+      <Link className="pl-4 absolute p-2 w-max z-10 mix-blend-difference" to="/">
         <Logo />
       </Link>
       <motion.header

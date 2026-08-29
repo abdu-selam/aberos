@@ -45,6 +45,10 @@ const WhyUs = () => {
               scale: isInView ? 1 : 0,
               opacity: isInView ? 1 : 0,
             }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+            }}
             className="absolute top-15 left-15 w-40 aspect-square object-cover object-center rounded-lg"
             src={bgOne}
             alt=""
@@ -79,6 +83,8 @@ const WhyUs = () => {
             }}
             transition={{
               amount: 1,
+              type: "spring",
+              stiffness: 300,
             }}
             className="absolute bottom-15 right-15 w-40 aspect-square object-cover object-center rounded-lg"
             src={bgTwo}

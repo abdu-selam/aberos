@@ -8,11 +8,12 @@ import MoltenMetal from "../../../components/effects/MoltenMetal";
 import {
   AnimatePresence,
   motion,
+  useInView,
   useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AppleTyping from "../../../components/effects/AppleTyping";
 import NumberCounter from "../../../components/effects/NumberCounter";
 
@@ -40,6 +41,15 @@ const Overview = () => {
   const wrapperRef = useRef();
   const [scrollWidth, setScrollWidth] = useState(0);
 
+  const mainItem = useRef(null);
+  const isInView = useInView(mainItem, { amount: 0.2 });
+  const [mainVissible, setMainVisible] = useState(false);
+
+  useEffect(() => {
+    if (mainVissible || !isInView) return;
+    setMainVisible(true);
+  }, [isInView]);
+
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
   });
@@ -56,7 +66,7 @@ const Overview = () => {
     <section className="pt-8 relative pb-8">
       <div ref={wrapperRef} className="h-[300dvh]">
         <div
-          className={`flex flex-col sticky top-12 items-start gap-2 pt-6 px-4 ${curr === 4 ? "h-[95vh]" : "h-max"}`}
+          className={`flex flex-col sticky top-12 items-start gap-2 pt-6 px-4 ${curr === 4 ? "h-[95vh]" : "h-max"} max-w-max-width mx-auto`}
         >
           <h2 className="text-[min(5vw,2.5rem)] font-bold text-center *:text-accent *:font-runalto">
             <AppleTyping
@@ -73,7 +83,7 @@ const Overview = () => {
             />
           </p>
         </div>
-        <ul className="flex items-center justify-center gap-4 min-[60rem]:mx-auto py-4 sticky top-1/4 transform-3d perspective-distant">
+        <ul className="flex items-center justify-center gap-4 min-[60rem]:mx-auto py-4 sticky top-1/4 transform-3d perspective-distant overflow-x-hidden h-max">
           {images.map((item, i) => {
             const logicFor2 =
               curr + 1 === i ||
@@ -127,19 +137,19 @@ const Overview = () => {
 
             return (
               <motion.li
+                ref={i === 0 ? mainItem : null}
                 initial={{
                   rotateX: 90,
                 }}
                 animate={{
                   opacity: order.num == 2 ? 1 : logicFor2 ? 0.6 : 0.4,
-                }}
-                whileInView={{
-                  rotateX: 0,
+                  rotateX: mainVissible ? 0 : 90,
                 }}
                 viewport={{
                   amount: 0.3,
                   once: true,
-                  margin: "0% 200% 0% 200%",
+                  margin: "0% 500% 0% 500%",
+                  root: "0% 500% 0% 500%",
                 }}
                 transition={{
                   opacity: {
@@ -179,10 +189,14 @@ const Overview = () => {
                           text="Lorem ipsum dolor sit amet consectetur."
                           className="font-runalto"
                           duration={0.5}
+                          animate
                         />
                       </h3>
                       <p className="text-sm opacity-80">
-                        <AppleTyping text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis." />
+                        <AppleTyping
+                          text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis."
+                          animate
+                        />
                       </p>
                     </figcaption>
                   )}

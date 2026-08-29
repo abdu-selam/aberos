@@ -1,5 +1,6 @@
-import React from "react";
 import GhostFibers from "../effects/GhostFibers";
+import AppleTyping from "../effects/AppleTyping";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const links = [
@@ -17,28 +18,55 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="bg-back/60 p-4 relative py-4 pb-8">
-      <div className="absolute w-full h-full top-0 left-0 -z-1">
-        <GhostFibers />
+    <footer className="bg-back/60 bg-linear-180 from-back p-4 relative py-4 pb-8">
+      <div className="absolute w-full h-full top-0 overflow-hidden left-0 -z-1">
+        <GhostFibers className="" />
       </div>
-      <div>
+      <div className="max-w-max-width mx-auto">
         <section className="py-8">
-          <h2 className="text-[11vw] min-[25rem]:text-[2.75rem] max-w-100 leading-none font-runalto font-semibold">
-            Building Stronger Businesses, Creating Lasting Impact.
+          <h2 className="max-w-100 leading-none">
+            <AppleTyping
+              text="Building Stronger Businesses, Creating Lasting Impact."
+              className="text-[11vw] min-[25rem]:text-[2.75rem] max-w-100 leading-none font-runalto font-semibold"
+            />
           </h2>
         </section>
         <section>
           <div className="flex flex-col items-end pb-8">
             <p className="text-end">
-              &copy; {new Date().getFullYear()} Aberos. Crafted with vision. Built to endure. All rights reserved.
+              &copy;&nbsp;
+              <AppleTyping
+                text={`${new Date().getFullYear()} Aberos. Crafted with vision. Built to endure. All rights reserved.`}
+              />
             </p>
             <ul className="flex gap-6">
               {links.map((item, i) => (
-                <li key={i}>
-                  <a className="text-lg hover:text-accent transition duration-300" target="_blank" href={item.link}>
+                <motion.li
+                  initial={{
+                    y: 10,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  viewport={{
+                    amount: 0.5,
+                    once: true,
+                  }}
+                  transition={{
+                    delay: 0.1 * i,
+                  }}
+                  key={i}
+                >
+                  <a
+                    className="text-lg hover:text-accent transition duration-300"
+                    target="_blank"
+                    href={item.link}
+                  >
                     {item.text}
                   </a>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>

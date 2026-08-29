@@ -26,7 +26,7 @@ const NumberCounter = ({ amount = 1, number = 25 }) => {
   }, [start]);
 
   useEffect(() => {
-    if (start) return;
+    if (start || !isInView) return;
     setStart(true);
   }, [isInView]);
 
