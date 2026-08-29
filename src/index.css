@@ -41,7 +41,7 @@
   }
 
   body {
-    @apply bg-back min-h-dvh overflow-x-hidden w-full;
+    @apply bg-back min-h-dvh w-full;
   }
 }
 

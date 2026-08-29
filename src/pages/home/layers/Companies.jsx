@@ -66,66 +66,68 @@ const Companies = () => {
         <AppleTyping text="Shaping Growth. Creating Impact." />
       </h2>
       <div ref={wrapperRef} className="relative h-[300vh]">
-        <motion.ul
-          style={{ x }}
-          className="flex w-max transition duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] sticky top-30"
-        >
-          {companyData.map((item, i) => (
-            <li
-              className="w-screen flex items-center justify-center shrink-0"
-              key={i}
-            >
-              <div className="w-full max-w-5xl mx-auto relative p-4">
-                <h3 className="text-xl min-[25rem]:text-2xl sm:text-4xl w-7/10 max-w-100 absolute z-1 -top-10">
-                  <AppleTyping
-                    className="text-back font-runalto"
-                    text={item.title}
-                    toBottom
-                    delay={0.3}
-                    once={false}
-                  />
-                </h3>
-                <figure className="relative left-10 w-full max-w-lg mx-auto">
-                  <motion.img
+        <div className="w-screen overflow-hidden sticky top-30">
+          <motion.ul
+            style={{ x }}
+            className="flex w-max transition duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]"
+          >
+            {companyData.map((item, i) => (
+              <li
+                className="w-screen flex items-center justify-center shrink-0"
+                key={i}
+              >
+                <div className="w-full max-w-5xl mx-auto relative p-4">
+                  <h3 className="text-xl min-[25rem]:text-2xl sm:text-4xl w-7/10 max-w-100 absolute z-1 -top-10">
+                    <AppleTyping
+                      className="text-back font-runalto"
+                      text={item.title}
+                      toBottom
+                      delay={0.3}
+                      once={false}
+                    />
+                  </h3>
+                  <figure className="relative left-10 w-full max-w-lg mx-auto">
+                    <motion.img
+                      initial={{
+                        y: 20,
+                        opacity: 0,
+                      }}
+                      whileInView={{
+                        y: 0,
+                        opacity: 1,
+                      }}
+                      className="w-[calc(100%-2.5rem)] aspect-9/13 object-cover"
+                      src={item.image}
+                      alt=""
+                    />
+                    <motion.figcaption
+                      initial={{
+                        y: "20%",
+                      }}
+                      whileInView={{
+                        y: 0,
+                      }}
+                      className="absolute bottom-2 left-5 mix-blend-difference"
+                    >
+                      {item.location}
+                    </motion.figcaption>
+                  </figure>
+                  <motion.div
                     initial={{
-                      y: 20,
                       opacity: 0,
                     }}
                     whileInView={{
-                      y: 0,
                       opacity: 1,
                     }}
-                    className="w-[calc(100%-2.5rem)] aspect-9/13 object-cover"
-                    src={item.image}
-                    alt=""
-                  />
-                  <motion.figcaption
-                    initial={{
-                      y: "20%",
-                    }}
-                    whileInView={{
-                      y: 0,
-                    }}
-                    className="absolute bottom-2 left-5 mix-blend-difference"
+                    className="relative pl-10 flex justify-end text-sm"
                   >
-                    {item.location}
-                  </motion.figcaption>
-                </figure>
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                  }}
-                  className="relative pl-10 flex justify-end text-sm"
-                >
-                  <p className="max-w-120 text-back">{item.description}</p>
-                </motion.div>
-              </div>
-            </li>
-          ))}
-        </motion.ul>
+                    <p className="max-w-120 text-back">{item.description}</p>
+                  </motion.div>
+                </div>
+              </li>
+            ))}
+          </motion.ul>
+        </div>
       </div>
       <motion.div
         style={{
