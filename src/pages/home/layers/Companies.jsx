@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import image from "../../../assets/hero-bg.webp";
+import bgThree from "../../../assets/bg-4.webp";
+import bgFour from "../../../assets/bg-5.webp";
 import {
   motion,
+  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -17,19 +20,20 @@ const Companies = () => {
     },
     {
       title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      image,
+      image: bgThree,
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
       location: "Lorem, ipsum dolor.",
     },
     {
       title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      image,
+      image: bgFour,
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
       location: "Lorem, ipsum dolor.",
     },
   ];
+  const [height, setHeight] = useState("h-max");
 
   const wrapperRef = useRef();
   const [scrollWidth, setScrollWidth] = useState(0);
@@ -38,16 +42,24 @@ const Companies = () => {
     target: wrapperRef,
   });
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest < 1) {
+      setHeight("h-max");
+    } else {
+      setHeight("h-screen");
+    }
+  });
+
   const x = useTransform(
     scrollYProgress,
-    [0, 0.99 / 2, 1 / 2, 1.99 / 2, 1],
-    ["0vw", "0vw", `-100vw`, `-100vw`, "-200vw"],
+    [0, 0.99 / 3, 1 / 3, 1.99 / 3, 2 / 3, 1],
+    ["0vw", "0vw", `-100vw`, `-100vw`, "-200vw", "-200vw"],
   );
   const xProg = useTransform(scrollYProgress, [0, 1], ["-100%", "-1%"]);
 
   return (
     <section className="bg-text min-h-dvh">
-      <h2 className="text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent">
+      <h2 className={`text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent ${height}`}>
         <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
         <span className="whitespace-nowrap">Creating Impact.</span>
       </h2>
@@ -71,7 +83,7 @@ const Companies = () => {
                     src={item.image}
                     alt=""
                   />
-                  <figcaption className="absolute bottom-2 left-5 shadow shadow-back">
+                  <figcaption className="absolute bottom-2 left-5 mix-blend-difference">
                     {item.location}
                   </figcaption>
                 </figure>

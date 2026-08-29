@@ -27,7 +27,7 @@
   }
 
   body {
-    @apply bg-back min-h-dvh overflow-x-hidden w-svw;
+    @apply bg-back min-h-dvh overflow-x-hidden w-full;
   }
 }
 

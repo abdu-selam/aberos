@@ -47,10 +47,14 @@ const Overview = () => {
     setCurr(index);
   });
 
+  const y = useTransform(scrollYProgress, [0, 1], ["1vh", "95vh"]);
+
   return (
-    <section className="pt-8 relative">
+    <section className="pt-8 relative pb-8">
       <div ref={wrapperRef} className="h-[300dvh]">
-        <div className="flex flex-col items-start gap-2 pt-6 px-4">
+        <div
+          className={`flex flex-col sticky top-12 items-start gap-2 pt-6 px-4 ${curr === 4 ? "h-[95vh]" : "h-max"}`}
+        >
           <h2 className="text-[min(5vw,2.5rem)] font-bold text-center *:text-accent">
             <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
             <span className="whitespace-nowrap">Creating Impact.</span>
@@ -70,19 +74,34 @@ const Overview = () => {
 
             const order =
               curr === i
-                ? 2
+                ? {
+                    num: 2,
+                    class: "order-2",
+                  }
                 : curr + 1 === i || (curr === 4 && i === 0)
-                  ? 3
+                  ? {
+                      num: 3,
+                      class: "order-3",
+                    }
                   : curr + 2 === i ||
                       (curr === 3 && i === 0) ||
                       (curr === 4 && i === 1)
-                    ? 4
+                    ? {
+                        num: 4,
+                        class: "order-4",
+                      }
                     : curr - 1 === i || (curr === 0 && i === 4)
-                      ? 1
-                      : 0;
+                      ? {
+                          num: 1,
+                          class: "order-1",
+                        }
+                      : {
+                          num: 0,
+                          class: "order-0",
+                        };
 
             let rotateY = 0;
-            switch (order) {
+            switch (order.num) {
               case 1:
                 rotateY = -30;
                 break;
@@ -100,7 +119,7 @@ const Overview = () => {
             return (
               <motion.li
                 animate={{
-                  opacity: order == 2 ? 1 : logicFor2 ? 0.6 : 0.4,
+                  opacity: order.num == 2 ? 1 : logicFor2 ? 0.6 : 0.4,
                   rotateY,
                 }}
                 transition={{
@@ -121,7 +140,7 @@ const Overview = () => {
                       : "w-4/10 max-w-55"
                 } shrink-0 aspect-9/13 
             overflow-hidden flex items-center justify-center transition duration-300
-            relative order-${order}
+            relative ${order.class}
             `}
               >
                 <figure className="h-full w-full relative">
@@ -167,7 +186,7 @@ const Overview = () => {
         Every number tells a story of our progress, achievements, and commitment
         to creating lasting value.
       </p>
-      <div className="w-9/10 mx-auto relative py-4">
+      <div className="w-9/10 mx-auto relative py-8">
         <div className="w-full h-0.5 absolute left-1/2 top-1/2 -translate-1/2 bg-text/50"></div>
         <p className="text-accent bg-back w-max px-4 mx-auto font-bold small-caps absolute left-1/2 top-1/2 -translate-1/2">
           Legacy of Growth
