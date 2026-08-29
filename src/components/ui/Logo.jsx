@@ -1,7 +1,7 @@
 
 const Logo = () => {
   return (
-    <div className="text-text text-2xl font-bold italic small-caps">Aberos</div>
+    <div className="mix-blend-difference text-2xl font-bold italic small-caps">Aberos</div>
   )
 }
 

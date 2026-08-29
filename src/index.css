@@ -7,6 +7,10 @@
 
   --breakpoint-pc: 50rem;
   --spacing-max-width: 120rem;
+
+  --font-poppins:
+    poppins, Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-runalto: runalto, "Segoe Script", "Lucida Handwriting", cursive;
 }
 
 @layer base {
@@ -15,11 +19,21 @@
   }
 
   * {
-    @apply text-text;
+    @apply text-text font-poppins;
   }
 
   .dark ::selection {
     @apply bg-text text-back;
+  }
+
+  @font-face {
+    font-family: poppins;
+    src: url("/fonts/Poppins.ttf");
+  }
+
+  @font-face {
+    font-family: runalto;
+    src: url("/fonts/Runalto.woff");
   }
 
   html {

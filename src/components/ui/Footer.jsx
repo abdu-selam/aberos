@@ -23,7 +23,7 @@ const Footer = () => {
       </div>
       <div>
         <section className="py-8">
-          <h2 className="text-[11vw] min-[25rem]:text-[2.75rem] max-w-100 leading-none">
+          <h2 className="text-[11vw] min-[25rem]:text-[2.75rem] max-w-100 leading-none font-runalto font-semibold">
             Building Stronger Businesses, Creating Lasting Impact.
           </h2>
         </section>
@@ -42,7 +42,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="text-[23vw] md:text-[11.4rem] leading-none font-black text-transparent [-webkit-text-stroke:3px_var(--color-accent)] opacity-50 text-end">
+          <div className="text-[23vw] md:text-[11.4rem] leading-none text-transparent [-webkit-text-stroke:2px_var(--color-accent)] font-runalto text-end">
             ABEROS
           </div>
         </section>

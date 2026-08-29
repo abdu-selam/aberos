@@ -28,7 +28,7 @@ const MissionAndVission = () => {
               <figcaption
                 className={`max-md:absolute bottom-0 md:w-full bg-linear-0 from-back/70 from-60% to-transparent max-md:px-4 md:self-end md:p-4 md:-translate-y-20 shrink-0 ${i === 1 ? "md:col-start-1 md:col-end-1 md:translate-x-20 text-end": "md:-translate-x-20"}`}
               >
-                <h2 className="text-3xl mix-blend-difference">{item.title}</h2>
+                <h2 className="text-3xl font-runalto font-semibold mix-blend-difference">{item.title}</h2>
                 <p className="text-sm">{item.text}</p>
               </figcaption>
             </figure>

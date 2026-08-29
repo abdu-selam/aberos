@@ -33,7 +33,7 @@ const Hero = () => {
         </p>
         <section className="flex flex-col gap-4 items-center">
           <div>
-            <h1 className="text-[clamp(1.25rem,6vw,4rem)] font-bold flex flex-col leading-5 min-[21rem]:leading-[6vw] lg:leading-17">
+            <h1 className="text-[clamp(1.25rem,6vw,4rem)] font-bold flex flex-col leading-5 min-[21rem]:leading-[6vw] lg:leading-17 *:font-runalto">
               <span className="text-center">Building Tomorrow, Today</span>
               <span className="text-center text-accent">
                 Excellence in Every Endeavor

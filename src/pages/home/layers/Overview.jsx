@@ -55,7 +55,7 @@ const Overview = () => {
         <div
           className={`flex flex-col sticky top-12 items-start gap-2 pt-6 px-4 ${curr === 4 ? "h-[95vh]" : "h-max"}`}
         >
-          <h2 className="text-[min(5vw,2.5rem)] font-bold text-center *:text-accent">
+          <h2 className="text-[min(5vw,2.5rem)] font-bold text-center *:text-accent *:font-runalto">
             <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
             <span className="whitespace-nowrap">Creating Impact.</span>
           </h2>
@@ -149,8 +149,8 @@ const Overview = () => {
                     alt=""
                   />
                   {curr === i && (
-                    <figcaption className="absolute w-full bottom-0 p-4 bg-linear-0 from-back/70 from-60% to-transparent flex flex-col gap-3">
-                      <h3 className="text-lg font-bold">
+                    <figcaption className="absolute w-full bottom-0 p-4 bg-linear-0 from-back/70 from-60% to-transparent flex flex-col gap-2">
+                      <h3 className="text-lg font-bold font-runalto">
                         Lorem ipsum dolor sit amet consectetur.
                       </h3>
                       <p className="text-sm opacity-80">
@@ -166,7 +166,7 @@ const Overview = () => {
           })}
         </ul>
       </div>
-      <h2 className="px-4 sm:text-[1.8rem] min-[30rem]:text-[1.6rem] text-[1.4rem] font-bold text-center *:text-accent">
+      <h2 className="px-4 sm:text-[1.8rem] min-[30rem]:text-[1.6rem] text-[1.4rem] font-bold text-center *:text-accent *:font-runalto">
         <span className="whitespace-nowrap">Our Story,</span>{" "}
         <span className="whitespace-nowrap">By the Numbers</span>
       </h2>
@@ -187,7 +187,7 @@ const Overview = () => {
       </p>
       <div className="w-9/10 mx-auto relative py-8">
         <div className="w-full h-0.5 absolute left-1/2 top-1/2 -translate-1/2 bg-text/50"></div>
-        <p className="text-accent bg-back w-max px-4 mx-auto font-bold small-caps absolute left-1/2 top-1/2 -translate-1/2">
+        <p className="text-accent bg-back w-max px-4 mx-auto font-bold absolute left-1/2 top-1/2 -translate-1/2 font-runalto">
           Legacy of Growth
         </p>
         <ul className="absolute w-full left-1/2 top-1/2 -translate-1/2 flex justify-between">

@@ -59,7 +59,7 @@ const Companies = () => {
 
   return (
     <section className="bg-text min-h-dvh">
-      <h2 className={`text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent ${height}`}>
+      <h2 className={`text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent *:font-runalto ${height}`}>
         <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
         <span className="whitespace-nowrap">Creating Impact.</span>
       </h2>
@@ -74,7 +74,7 @@ const Companies = () => {
               key={i}
             >
               <div className="w-full max-w-5xl mx-auto relative p-4">
-                <h3 className="text-lg min-[25rem]:text-xl sm:text-3xl w-7/10 max-w-100 absolute z-1 -top-10 text-back">
+                <h3 className="text-xl min-[25rem]:text-2xl sm:text-4xl w-7/10 max-w-100 absolute z-1 font-runalto -top-10 text-back">
                   {item.title}
                 </h3>
                 <figure className="relative left-10 w-full max-w-lg mx-auto">

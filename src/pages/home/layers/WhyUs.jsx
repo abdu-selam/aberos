@@ -38,9 +38,11 @@ const WhyUs = () => {
             src={bgOne}
             alt=""
           />
-          <h2 className="text-[7vw] max-sm:leading-none sm:text-5xl text-center *:text-back">
-            <div className="">Lorem ipsum amet.</div>
-            <div className="whitespace-nowrap font-bold">
+          <h2 className="text-[7vw] max-sm:leading-none sm:text-5xl text-center">
+            <div className="font-runalto font-bold text-back">
+              Lorem ipsum amet.
+            </div>
+            <div className="whitespace-nowrap font-bold text-accent">
               Lorem ipsum dolor amet.
             </div>
           </h2>
@@ -59,7 +61,7 @@ const WhyUs = () => {
               key={i}
             >
               <div className="w-8/10 max-w-80">
-                <h3 className="text-3xl">{item.title}</h3>
+                <h3 className="text-4xl font-runalto font-bold">{item.title}</h3>
                 <p>{item.text}</p>
               </div>
             </li>
