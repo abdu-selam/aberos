@@ -8,6 +8,7 @@ const AppleTyping = ({
   className = "",
   duration = 0.3,
   y = 10,
+  delay = 0,
 }) => {
   return (
     <>
@@ -23,7 +24,7 @@ const AppleTyping = ({
             opacity: 1,
           }}
           transition={{
-            delay: (duration / 3) * i,
+            delay: (duration / 3) * i + delay,
             duration,
           }}
           viewport={{

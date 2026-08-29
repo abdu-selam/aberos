@@ -8,6 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import AppleTyping from "../../../components/effects/AppleTyping";
 
 const Companies = () => {
   const companyData = [
@@ -59,9 +60,10 @@ const Companies = () => {
 
   return (
     <section className="bg-text min-h-dvh">
-      <h2 className={`text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent *:font-runalto ${height}`}>
-        <span className="whitespace-nowrap">Shaping Growth.</span>{" "}
-        <span className="whitespace-nowrap">Creating Impact.</span>
+      <h2
+        className={`text-[min(5vw,1.5rem)] sticky top-4 w-full lg:text-3xl p-4 pb-12 font-bold *:text-accent *:font-runalto ${height}`}
+      >
+        <AppleTyping text="Shaping Growth. Creating Impact." />
       </h2>
       <div ref={wrapperRef} className="relative h-[300vh]">
         <motion.ul
@@ -74,22 +76,50 @@ const Companies = () => {
               key={i}
             >
               <div className="w-full max-w-5xl mx-auto relative p-4">
-                <h3 className="text-xl min-[25rem]:text-2xl sm:text-4xl w-7/10 max-w-100 absolute z-1 font-runalto -top-10 text-back">
-                  {item.title}
+                <h3 className="text-xl min-[25rem]:text-2xl sm:text-4xl w-7/10 max-w-100 absolute z-1 -top-10">
+                  <AppleTyping
+                    className="text-back font-runalto"
+                    text={item.title}
+                    toBottom
+                    delay={0.3}
+                    once={false}
+                  />
                 </h3>
                 <figure className="relative left-10 w-full max-w-lg mx-auto">
-                  <img
+                  <motion.img
+                    initial={{
+                      y: "20%",
+                    }}
+                    whileInView={{
+                      y: 0,
+                    }}
                     className="w-[calc(100%-2.5rem)] aspect-9/13 object-cover"
                     src={item.image}
                     alt=""
                   />
-                  <figcaption className="absolute bottom-2 left-5 mix-blend-difference">
+                  <motion.figcaption
+                    initial={{
+                      y: "20%",
+                    }}
+                    whileInView={{
+                      y: 0,
+                    }}
+                    className="absolute bottom-2 left-5 mix-blend-difference"
+                  >
                     {item.location}
-                  </figcaption>
+                  </motion.figcaption>
                 </figure>
-                <div className="relative pl-10 flex justify-end text-sm">
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                  }}
+                  className="relative pl-10 flex justify-end text-sm"
+                >
                   <p className="max-w-120 text-back">{item.description}</p>
-                </div>
+                </motion.div>
               </div>
             </li>
           ))}
