@@ -127,8 +127,7 @@ const Overview = () => {
                     duration: 0.3,
                   },
                   rotateY: {
-                    duration: 0.4,
-                    delay: 0.1,
+                    duration: 0.3,
                   },
                 }}
                 key={i}

@@ -15,7 +15,6 @@ const Home = () => {
         <Companies />
         <WhyUs />
         <MissionAndVission />
-        {/* mission and vission */}
         {/* cta */}
       </main>
     </>
