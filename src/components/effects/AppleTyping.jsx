@@ -9,6 +9,7 @@ const AppleTyping = ({
   duration = 0.3,
   y = 10,
   delay = 0,
+  margin = "0px 0px 0px 0px",
 }) => {
   return (
     <>
@@ -30,6 +31,7 @@ const AppleTyping = ({
           viewport={{
             once,
             amount,
+            margin
           }}
           className={`${className} inline-block`}
         >

@@ -38,7 +38,7 @@ const Header = () => {
         transition={{
           ease: "backInOut"
         }}
-        className="sm:bg-back/30 z-10 sticky top-2 sm:my-2 sm:backdrop-blur-md w-full px-2 sm:px-6 py-2 mx-auto rounded-lg flex justify-end sm:justify-between items-center sm:border border-text/20 sm:w-max"
+        className="sm:bg-back/30 z-10 sticky top-2 sm:backdrop-blur-md w-full px-2 sm:px-6 py-2 mx-auto rounded-lg flex justify-end sm:justify-between items-center sm:border border-text/20 sm:w-max"
       >
         <nav className="max-sm:hidden">
           <Navs animate />

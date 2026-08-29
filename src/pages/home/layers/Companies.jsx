@@ -88,10 +88,12 @@ const Companies = () => {
                 <figure className="relative left-10 w-full max-w-lg mx-auto">
                   <motion.img
                     initial={{
-                      y: "20%",
+                      y: 20,
+                      opacity: 0,
                     }}
                     whileInView={{
                       y: 0,
+                      opacity: 1,
                     }}
                     className="w-[calc(100%-2.5rem)] aspect-9/13 object-cover"
                     src={item.image}
