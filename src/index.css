@@ -62,5 +62,3 @@
     font-variant: small-caps;
   }
 }
-
-@custom-variant dark (&:where(.dark, .dark *));
