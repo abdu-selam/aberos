@@ -4,6 +4,7 @@ import Hero from "./layers/Hero";
 import Overview from "./layers/Overview";
 import Companies from "./layers/Companies";
 import WhyUs from "./layers/WhyUs";
+import MissionAndVission from "./layers/MissionAndVission";
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
         <Overview />
         <Companies />
         <WhyUs />
-        {/* why us */}
+        <MissionAndVission />
         {/* mission and vission */}
         {/* cta */}
       </main>
