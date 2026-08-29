@@ -71,7 +71,8 @@ const Hero = () => {
               rotateZ: 0,
             }}
             transition={{
-              ease: "backInOut",
+              type: "spring",
+              stiffness: 100,
             }}
           >
             Our Companies
@@ -97,7 +98,8 @@ const Hero = () => {
                 }}
                 transition={{
                   delay: 0.1 * i,
-                  ease: "spring",
+                  type: "spring",
+                  stiffness: 300,
                 }}
                 key={i}
               >

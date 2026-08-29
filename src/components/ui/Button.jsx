@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 
-const Button = ({ children, className="", ...props }) => {
+const Button = ({ children, className = "", ...props }) => {
   return (
     <motion.button
       {...props}
       whileHover={{
-        scale: 1.02
+        scale: 1.02,
+      }}
+      whileTap={{
+        scale: 0.95,
       }}
       className={`bg-accent p-2 px-4 rounded-lg font-semibold ${className} relative group overflow-hidden hover:scale-102 disabled:hover:scale-100 disabled:opacity-80`}
     >
