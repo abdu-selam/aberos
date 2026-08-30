@@ -5,34 +5,9 @@ import { useRef } from "react";
 import AppleTyping from "../../../components/effects/AppleTyping";
 import WhyUsItem from "../../../components/ui/WhyUsItem";
 import Plasma from "../../../components/effects/Plasma";
+import { whyUsTexts } from "../../../store/home";
 
 const WhyUs = () => {
-  const items = [
-    {
-      title: "lorem ipsom amet selor dor korem",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
-    },
-    {
-      title: "lorem ipsom amet selor dor korem",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
-    },
-    {
-      title: "lorem ipsom amet selor dor korem",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
-    },
-    {
-      title: "lorem ipsom amet selor dor korem",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
-    },
-    {
-      title: "lorem ipsom amet selor dor korem",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
-    },
-    {
-      title: "lorem ipsom amet selor dor korem",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
-    },
-  ];
   const ref = useRef();
   const isInView = useInView(ref, { amount: 0, margin: "30px 0px 0px 0px" });
 
@@ -97,12 +72,10 @@ const WhyUs = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full -z-1">
           <Plasma opacity={0.5} speed={0.3} color="#00a98b" />
         </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-0 from-back -z-1">
-        </div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-180 from-back -z-1">
-        </div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-0 from-back -z-1"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-180 from-back -z-1"></div>
         <ul>
-          {items.map((item, i) => (
+          {whyUsTexts.map((item, i) => (
             <li key={i}>
               <WhyUsItem item={item} i={i} />
             </li>

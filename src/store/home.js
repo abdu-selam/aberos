@@ -82,3 +82,30 @@ export const companyData = [
     location: "Lorem, ipsum dolor.",
   },
 ];
+
+export const whyUsTexts = [
+  {
+    title: "lorem ipsom amet selor dor korem",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+  },
+  {
+    title: "lorem ipsom amet selor dor korem",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+  },
+  {
+    title: "lorem ipsom amet selor dor korem",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+  },
+  {
+    title: "lorem ipsom amet selor dor korem",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+  },
+  {
+    title: "lorem ipsom amet selor dor korem",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+  },
+  {
+    title: "lorem ipsom amet selor dor korem",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+  },
+];
