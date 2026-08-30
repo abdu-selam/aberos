@@ -1,7 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import image from "../../../assets/hero-bg.webp";
-import bgThree from "../../../assets/bg-4.webp";
-import bgFour from "../../../assets/bg-5.webp";
 import {
   motion,
   useMotionValueEvent,
@@ -9,31 +6,10 @@ import {
   useTransform,
 } from "framer-motion";
 import AppleTyping from "../../../components/effects/AppleTyping";
+import { companyData } from "../../../store/home";
 
 const Companies = () => {
-  const companyData = [
-    {
-      title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      image,
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
-      location: "Lorem, ipsum dolor.",
-    },
-    {
-      title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      image: bgThree,
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
-      location: "Lorem, ipsum dolor.",
-    },
-    {
-      title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      image: bgFour,
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
-      location: "Lorem, ipsum dolor.",
-    },
-  ];
+  
   const [height, setHeight] = useState("h-max");
 
   const wrapperRef = useRef();
@@ -66,10 +42,10 @@ const Companies = () => {
         <AppleTyping text="Shaping Growth. Creating Impact." />
       </h2>
       <div ref={wrapperRef} className="relative h-[300vh]">
-        <div className="w-screen overflow-hidden sticky top-30">
+        <div className="w-screen h-screen overflow-hidden sticky top-0">
           <motion.ul
             style={{ x }}
-            className="flex w-max transition duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]"
+            className="flex w-max transition relative top-30 duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]"
           >
             {companyData.map((item, i) => (
               <li
