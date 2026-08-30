@@ -11,28 +11,22 @@ const AppleTyping = ({
   delay = 0,
   margin = "0px 0px 0px 0px",
   animate = false,
+  animation = { y: 0, opacity: 1 },
+  initiate = true,
 }) => {
   return (
     <>
       {text.split(" ").map((item, i) => (
         <motion.span
           key={i}
-          initial={{
-            y: toBottom ? -y : y,
-            opacity: 0,
-          }}
-          whileInView={
-            !animate && {
-              y: 0,
-              opacity: 1,
+          initial={
+            initiate && {
+              y: toBottom ? -y : y,
+              opacity: 0,
             }
           }
-          animate={
-            animate && {
-              y: 0,
-              opacity: 1,
-            }
-          }
+          whileInView={!animate && animation}
+          animate={animate && animation}
           transition={{
             delay: (duration / 3) * i + delay,
             duration,

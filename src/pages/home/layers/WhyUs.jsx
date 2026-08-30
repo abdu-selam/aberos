@@ -4,6 +4,7 @@ import bgTwo from "../../../assets/bg-2.webp";
 import { useRef } from "react";
 import AppleTyping from "../../../components/effects/AppleTyping";
 import WhyUsItem from "../../../components/ui/WhyUsItem";
+import Plasma from "../../../components/effects/Plasma";
 
 const WhyUs = () => {
   const items = [
@@ -92,7 +93,14 @@ const WhyUs = () => {
           />
         </div>
       </div>
-      <div className="px-4 max-w-7xl mx-auto">
+      <div className="px-4 max-w-7xl mx-auto relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full -z-1">
+          <Plasma opacity={0.5} speed={0.3} color="#00a98b" />
+        </div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-0 from-back -z-1">
+        </div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-180 from-back -z-1">
+        </div>
         <ul>
           {items.map((item, i) => (
             <li key={i}>
