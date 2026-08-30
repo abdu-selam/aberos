@@ -71,7 +71,7 @@ export const companyData = [
     image: companyImageOne,
 
     description:
-      "Aberos Mall brings together shopping, convenience, and everyday essentials in one welcoming destination. Designed to serve our community, the mall offers a comfortable and reliable place where visitors can discover quality products, useful services, and a better shopping experience all in one place.",
+      "Aberos Mall brings together shopping, convenience, and everyday essentials in one welcoming destination. Designed to serve our community, the mall offers a comfortable and reliable place.",
 
     location: "Werabe Umer Mosque, Ethiopia.",
   },
@@ -82,7 +82,7 @@ export const companyData = [
     image: companyImageTwo,
 
     description:
-      "Our restaurant creates a warm and enjoyable space where people can share delicious food and meaningful moments. With a focus on quality ingredients, attentive service, and a comfortable atmosphere, we aim to deliver an experience that brings together great taste, hospitality, and everyday comfort.",
+      "Our restaurant creates a warm and enjoyable space where people can share delicious food and meaningful moments. With a focus on quality ingredients, attentive service, and a comfortable atmosphere.",
 
     location: "Werabe Abros Mall, Ethiopia.",
   },
@@ -93,7 +93,7 @@ export const companyData = [
     image: companyImageThree,
 
     description:
-      "Our floor factory produces reliable flooring solutions designed for modern homes, businesses, and larger spaces. Combining quality materials, practical craftsmanship, and careful production standards, we create durable flooring products that deliver lasting performance while supporting beautiful and functional environments.",
+      "Our floor factory produces reliable flooring solutions designed for modern homes, businesses, and larger spaces. Combining quality materials, practical craftsmanship, and careful production standards.",
 
     location: "Wearbe Duket Factory, Ethiopia.",
   },
