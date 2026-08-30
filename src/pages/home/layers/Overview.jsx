@@ -1,10 +1,3 @@
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import image from "../../../assets/hero-bg.webp";
-import bgOne from "../../../assets/bg-2.webp";
-import bgTwo from "../../../assets/bg-3.webp";
-import bgThree from "../../../assets/bg-4.webp";
-import bgFour from "../../../assets/bg-5.webp";
-import MoltenMetal from "../../../components/effects/MoltenMetal";
 import {
   AnimatePresence,
   motion,
@@ -16,28 +9,12 @@ import {
 import { useEffect, useRef, useState } from "react";
 import AppleTyping from "../../../components/effects/AppleTyping";
 import NumberCounter from "../../../components/effects/NumberCounter";
+import { overview, overviewStats as stats } from "../../../store/home";
+import OverviewItem from "../components/OverviewItem";
 
 const Overview = () => {
-  const images = [image, bgOne, bgTwo, bgThree, bgFour];
   const [curr, setCurr] = useState(0);
-  const stats = [
-    {
-      name: "Years of Experience",
-      amount: 12,
-    },
-    {
-      name: "Fulltime Employees",
-      amount: 120,
-    },
-    {
-      name: "Sub Companies",
-      amount: 3,
-    },
-    {
-      name: "Active Clients",
-      amount: 25,
-    },
-  ];
+
   const wrapperRef = useRef();
   const [scrollWidth, setScrollWidth] = useState(0);
 
@@ -60,7 +37,6 @@ const Overview = () => {
     setCurr(index);
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["1vh", "95vh"]);
 
   return (
     <section className="pt-8 relative pb-8">
@@ -84,126 +60,16 @@ const Overview = () => {
           </p>
         </div>
         <ul className="flex items-center justify-center gap-4 min-[60rem]:mx-auto py-4 sticky top-1/4 transform-3d perspective-distant overflow-x-hidden h-max">
-          {images.map((item, i) => {
-            const logicFor2 =
-              curr + 1 === i ||
-              curr - 4 === i ||
-              curr - 1 === i ||
-              (curr === 0 && i === 4);
-
-            const order =
-              curr === i
-                ? {
-                    num: 2,
-                    class: "order-2",
-                  }
-                : curr + 1 === i || (curr === 4 && i === 0)
-                  ? {
-                      num: 3,
-                      class: "order-3",
-                    }
-                  : curr + 2 === i ||
-                      (curr === 3 && i === 0) ||
-                      (curr === 4 && i === 1)
-                    ? {
-                        num: 4,
-                        class: "order-4",
-                      }
-                    : curr - 1 === i || (curr === 0 && i === 4)
-                      ? {
-                          num: 1,
-                          class: "order-1",
-                        }
-                      : {
-                          num: 0,
-                          class: "order-0",
-                        };
-
-            let rotateY = 0;
-            switch (order.num) {
-              case 1:
-                rotateY = -30;
-                break;
-              case 3:
-                rotateY = 30;
-                break;
-              case 0:
-                rotateY = -45;
-                break;
-              case 4:
-                rotateY = 45;
-                break;
-            }
-
-            return (
-              <motion.li
-                ref={i === 0 ? mainItem : null}
-                initial={{
-                  rotateX: 90,
-                }}
-                animate={{
-                  opacity: order.num == 2 ? 1 : logicFor2 ? 0.6 : 0.4,
-                  rotateX: mainVissible ? 0 : 90,
-                }}
-                viewport={{
-                  amount: 0.3,
-                  once: true,
-                  margin: "0% 500% 0% 500%",
-                  root: "0% 500% 0% 500%",
-                }}
-                transition={{
-                  opacity: {
-                    duration: 0.3,
-                  },
-                  rotateX: {
-                    ease: [0.68, -0.55, 0.265, 1.55],
-                    duration: 0.9,
-                  },
-                }}
-                style={{
-                  rotateY,
-                }}
-                key={i}
-                className={`${
-                  curr === i
-                    ? "w-8/10 max-w-110"
-                    : logicFor2
-                      ? "w-6/10 max-w-82.5"
-                      : "w-4/10 max-w-55"
-                } shrink-0 aspect-9/13 
-            overflow-hidden flex items-center backface-hidden justify-center
-            relative ${order.class}
-            `}
-              >
-                <figure className="h-full w-full relative">
-                  <img
-                    className="w-full h-full object-cover"
-                    src={item}
-                    alt=""
-                  />
-
-                  {curr === i && (
-                    <figcaption className="absolute w-full bottom-0 p-4 bg-linear-0 from-back/70 from-60% to-transparent flex flex-col gap-2">
-                      <h3 className="text-lg font-bold font-runalto">
-                        <AppleTyping
-                          text="Lorem ipsum dolor sit amet consectetur."
-                          className="font-runalto"
-                          duration={0.5}
-                          animate
-                        />
-                      </h3>
-                      <p className="text-sm opacity-80">
-                        <AppleTyping
-                          text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis."
-                          animate
-                        />
-                      </p>
-                    </figcaption>
-                  )}
-                </figure>
-              </motion.li>
-            );
-          })}
+          {overview.map((item, i) => (
+            <OverviewItem
+              key={i}
+              item={item}
+              i={i}
+              curr={curr}
+              mainItem={mainItem}
+              mainVissible={mainVissible}
+            />
+          ))}
         </ul>
       </div>
       <h2 className="px-4 sm:text-[1.8rem] min-[30rem]:text-[1.6rem] text-[1.4rem] font-bold text-center *:text-accent *:font-runalto">
