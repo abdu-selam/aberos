@@ -1,41 +1,46 @@
-import overviewImageOne from "../assets/hero-bg.webp";
-import overviewImageTwo from "../assets/bg-2.webp";
-import overviewImageThree from "../assets/bg-3.webp";
-import overviewImageFour from "../assets/bg-4.webp";
-import overviewImageFive from "../assets/bg-5.webp";
-import companyImageOne from "../assets/bg-3.webp";
-import companyImageTwo from "../assets/bg-4.webp";
-import companyImageThree from "../assets/bg-5.webp";
+import overviewImageOne from "../assets/overview-1.webp";
+import overviewImageTwo from "../assets/overview-2.webp";
+import overviewImageThree from "../assets/overview-3.webp";
+import overviewImageFour from "../assets/overview-4.webp";
+import overviewImageFive from "../assets/overview-5.webp";
+
+import companyImageOne from "../assets/mall.webp";
+import companyImageTwo from "../assets/restaurant.webp";
+import companyImageThree from "../assets/factory.webp";
 
 export const overview = [
   {
-    title: "Lorem ipsum dolor sit amet consectetur.",
+    title: "Building stronger businesses through trusted leadership.",
     descrition:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis.",
+      "Aberos PLC brings diverse companies together under one vision, creating sustainable growth, shared value, and opportunities for every generation.",
     image: overviewImageOne,
   },
+
   {
-    title: "Lorem ipsum dolor sit amet consectetur.",
+    title: "One group united by a clear purpose.",
     descrition:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis.",
+      "Our three specialized companies work with independence and strength while sharing the values, direction, and ambition of Aberos PLC.",
     image: overviewImageTwo,
   },
+
   {
-    title: "Lorem ipsum dolor sit amet consectetur.",
+    title: "Creating value across different industries and markets.",
     descrition:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis.",
+      "From strategic investment to everyday operations, our businesses are built to deliver meaningful solutions, quality, and long-term impact.",
     image: overviewImageThree,
   },
+
   {
-    title: "Lorem ipsum dolor sit amet consectetur.",
+    title: "Driven by innovation, excellence, and lasting progress.",
     descrition:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis.",
+      "We combine forward-thinking ideas with practical experience to strengthen our companies, serve communities, and create a better future.",
     image: overviewImageFour,
   },
+
   {
-    title: "Lorem ipsum dolor sit amet consectetur.",
+    title: "Growing together with purpose and responsibility.",
     descrition:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate officia ipsum unde illo consequatur debitis.",
+      "Aberos PLC continues to expand its vision by building successful companies that create value for customers, partners, employees, and society.",
     image: overviewImageFive,
   },
 ];
@@ -61,51 +66,67 @@ export const overviewStats = [
 
 export const companyData = [
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    title: "A modern shopping destination where needs meet quality.",
+
     image: companyImageOne,
+
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
-    location: "Lorem, ipsum dolor.",
+      "Aberos Mall brings together shopping, convenience, and everyday essentials in one welcoming destination. Designed to serve our community, the mall offers a comfortable and reliable place where visitors can discover quality products, useful services, and a better shopping experience all in one place.",
+
+    location: "Werabe Umer Mosque, Ethiopia.",
   },
+
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    title: "A dining where great memorable moments come together.",
+
     image: companyImageTwo,
+
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
-    location: "Lorem, ipsum dolor.",
+      "Our restaurant creates a warm and enjoyable space where people can share delicious food and meaningful moments. With a focus on quality ingredients, attentive service, and a comfortable atmosphere, we aim to deliver an experience that brings together great taste, hospitality, and everyday comfort.",
+
+    location: "Werabe Abros Mall, Ethiopia.",
   },
+
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    title: "Strong, refined flooring solutions built to bring quality.",
+
     image: companyImageThree,
+
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rerum vel nesciunt sequi deserunt assumenda accusamus voluptas qui? Dicta.",
-    location: "Lorem, ipsum dolor.",
+      "Our floor factory produces reliable flooring solutions designed for modern homes, businesses, and larger spaces. Combining quality materials, practical craftsmanship, and careful production standards, we create durable flooring products that deliver lasting performance while supporting beautiful and functional environments.",
+
+    location: "Wearbe Duket Factory, Ethiopia.",
   },
 ];
 
 export const whyUsTexts = [
   {
-    title: "lorem ipsom amet selor dor korem",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+    title: "Built on trust and lasting quality",
+    text: "We are committed to delivering reliable services and quality experiences across every business, building relationships that grow stronger with time.",
   },
+
   {
-    title: "lorem ipsom amet selor dor korem",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+    title: "One group, many possibilities together",
+    text: "Our diverse businesses work under one shared vision, creating greater value while serving different needs within our growing community.",
   },
+
   {
-    title: "lorem ipsom amet selor dor korem",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+    title: "Committed to excellence in every detail",
+    text: "From service and production to customer experience, we focus on maintaining high standards and delivering value people can trust.",
   },
+
   {
-    title: "lorem ipsom amet selor dor korem",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+    title: "Quality solutions designed around people",
+    text: "We understand everyday needs and create practical experiences and products that bring comfort, convenience, and lasting satisfaction to people.",
   },
+
   {
-    title: "lorem ipsom amet selor dor korem",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+    title: "Driven by growth and new opportunities",
+    text: "We continue exploring new possibilities, improving our businesses, and building opportunities that support sustainable growth for the future.",
   },
+
   {
-    title: "lorem ipsom amet selor dor korem",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dignissimos rem ipsum Lorem ipsum dolor sit amet consectetur ?",
+    title: "Experience you can confidently depend on",
+    text: "Through dedication, strong values, and consistent service, we work to become a trusted name people can confidently choose every day.",
   },
 ];

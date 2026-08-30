@@ -37,7 +37,6 @@ const Overview = () => {
     setCurr(index);
   });
 
-
   return (
     <section className="pt-8 relative pb-8">
       <div ref={wrapperRef} className="h-[300dvh]">

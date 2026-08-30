@@ -1,10 +1,9 @@
 import { motion, useInView } from "framer-motion";
-import bgOne from "../../../assets/bg-2.webp";
-import bgTwo from "../../../assets/bg-2.webp";
+import imageOne from "../../../assets/overview-2.webp";
+import imageTwo from "../../../assets/overview-4.webp";
 import { useRef } from "react";
 import AppleTyping from "../../../components/effects/AppleTyping";
 import WhyUsItem from "../../../components/ui/WhyUsItem";
-import Plasma from "../../../components/effects/Plasma";
 import { whyUsTexts } from "../../../store/home";
 
 const WhyUs = () => {
@@ -26,21 +25,21 @@ const WhyUs = () => {
               stiffness: 300,
             }}
             className="absolute top-15 left-15 w-40 aspect-square object-cover object-center rounded-lg"
-            src={bgOne}
+            src={imageOne}
             alt=""
           />
           <h2 className="text-[7vw] max-sm:leading-none sm:text-5xl text-center">
             <div>
               <AppleTyping
                 once={false}
-                text="Lorem ipsum amet."
+                text="More Than a Company"
                 className="font-runalto font-bold text-back"
               />
             </div>
             <div>
               <AppleTyping
                 once={false}
-                text="Lorem ipsum dolor amet."
+                text="One Vision, Three Businesses"
                 className="whitespace-nowrap font-bold text-accent"
               />
             </div>
@@ -63,17 +62,12 @@ const WhyUs = () => {
               stiffness: 300,
             }}
             className="absolute bottom-15 right-15 w-40 aspect-square object-cover object-center rounded-lg"
-            src={bgTwo}
+            src={imageTwo}
             alt=""
           />
         </div>
       </div>
-      <div className="px-4 max-w-7xl mx-auto relative">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full -z-1">
-          <Plasma opacity={0.5} speed={0.3} color="#00a98b" />
-        </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-0 from-back -z-1"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-20 bg-linear-180 from-back -z-1"></div>
+      <div className="px-4 max-w-7xl overflow-hidden mx-auto relative">
         <ul>
           {whyUsTexts.map((item, i) => (
             <li key={i}>

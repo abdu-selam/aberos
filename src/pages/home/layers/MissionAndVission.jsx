@@ -1,20 +1,25 @@
 import { motion, useInView } from "framer-motion";
-import bgOne from "../../../assets/bg-4.webp";
-import bgTwo from "../../../assets/bg-5.webp";
+import mission from "../../../assets/mission.webp";
+import vision from "../../../assets/vission.webp";
 import AppleTyping from "../../../components/effects/AppleTyping";
 import { useRef } from "react";
 
 const MissionAndVission = () => {
   const data = [
     {
-      title: "Lorem ipsum dolor sit amet.",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing",
-      image: bgOne,
+      title: "Our Mission: Creating Everyday Value.",
+
+      text: "Our mission is to create meaningful value through quality products, reliable services, and diverse business solutions. Across our mall, restaurant, and floor factory, we focus on meeting everyday needs, serving our community with care, and building trusted experiences that create lasting satisfaction for everyone.",
+
+      image: mission,
     },
+
     {
-      title: "Lorem ipsum dolor sit amet.",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      image: bgTwo,
+      title: "Our Vision: Growing Beyond Today.",
+
+      text: "Our vision is to become a leading and trusted business group recognized for quality, innovation, and sustainable growth. We aim to continuously strengthen our diverse companies, create new opportunities, and build businesses that positively contribute to our community while creating a stronger future for generations to come.",
+
+      image: vision,
     },
   ];
 
@@ -35,7 +40,7 @@ const MissionAndVission = () => {
                 animate={{
                   opacity: Number(i === 0 ? isInView1 : isInView2),
                 }}
-                className={`h-full md:w-full object-cover ${i === 1 && "md:col-start-2 md:col-end-3 row-span-2"}`}
+                className={`h-full md:w-full object-cover ${i === 1 && "md:col-start-2 md:col-end-3 row-span-2"} grayscale-50`}
                 src={item.image}
                 alt=""
               />

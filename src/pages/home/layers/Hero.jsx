@@ -3,6 +3,7 @@ import heroBg from "../../../assets/hero-bg.webp";
 import Button from "../../../components/ui/Button";
 import { motion } from "framer-motion";
 import AppleTyping from "../../../components/effects/AppleTyping";
+import HeroBack from "../../../components/ui/HeroBack";
 
 const Hero = () => {
   const links = [
@@ -22,20 +23,7 @@ const Hero = () => {
 
   return (
     <div className="relative h-[calc(100dvh-2.8rem)] text-text-dark">
-      <motion.img
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.7,
-        }}
-        src={heroBg}
-        className="absolute -z-1 w-full h-dvh bottom-0 object-cover object-center"
-        alt=""
-      />
+      <HeroBack />
       <div className="absolute -z-1 w-full h-dvh bottom-0 left-0 bg-linear-135 from-black/80 to-black/50"></div>
       <section className="p-4 flex flex-col h-full justify-between max-w-max-width mx-auto">
         <p className="max-w-60 text-sm">

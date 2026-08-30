@@ -9,7 +9,6 @@ import AppleTyping from "../../../components/effects/AppleTyping";
 import { companyData } from "../../../store/home";
 
 const Companies = () => {
-  
   const [height, setHeight] = useState("h-max");
 
   const wrapperRef = useRef();
@@ -42,7 +41,12 @@ const Companies = () => {
         <AppleTyping text="Shaping Growth. Creating Impact." />
       </h2>
       <div ref={wrapperRef} className="relative h-[300vh]">
-        <div className="w-screen h-screen overflow-hidden sticky top-0">
+        <div
+          style={{
+            width: window.scrollWidth,
+          }}
+          className="h-screen overflow-hidden sticky top-0"
+        >
           <motion.ul
             style={{ x }}
             className="flex w-max transition relative top-30 duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]"
@@ -78,12 +82,14 @@ const Companies = () => {
                     />
                     <motion.figcaption
                       initial={{
-                        y: "20%",
+                        y: 20,
+                        opacity: 0,
                       }}
                       whileInView={{
                         y: 0,
+                        opacity: 1,
                       }}
-                      className="absolute bottom-2 left-5 mix-blend-difference"
+                      className="absolute -bottom-1 1left-1 pl-5 py-2 pr-2 rounded-tr-2xl bg-text text-back text-xs max-w-7/10"
                     >
                       {item.location}
                     </motion.figcaption>

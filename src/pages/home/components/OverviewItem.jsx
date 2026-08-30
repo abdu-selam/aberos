@@ -91,7 +91,7 @@ const OverviewItem = ({ curr, i, mainItem, mainVissible, item }) => {
             `}
     >
       <figure className="h-full w-full relative">
-        <img className="w-full h-full object-cover" src={item.image} alt="" />
+        <img className="w-full h-full object-cover grayscale-100" src={item.image} alt="" />
 
         {curr === i && (
           <figcaption className="absolute w-full bottom-0 p-4 bg-linear-0 from-back/70 from-60% to-transparent flex flex-col gap-2">
