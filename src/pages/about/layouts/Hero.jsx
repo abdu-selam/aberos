@@ -4,10 +4,10 @@ const Hero = () => {
   return (
     <>
       <div className="absolute h-screen w-screen bg-text left-0 top-0 -z-1"></div>
-      <p className="max-lg:hidden text-back absolute right-[-6vw] top-[-5vw] text-[20vw] xl:right-[-4.8rem] xl:-top-16 xl:text-[16rem] leading-none font-runalto font-bold z-11">
-        ABEROS
-      </p>
-      <section className="min-h-screen overflow-hidden relative bg-text">
+      <section className="h-[calc(100vh-2.75rem)] relative bg-text">
+        <p className="max-lg:hidden text-back absolute right-[-6vw] top-[-5vw] text-[20vw] xl:right-[-4.8rem] xl:-top-16 xl:text-[12rem] leading-none font-runalto font-bold z-1">
+          ABEROS
+        </p>
         <ul className="absolute w-full max-w-150 aspect-square left-1/2 top-1/2 -translate-1/2">
           {[1, 2].map((item) => (
             <li
@@ -28,21 +28,9 @@ const Hero = () => {
             businesses we continue to build.
           </p>
         </div>
-        <p className="text-back absolute lg:left-[-6vw] bottom-[-5vw] text-[20vw] xl:left-[-4.8rem] xl:-bottom-16 xl:text-[16rem] leading-none font-runalto font-bold max-lg:left-1/2 max-lg:-translate-x-1/2">
+        <p className="text-back absolute lg:left-[-6vw] bottom-[-2vh] text-[20vw] xl:left-[-4.8rem] lg:bottom-[-8vh] xl:-bottom-12 xl:text-[12rem] leading-none font-runalto font-bold max-lg:left-1/2 max-lg:-translate-x-1/2">
           ABEROS
         </p>
-        {/* 
-      1. top text
-      2. center
-        1. circles
-            1. the top
-            2. the bottom
-        2. texts
-            1. top text
-            2. center tex
-            3. last text
-      3. bottom text
-      */}
       </section>
     </>
   );
