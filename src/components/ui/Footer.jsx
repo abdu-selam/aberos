@@ -1,6 +1,7 @@
 import GhostFibers from "../effects/GhostFibers";
 import AppleTyping from "../effects/AppleTyping";
 import { motion } from "framer-motion";
+import StrokeName from "../effects/StrokeName";
 
 const Footer = () => {
   const links = [
@@ -70,9 +71,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="text-[23vw] md:text-[11.4rem] leading-none text-transparent [-webkit-text-stroke:2px_var(--color-accent)] font-runalto text-end">
-            ABEROS
-          </div>
+          <StrokeName className="text-end" />
         </section>
       </div>
       <div className="mt-8 h-0.5 w-[100%-1rem] -translate-x-4 bg-text/40"></div>
