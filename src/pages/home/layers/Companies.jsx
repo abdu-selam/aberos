@@ -57,7 +57,7 @@ const Companies = () => {
                 key={i}
               >
                 <div className="w-full max-w-5xl mx-auto relative p-4">
-                  <h3 className="text-xl min-[25rem]:text-2xl sm:text-4xl w-7/10 max-w-100 absolute z-1 -top-10">
+                  <h3 className="text-xl min-[25rem]:text-2xl sm:text-4xl w-7/10 max-w-100 absolute z-1 -top-10 bg-text">
                     <AppleTyping
                       className="text-back font-runalto"
                       text={item.title}
