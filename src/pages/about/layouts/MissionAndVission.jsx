@@ -12,14 +12,14 @@ const MissionAndVission = () => {
           What Drives Us Forward
         </h3>
       </div>
-      <ul className="flex flex-col gap-12">
+      <ul className="flex flex-col gap-12 max-w-240 mx-auto">
         {missionAndVission.map((item, i) => (
-          <li key={i}>
-            <div className="pb-6">
-              <h4 className="text-back font-runalto font-bold text-lg text-center">
+          <li className="relative" key={i}>
+            <div className="pb-6 sm:absolute w-full h-full bg-back/50 rounded-2xl sm:p-4">
+              <h4 className="text-back font-runalto sm:text-text font-bold text-lg text-center">
                 {item.title}
               </h4>
-              <p className="text-back text-sm text-center">
+              <p className="text-back text-sm sm:text-text text-center max-w-180 mx-auto">
                 {item.description}
               </p>
             </div>
