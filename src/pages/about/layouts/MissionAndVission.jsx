@@ -3,8 +3,8 @@ import { missionAndVission } from "../../../store/about";
 
 const MissionAndVission = () => {
   return (
-    <section className="bg-text pt-12">
-      <div className="px-4 pb-6">
+    <section className="bg-text py-12 px-4">
+      <div className="pb-6">
         <h2 className="text-center text-back leading-none pb-1.5">
           Purpose and Direction
         </h2>
@@ -12,21 +12,32 @@ const MissionAndVission = () => {
           What Drives Us Forward
         </h3>
       </div>
-      <ul>
+      <ul className="flex flex-col gap-12">
         {missionAndVission.map((item, i) => (
           <li key={i}>
-            <h4>{item.title}</h4>
-            <p>{item.description}</p>
+            <div className="pb-6">
+              <h4 className="text-back font-runalto font-bold text-lg text-center">
+                {item.title}
+              </h4>
+              <p className="text-back text-sm text-center">
+                {item.description}
+              </p>
+            </div>
             <img
+              className="w-full aspect-3/2 rounded-2xl"
               src={item.image}
               alt={`Image of ${item.title} in the mission and vission section`}
             />
           </li>
         ))}
       </ul>
-      <div>
-        <p>Discover the companies that make up Aberos, explore what they do.</p>
-        <Link>Our companies</Link>
+      <div className="flex flex-col items-center pt-12">
+        <p className="text-back text-center text-sm">
+          Discover the companies that make up Aberos, explore what they do.
+        </p>
+        <Link className="text-accent text-center font-runalto font-bold text-lg">
+          Our companies
+        </Link>
       </div>
     </section>
   );
