@@ -5,47 +5,54 @@ import StoryItem from "../components/StoryItem";
 
 const Story = () => {
   return (
-    <section className="bg-back pt-12 flex flex-col min-h-screen sticky top-0 md:justify-between max-w-360 mx-auto overflow-hidden">
-      <div className="px-4 pb-6">
-        <h2 className="text-center leading-none pb-1.5">Our Journey</h2>
-        <h3 className="text-[min(7.5vw,2.2rem)] font-runalto font-semibold leading-none text-center">
-          Journey of Growth,
-        </h3>
-      </div>
-      <p className="text-center text-sm max-w-150 mx-auto px-4 pb-12 md:hidden">
-        Every organization has a beginning, but what defines its story is
-        everything built along the way. Aberos has grown through a continuous
-        journey of ambition, dedication, learning, and opportunity.
-      </p>
-      <div className="flex md:flex-col gap-4 px-4 h-max justify-center pb-12">
-        <div className="w-0.5 md:w-full min-h-full md:h-0.5 bg-text"></div>
-        <ul className="flex max-md:flex-col gap-10 md:-translate-y-6">
-          {history.map((item, i) => (
-            <StoryItem key={i} item={item} />
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3 className="text-lg font-runalto md:order-1 font-semibold leading-none text-center pb-4">
-          From Our First Steps We Continue to Build Together
-        </h3>
-        <div className="relative w-full aspect-8/5 max-w-200 mx-auto overflow-hidden md:order-3">
-          <p className="text-center text-sm w-150 absolute max-md:hidden left-1/2 -translate-x-1/2 z-2">
-            Every organization has a beginning, but what defines its story is
-            everything built along the way. Aberos has grown through a
-            continuous journey of ambition, dedication, learning, and
-            opportunity.
-          </p>
-          <img
-            className="w-full aspect-8/5 bottom-0 absolute z-0"
-            src={image}
-            alt=""
-          />
-          <div className="absolute w-full h-full left-0 top-0 bg-back/50"></div>
-          <StrokeName className="text-center left-1/2 -translate-x-1/2 z-15 absolute bottom-[-7.57vw] md:-bottom-15" />
+    <div
+      style={{
+        "--height": `${history.length * 50}vh`,
+      }}
+      className="history-height"
+    >
+      <section className="bg-back pt-12 flex flex-col min-h-screen sticky top-0 md:justify-between max-w-360 mx-auto overflow-hidden">
+        <div className="px-4 pb-6">
+          <h2 className="text-center leading-none pb-1.5">Our Journey</h2>
+          <h3 className="text-[min(7.5vw,2.2rem)] font-runalto font-semibold leading-none text-center">
+            Journey of Growth,
+          </h3>
         </div>
-      </div>
-    </section>
+        <p className="text-center text-sm max-w-150 mx-auto px-4 pb-12 md:hidden">
+          Every organization has a beginning, but what defines its story is
+          everything built along the way. Aberos has grown through a continuous
+          journey of ambition, dedication, learning, and opportunity.
+        </p>
+        <div className="flex md:flex-col gap-4 h-max justify-center overflow-hidden w-[calc(100%-2rem)] mx-auto pt-4 pb-12">
+          <div className="w-0.5  md:w-full min-h-full md:h-0.5 bg-text"></div>
+          <ul className="flex max-md:flex-col gap-10 md:-translate-y-6">
+            {history.map((item, i) => (
+              <StoryItem key={i} item={item} />
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-lg font-runalto md:order-1 font-semibold leading-none text-center pb-4">
+            From Our First Steps We Continue to Build Together
+          </h3>
+          <div className="relative w-full aspect-8/5 max-w-200 mx-auto overflow-hidden md:order-3">
+            <p className="text-center text-sm w-150 absolute max-md:hidden left-1/2 -translate-x-1/2 z-2">
+              Every organization has a beginning, but what defines its story is
+              everything built along the way. Aberos has grown through a
+              continuous journey of ambition, dedication, learning, and
+              opportunity.
+            </p>
+            <img
+              className="w-full aspect-8/5 bottom-0 absolute z-0"
+              src={image}
+              alt=""
+            />
+            <div className="absolute w-full h-full left-0 top-0 bg-back/50"></div>
+            <StrokeName className="text-center left-1/2 -translate-x-1/2 z-15 absolute bottom-[-7.57vw] md:-bottom-15" />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

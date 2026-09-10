@@ -55,6 +55,14 @@
   .scroll-hidden::-webkit-scrollbar {
     display: none;
   }
+
+  .history-height {
+    height: max-content;
+
+    @media (width >= 48rem) {
+      height: var(--height);
+    }
+  }
 }
 
 @layer utilities {

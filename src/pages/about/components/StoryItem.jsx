@@ -2,7 +2,7 @@ import React from "react";
 
 const StoryItem = ({ item }) => {
   return (
-    <li className="max-w-80 max-md:w-80 shrink-0">
+    <li className="max-w-80 w-full max-md:w- shrink-0">
       <div className="flex flex-col md:items-center gap-4">
         <div className="flex md:flex-col gap-4 items-center max-md:-translate-x-6">
           <div className="w-3.5 h-3.5 rotate-45 bg-accent"></div>
