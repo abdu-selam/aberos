@@ -1,17 +1,29 @@
+import { useRef } from "react";
 import image from "../../../assets/about/overview-1lg.webp";
 import StrokeName from "../../../components/effects/StrokeName";
 import { history } from "../../../store/about";
 import StoryItem from "../components/StoryItem";
+import { motion, useScroll, useTransform } from "framer-motion";
+import HistoryWrapper from "../components/HistoryWrapper";
 
 const Story = () => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-90%"]);
+
   return (
     <div
+      ref={ref}
       style={{
         "--height": `${history.length * 50}vh`,
       }}
       className="history-height"
     >
-      <section className="bg-back pt-12 flex flex-col min-h-screen sticky top-0 md:justify-between max-w-360 mx-auto overflow-hidden">
+      <section className="bg-back pt-12 flex flex-col min-h-screen md:sticky md:top-0 md:justify-between max-w-360 mx-auto overflow-hidden">
         <div className="px-4 pb-6">
           <h2 className="text-center leading-none pb-1.5">Our Journey</h2>
           <h3 className="text-[min(7.5vw,2.2rem)] font-runalto font-semibold leading-none text-center">
@@ -25,11 +37,11 @@ const Story = () => {
         </p>
         <div className="flex md:flex-col gap-4 h-max justify-center overflow-hidden w-[calc(100%-2rem)] mx-auto pt-4 pb-12">
           <div className="w-0.5  md:w-full min-h-full md:h-0.5 bg-text"></div>
-          <ul className="flex max-md:flex-col gap-10 md:-translate-y-6">
+          <HistoryWrapper x={x}>
             {history.map((item, i) => (
               <StoryItem key={i} item={item} />
             ))}
-          </ul>
+          </HistoryWrapper>
         </div>
         <div>
           <h3 className="text-lg font-runalto md:order-1 font-semibold leading-none text-center pb-4">
