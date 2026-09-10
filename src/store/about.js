@@ -115,3 +115,18 @@ export const history = [
       "With years of experience behind us, Aberos continues moving forward with renewed ambition, new opportunities, and a clear vision for the future.",
   },
 ];
+
+export const missionAndVission = [
+  {
+    title: "Our Mission",
+    description:
+      "Our mission is to build and develop businesses that create meaningful value for our customers, partners, people, and communities. We are committed to pursuing opportunities with integrity, delivering lasting value, and continuously improving the way we grow and operate.",
+    image: overviewImg1,
+  },
+  {
+    title: "Our Vission",
+    description:
+      "Our vision is to grow Aberos into a respected and diversified organization known for its impact, innovation, and commitment to excellence. We aspire to build a future where our businesses continue to grow, create opportunities, and contribute to lasting economic and social progress.",
+    image: overviewImg2,
+  },
+];
