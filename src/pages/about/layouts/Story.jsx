@@ -1,10 +1,11 @@
 import image from "../../../assets/about/overview-1lg.webp";
 import StrokeName from "../../../components/effects/StrokeName";
 import { history } from "../../../store/about";
+import StoryItem from "../components/StoryItem";
 
 const Story = () => {
   return (
-    <section className="bg-back pt-12 flex flex-col min-h-screen md:justify-between max-w-360 mx-auto overflow-hidden">
+    <section className="bg-back pt-12 flex flex-col min-h-screen sticky top-0 md:justify-between max-w-360 mx-auto overflow-hidden">
       <div className="px-4 pb-6">
         <h2 className="text-center leading-none pb-1.5">Our Journey</h2>
         <h3 className="text-[min(7.5vw,2.2rem)] font-runalto font-semibold leading-none text-center">
@@ -20,24 +21,7 @@ const Story = () => {
         <div className="w-0.5 md:w-full min-h-full md:h-0.5 bg-text"></div>
         <ul className="flex max-md:flex-col gap-10 md:-translate-y-6">
           {history.map((item, i) => (
-            <li className="max-w-80 max-md:w-80 shrink-0" key={i}>
-              <div className="flex flex-col md:items-center gap-4">
-                <div className="flex md:flex-col gap-4 items-center max-md:-translate-x-6">
-                  <div className="w-3.5 h-3.5 rotate-45 bg-accent"></div>
-                  <p className="bg-text text-back w-max text-xs p-1 px-2">
-                    {item.date}
-                  </p>
-                </div>
-                <div className="flex flex-col md:items-center gap-2">
-                  <h4 className="text-lg font-runalto leading-none font-bold md:text-center">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm md:text-center opacity-90">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            </li>
+            <StoryItem key={i} item={item} />
           ))}
         </ul>
       </div>
