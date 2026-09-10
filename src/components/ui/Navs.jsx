@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Navs = ({ animate = false }) => {
+const Navs = ({ animate = false, closer = () => {} }) => {
   const navs = [
     {
       text: "Home",
@@ -41,6 +41,7 @@ const Navs = ({ animate = false }) => {
           key={i}
         >
           <Link
+            onClick={closer}
             className="nav-less-item hover:text-accent text-text transition duration-300"
             to={item.link}
           >

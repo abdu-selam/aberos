@@ -23,7 +23,10 @@ const Header = () => {
 
   return (
     <>
-      <Link className="pl-4 absolute p-2 w-max z-10 mix-blend-difference" to="/">
+      <Link
+        className="pl-4 absolute p-2 w-max z-10 mix-blend-difference"
+        to="/"
+      >
         <Logo />
       </Link>
       <motion.header
@@ -36,7 +39,7 @@ const Header = () => {
           opacity: 1,
         }}
         transition={{
-          ease: "backInOut"
+          ease: "backInOut",
         }}
         className="sm:bg-back/30 z-10 sticky top-2 sm:backdrop-blur-md w-full px-2 sm:px-6 py-2 mx-auto rounded-lg flex justify-end sm:justify-between items-center sm:border border-text/20 sm:w-max"
       >
@@ -84,7 +87,7 @@ const Header = () => {
               </span>
             </div>
             <div className="w-full">
-              <Navs />
+              <Navs closer={() => setMenu(false)} />
             </div>
           </motion.nav>
         )}
