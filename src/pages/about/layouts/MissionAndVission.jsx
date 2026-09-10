@@ -14,8 +14,8 @@ const MissionAndVission = () => {
       </div>
       <ul className="flex flex-col gap-12 max-w-240 mx-auto">
         {missionAndVission.map((item, i) => (
-          <li className="relative" key={i}>
-            <div className="pb-6 sm:absolute w-full h-full bg-back/50 rounded-2xl sm:p-4">
+          <li className="relative group" key={i}>
+            <div className="pb-6 sm:absolute w-full h-full sm:bg-back/50 rounded-2xl sm:p-4 sm:z-1">
               <h4 className="text-back font-runalto sm:text-text font-bold text-lg text-center">
                 {item.title}
               </h4>
@@ -23,11 +23,13 @@ const MissionAndVission = () => {
                 {item.description}
               </p>
             </div>
-            <img
-              className="w-full aspect-3/2 rounded-2xl"
-              src={item.image}
-              alt={`Image of ${item.title} in the mission and vission section`}
-            />
+            <div className="w-full aspect-3/2 rounded-2xl overflow-hidden">
+              <img
+                className="w-full h-full hover:scale-105 sm:group-hover:scale-105 transition"
+                src={item.image}
+                alt={`Image of ${item.title} in the mission and vission section`}
+              />
+            </div>
           </li>
         ))}
       </ul>
@@ -35,7 +37,7 @@ const MissionAndVission = () => {
         <p className="text-back text-center text-sm">
           Discover the companies that make up Aberos, explore what they do.
         </p>
-        <Link className="text-accent text-center font-runalto font-bold text-lg">
+        <Link to="/companies" className="text-accent text-center font-runalto font-bold text-lg hover:scale-105 transition">
           Our companies
         </Link>
       </div>

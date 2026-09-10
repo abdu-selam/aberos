@@ -47,18 +47,20 @@ const Story = () => {
           <h3 className="text-lg font-runalto md:order-1 font-semibold leading-none text-center pb-4">
             From Our First Steps We Continue to Build Together
           </h3>
-          <div className="relative w-full aspect-8/5 max-w-200 mx-auto overflow-hidden md:order-3">
+          <div className="relative group w-full aspect-8/5 max-w-200 mx-auto overflow-hidden md:order-3">
             <p className="text-center text-sm w-150 absolute max-md:hidden left-1/2 -translate-x-1/2 z-2">
               Every organization has a beginning, but what defines its story is
               everything built along the way. Aberos has grown through a
               continuous journey of ambition, dedication, learning, and
               opportunity.
             </p>
-            <img
-              className="w-full aspect-8/5 bottom-0 absolute z-0"
-              src={image}
-              alt=""
-            />
+            <div className="w-full aspect-8/5 bottom-0 absolute z-0 overflow-hidden">
+              <img
+                className="w-full h-full group-hover:scale-105 transition"
+                src={image}
+                alt=""
+              />
+            </div>
             <div className="absolute w-full h-full left-0 top-0 bg-back/50"></div>
             <StrokeName className="text-center left-1/2 -translate-x-1/2 z-15 absolute bottom-[-7.57vw] md:-bottom-15" />
           </div>
