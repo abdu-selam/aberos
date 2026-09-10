@@ -3,14 +3,26 @@ import image from "../../../assets/about/overview-1lg.webp";
 import StrokeName from "../../../components/effects/StrokeName";
 import { history } from "../../../store/about";
 import StoryItem from "../components/StoryItem";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import HistoryWrapper from "../components/HistoryWrapper";
 
 const Story = () => {
   const ref = useRef(null);
+  const spanRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (!spanRef.current) return;
+
+    spanRef.current.textContent = (latest * 100).toFixed(1);
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-90%"]);
@@ -19,7 +31,7 @@ const Story = () => {
     <div
       ref={ref}
       style={{
-        "--height": `${history.length * 50}vh`,
+        "--height": `${history.length * 30}vh`,
       }}
       className="history-height"
     >
@@ -42,6 +54,9 @@ const Story = () => {
               <StoryItem key={i} item={item} />
             ))}
           </HistoryWrapper>
+          <div className="text-center font-bold max-md:hidden">
+            [Scroll - <span ref={spanRef}>0</span>%]
+          </div>
         </div>
         <div>
           <h3 className="text-lg font-runalto md:order-1 font-semibold leading-none text-center pb-4">
