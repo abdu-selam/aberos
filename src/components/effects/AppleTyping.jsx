@@ -13,6 +13,7 @@ const AppleTyping = ({
   animate = false,
   animation = { y: 0, opacity: 1 },
   initiate = true,
+  sep = true,
 }) => {
   return (
     <>
@@ -38,7 +39,8 @@ const AppleTyping = ({
           }}
           className={`${className} inline-block`}
         >
-          {item}&nbsp;
+          {item}
+          {sep && <>&nbsp;</>}
         </motion.span>
       ))}
     </>
