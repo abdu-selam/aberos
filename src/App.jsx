@@ -5,6 +5,7 @@ import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 import About from "./pages/about/About";
 import Companies from "./pages/companies/Companies";
+import Contact from "./pages/contact/Contact";
 
 const App = () => {
   const location = useLocation();
@@ -23,8 +24,9 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/companies" element={<Companies />} />
+        <Route path="/contact" element={<Contact  />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
