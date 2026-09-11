@@ -7,11 +7,11 @@ const Footer = () => {
   const links = [
     {
       text: "Tiktok",
-      link: "#",
+      link: "https://www.tiktok.com/@abdu.dev",
     },
     {
       text: "Linkedin",
-      link: "#",
+      link: "https://www.linkedin.com/authwall?trkInfo=AQHg1NOjoN-5xgAAAaA0QHZ4d82OopbZT66C8sQLpbn3yo7nA5GU6gfX84PeNHdlvjtAjWslb-E1dccbZUGNe2GJJ8XYsOB3xSTrPiQ7s_8XI1ZHiyztAdDmzhjW5OT6pJ-n3D0=&original_referer=https://talentflow.ct.ws/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fabduselam-awel-b74083385",
     },
     {
       text: "Instagram",

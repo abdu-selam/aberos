@@ -1,6 +1,32 @@
 import React from "react";
 
 const ContactInfo = () => {
+  const links = [
+    {
+      name: "Telegram",
+      link: "https://t.me/abdu_dev_tg",
+    },
+    {
+      name: "TikTok",
+      link: "https://tiktok.com/@abdu.dev",
+    },
+    {
+      name: "YouTube",
+      link: "https://youtube.com/@abdu_dev_yt",
+    },
+  ];
+
+  const phoneNumber = [
+    {
+      link: "+251900000000",
+      name: "(+251)9 00 000 000",
+    },
+    {
+      link: "+251900000000",
+      name: "(+251)9 00 000 000",
+    },
+  ];
+
   return (
     <section className="grid place-content-center">
       <div className="flex flex-col items-center lg:items-start gap-4">
@@ -39,27 +65,27 @@ const ContactInfo = () => {
           ))}
         </div>
         <div>
-          {["+2516837927", "+928480928049"].map((item, i) => (
+          {phoneNumber.map((item, i) => (
             <p className="text-center lg:text-start" key={i}>
               <a
                 className="text-back transition duration-300 hover:text-accent"
-                href={`tel:${item}`}
+                href={`tel:${item.link}`}
               >
-                {item}
+                {item.name}
               </a>
             </p>
           ))}
         </div>
         <ul className="flex gap-4">
-          {["Telegram", "Tiktok", "Facebook"].map((item, i) => (
+          {links.map((item, i) => (
             <li key={i}>
               <a
                 className="text-text bg-accent px-4 py-2 font-semibold inline-block transition duration-300 hover:bg-back"
-                href={item}
+                href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {item}
+                {item.name}
               </a>
             </li>
           ))}

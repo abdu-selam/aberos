@@ -4,22 +4,24 @@ import Button from "../../../components/ui/Button";
 import { motion } from "framer-motion";
 import AppleTyping from "../../../components/effects/AppleTyping";
 import HeroBack from "../../../components/ui/HeroBack";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const links = [
     {
       icon: FaTiktok,
-      link: "#",
+      link: "https://tiktok.com/@abdu.dev",
     },
     {
       icon: FaLinkedin,
-      link: "#",
+      link: "https://www.linkedin.com/authwall?trkInfo=AQHg1NOjoN-5xgAAAaA0QHZ4d82OopbZT66C8sQLpbn3yo7nA5GU6gfX84PeNHdlvjtAjWslb-E1dccbZUGNe2GJJ8XYsOB3xSTrPiQ7s_8XI1ZHiyztAdDmzhjW5OT6pJ-n3D0=&original_referer=https://talentflow.ct.ws/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fabduselam-awel-b74083385",
     },
     {
       icon: FaInstagram,
       link: "#",
     },
   ];
+  const navigate = useNavigate();
 
   return (
     <div className="relative h-[calc(100dvh-2.8rem)] text-text-dark">
@@ -62,6 +64,7 @@ const Hero = () => {
               type: "spring",
               stiffness: 100,
             }}
+            onClick={() => navigate("/companies")}
           >
             Our Companies
           </Button>
