@@ -10,7 +10,7 @@ const Contact = () => {
       <p className="max-lg:hidden *:text-back absolute right-[-4.8rem] -top-16 text-[12rem] leading-none *:font-runalto font-bold z-1">
         <AppleTyping toBottom sep={false} text="A B E R O S" />
       </p>
-      <section className="h-full grid lg:gap-4 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1">
+      <section className="h-full max-w-5xl grid lg:gap-4 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 mx-auto">
         <ContactInfo />
         <ContactForm />
       </section>
