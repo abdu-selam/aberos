@@ -6,7 +6,7 @@ import { FaX } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Header = () => {
+const Header = ({ fixed = false }) => {
   const [menu, setMenu] = useState(false);
 
   useEffect(() => {
@@ -41,7 +41,10 @@ const Header = () => {
         transition={{
           ease: "backInOut",
         }}
-        className="sm:bg-back/30 z-10 sticky top-2 sm:backdrop-blur-md w-full px-2 sm:px-6 py-2 mx-auto rounded-lg flex justify-end sm:justify-between items-center sm:border border-text/20 sm:w-max"
+        style={{
+          position: fixed ? "fixed" : "sticky",
+        }}
+        className={`sm:bg-back z-10 top-2 ${fixed && "left-1/2 -translate-x-1/2"} sm:backdrop-blur-md w-full px-2 sm:px-6 py-2 mx-auto rounded-lg flex justify-end sm:justify-between items-center sm:border border-text/20 sm:w-max`}
       >
         <nav className="max-sm:hidden">
           <Navs animate />

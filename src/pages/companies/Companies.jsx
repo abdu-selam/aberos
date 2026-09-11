@@ -3,10 +3,12 @@ import Hero from "./layouts/Hero";
 import { companies } from "../../store/companies";
 import Company from "./layouts/Company";
 import Footer from "../../components/ui/Footer";
+import Header from "../../components/ui/Header";
 
 const Companies = () => {
   return (
     <>
+      <Header />
       <main>
         <Hero />
 

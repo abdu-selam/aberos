@@ -4,10 +4,12 @@ import Overview from "./layouts/Overview";
 import Story from "./layouts/Story";
 import MissionAndVission from "./layouts/MissionAndVission";
 import Footer from "../../components/ui/Footer";
+import Header from "../../components/ui/Header";
 
 const About = () => {
   return (
     <>
+      <Header />
       <main>
         <Hero />
         <Overview />
