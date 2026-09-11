@@ -18,6 +18,12 @@
     @apply bg-text text-back;
   }
 
+  .bg-text {
+    ::selection {
+      @apply bg-back text-text;
+    }
+  }
+
   * {
     @apply text-text font-poppins;
   }
