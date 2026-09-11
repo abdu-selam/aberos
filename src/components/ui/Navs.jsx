@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navs = ({ animate = false, closer = () => {} }) => {
   const navs = [
@@ -20,6 +20,7 @@ const Navs = ({ animate = false, closer = () => {} }) => {
       link: "/contact",
     },
   ];
+  const location = useLocation();
 
   return (
     <ul className="flex max-sm:flex-col max-sm:w-full gap-2 sm:gap-8">
@@ -41,7 +42,16 @@ const Navs = ({ animate = false, closer = () => {} }) => {
           key={i}
         >
           <Link
-            onClick={closer}
+            onClick={() => {
+              closer;
+
+              if (location.pathname.trim() === item.link) {
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }
+            }}
             className="nav-less-item hover:text-accent text-text transition duration-300"
             to={item.link}
           >
