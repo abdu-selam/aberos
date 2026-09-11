@@ -12,12 +12,6 @@ const About = () => {
         <Overview />
         <Story />
         <MissionAndVission />
-        {/* 
-        1. Hero section * 
-        2. overview *
-        3. history section *
-        4. vission section
-        */}
       </main>
     </>
   );

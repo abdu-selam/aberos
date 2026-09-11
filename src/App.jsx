@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 import About from "./pages/about/About";
+import Companies from "./pages/companies/Companies";
 
 const App = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/companies" element={<Companies />} />
       </Routes>
       <Footer />
     </>
