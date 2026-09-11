@@ -3,6 +3,7 @@ import Hero from "./layouts/Hero";
 import Overview from "./layouts/Overview";
 import Story from "./layouts/Story";
 import MissionAndVission from "./layouts/MissionAndVission";
+import Footer from "../../components/ui/Footer";
 
 const About = () => {
   return (
@@ -13,6 +14,7 @@ const About = () => {
         <Story />
         <MissionAndVission />
       </main>
+      <Footer />
     </>
   );
 };

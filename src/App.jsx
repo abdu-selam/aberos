@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Header from "./components/ui/Header";
-import Footer from "./components/ui/Footer";
 import About from "./pages/about/About";
 import Companies from "./pages/companies/Companies";
 import Contact from "./pages/contact/Contact";
@@ -26,7 +25,6 @@ const App = () => {
         <Route path="/companies" element={<Companies />} />
         <Route path="/contact" element={<Contact  />} />
       </Routes>
-      {/* <Footer /> */}
     </>
   );
 };

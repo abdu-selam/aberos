@@ -4,6 +4,7 @@ import Overview from "./layers/Overview";
 import Companies from "./layers/Companies";
 import WhyUs from "./layers/WhyUs";
 import MissionAndVission from "./layers/MissionAndVission";
+import Footer from "../../components/ui/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <MissionAndVission />
         {/* cta */}
       </main>
+      <Footer />
     </>
   );
 };
