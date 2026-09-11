@@ -64,11 +64,21 @@ const Hero = () => {
           ))}
         </ul>
       </div>
-      <ul>
-        <li></li>
+      <ul className="">
+        {[0, 1].map((item, i) => (
+          <li
+            className={`w-screen max-w-150 aspect-square absolute bottom-0 right-0 translate-1/2 rounded-full shadow-[0_0_0.8rem] shadow-back/15 ${i === 1 && "scale-75"}`}
+            key={i}
+          ></li>
+        ))}
       </ul>
-      <ul>
-        <li></li>
+      <ul className="">
+        {[0, 1].map((item, i) => (
+          <li
+            className={`w-[85vw] max-w-127.5 lg:max-w-100 aspect-square absolute top-[-2.8rem] lg:top-full left-0 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[0_0_0.8rem] shadow-back/15 ${i === 1 && "scale-75"}`}
+            key={i}
+          ></li>
+        ))}
       </ul>
       {/* 
       1. title
