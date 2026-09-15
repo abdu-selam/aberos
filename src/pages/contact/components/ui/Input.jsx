@@ -23,7 +23,7 @@ const Input = ({
             name={name}
             id={id}
             {...props}
-          />
+          ></textarea>
         ) : (
           <input
             className="bg-accent/70 w-full focus:outline-none text-back  transition px-3 py-2"

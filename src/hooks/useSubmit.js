@@ -7,6 +7,11 @@ export const useSubmit = (ref) => {
     type: "",
     message: "",
   });
+  const [alert, setAlert] = useState({
+    open: false,
+    status: false,
+    message: "",
+  });
   let timeout = null;
 
   const nextInputFunc = (el) => {
@@ -29,9 +34,14 @@ export const useSubmit = (ref) => {
     };
 
     const res = await fetcher(data);
+    setAlert({
+      open: true,
+      status: res.status,
+      message: res.message,
+    });
   };
 
-  return { submit, tooltip, nextInput: nextInputFunc };
+  return { submit, tooltip, nextInput: nextInputFunc, alert, setAlert };
 };
 
 const fetcher = async (data) => {

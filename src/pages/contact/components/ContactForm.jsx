@@ -3,13 +3,26 @@ import Tooltip from "../../../components/features/Tooltip";
 import Input from "./ui/Input";
 import { useRef } from "react";
 import { useSubmit } from "../../../hooks/useSubmit";
+import Alert from "../../../components/features/Alert";
 
 const ContactForm = () => {
   const formRef = useRef(null);
-  const { submit, tooltip, nextInput } = useSubmit(formRef);
+  const { submit, tooltip, nextInput, alert, setAlert } = useSubmit(formRef);
 
   return (
     <div className="flex justify-center items-center px-4">
+      <Alert
+        open={alert.open}
+        status={alert.status}
+        message={alert.message}
+        close={() =>
+          setAlert({
+            open: false,
+            status: false,
+            message: "",
+          })
+        }
+      />
       <form
         onSubmit={submit}
         ref={formRef}
