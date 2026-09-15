@@ -7,6 +7,8 @@ const Input = ({
   type = "text",
   label = "",
   textarea = false,
+  content,
+  open,
   ...props
 }) => {
   return (
@@ -14,7 +16,7 @@ const Input = ({
       <label className="text-back text-sm" htmlFor={id}>
         {label}
       </label>
-      <Tooltip>
+      <Tooltip content={content} open={open}>
         {textarea ? (
           <textarea
             className="bg-accent/70 focus:outline-none text-back  transition px-3 py-2 h-65 w-full"

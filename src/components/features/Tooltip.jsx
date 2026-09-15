@@ -39,7 +39,7 @@ const Tooltip = ({ children, content = "", open }) => {
             <div
               className="
             absolute top-full left-1/2 -translate-x-1/2
-            w-2 h-2 bg-black
+            w-2 h-2 bg-back
             rotate-45 -translate-y-1/2
           "
             />
