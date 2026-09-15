@@ -9,14 +9,17 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const links = [
     {
+      label: "TikTok Address of Aberos",
       icon: FaTiktok,
       link: "https://tiktok.com/@abdu.dev",
     },
     {
+      label: "Linkedin Address of Aberos",
       icon: FaLinkedin,
       link: "https://www.linkedin.com/authwall?trkInfo=AQHg1NOjoN-5xgAAAaA0QHZ4d82OopbZT66C8sQLpbn3yo7nA5GU6gfX84PeNHdlvjtAjWslb-E1dccbZUGNe2GJJ8XYsOB3xSTrPiQ7s_8XI1ZHiyztAdDmzhjW5OT6pJ-n3D0=&original_referer=https://talentflow.ct.ws/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fabduselam-awel-b74083385",
     },
     {
+      label: "Instagram Address of Aberos",
       icon: FaInstagram,
       link: "#",
     },
@@ -95,6 +98,7 @@ const Hero = () => {
                 key={i}
               >
                 <a
+                  aria-label={item.label}
                   className="block bg-back text-text p-1.5 rounded-full hover:bg-accent hover:text-text-dark transition duration-300"
                   href={item.link}
                   target="_blank"

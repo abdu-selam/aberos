@@ -1,0 +1,19 @@
+# Aberos PLC | Shopping Mall, Restaurant & Flooring Factory Company
+> A diversified company operating a shopping mall, restaurant, and floor factory, delivering quality retail, dining, and manufacturing solutions.
+
+## Main Pages
+
+- [Home](https://aberosplc.netlify.app): Introduction, statistics and overviews.
+- [About](https://aberosplc.netlify.app/about): About Aberos and it's mission and vission.
+- [Projects](https://aberosplc.netlify.app/companies): detail about each sub companies.
+- [Contact](https://aberosplc.netlify.app/contact): Contact and collaboration information.
+
+## Companies
+
+- Aberos Mall
+- Aberos Floor factory
+- Aberos restaurant
+
+## Developer
+
+Abduselam is a MERN stack developer focused on building modern, responsive and interactive web applications.
