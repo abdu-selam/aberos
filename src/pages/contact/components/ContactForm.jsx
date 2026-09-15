@@ -4,10 +4,12 @@ import Input from "./ui/Input";
 import { useRef } from "react";
 import { useSubmit } from "../../../hooks/useSubmit";
 import Alert from "../../../components/features/Alert";
+import { BiLoader } from "react-icons/bi";
 
 const ContactForm = () => {
   const formRef = useRef(null);
-  const { submit, tooltip, nextInput, alert, setAlert } = useSubmit(formRef);
+  const { submit, tooltip, nextInput, alert, setAlert, isSubmitting } =
+    useSubmit(formRef);
 
   return (
     <div className="flex justify-center items-center px-4">
@@ -60,8 +62,15 @@ const ContactForm = () => {
           textarea
         />
 
-        <Button className="rounded-none bg-back w-full text-text z-1">
-          Send Message
+        <Button
+          disabled={isSubmitting}
+          className="rounded-none bg-back w-full text-text z-1"
+        >
+          {isSubmitting ? (
+            <BiLoader className="animate-spin text-xl mx-auto" />
+          ) : (
+            <>Send Message</>
+          )}
         </Button>
       </form>
     </div>

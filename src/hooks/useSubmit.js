@@ -13,6 +13,7 @@ export const useSubmit = (ref) => {
     message: "",
   });
   let timeout = null;
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const nextInputFunc = (el) => {
     nextInput(ref, el);
@@ -20,28 +21,38 @@ export const useSubmit = (ref) => {
 
   const submit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     const form = ref.current;
 
     const validation = nextInput(ref);
 
     const goon = tooltipHelper(validation, timeout, setTooltip);
-    if (!goon) return;
+    if (goon) {
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+      };
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-
-    const res = await fetcher(data);
-    setAlert({
-      open: true,
-      status: res.status,
-      message: res.message,
-    });
+      const res = await fetcher(data);
+      setAlert({
+        open: true,
+        status: res.status,
+        message: res.message,
+      });
+    }
+    setIsSubmitting(false);
   };
 
-  return { submit, tooltip, nextInput: nextInputFunc, alert, setAlert };
+  return {
+    submit,
+    tooltip,
+    nextInput: nextInputFunc,
+    alert,
+    setAlert,
+    isSubmitting,
+  };
 };
 
 const fetcher = async (data) => {

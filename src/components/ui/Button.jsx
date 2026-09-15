@@ -4,9 +4,6 @@ const Button = ({ children, className = "", ...props }) => {
   return (
     <motion.button
       {...props}
-      whileHover={{
-        scale: 1.02,
-      }}
       whileTap={{
         scale: 0.95,
       }}
