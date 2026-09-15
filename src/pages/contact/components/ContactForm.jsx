@@ -1,42 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../../components/ui/Button";
+import Tooltip from "../../../components/features/Tooltip";
+import Input from "./ui/Input";
 
 const ContactForm = () => {
+  const [inputHover, setInputHover] = useState(false);
   return (
     <div className="flex justify-center items-center px-4">
       <form className="grid gap-3 w-full max-w-100">
-        <div className="flex flex-col w-full">
-          <label className="text-back text-sm" htmlFor="name">
-            Name
-          </label>
-          <input
-            className="bg-accent/70 focus:outline-none text-back  transition px-3 py-2"
-            type="text"
-            id="name"
-            name="name"
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label className="text-back text-sm" htmlFor="email">
-            Email
-          </label>
-          <input
-            className="bg-accent/70 focus:outline-none text-back  transition px-3 py-2"
-            type="text"
-            id="email"
-            name="email"
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label className="text-back text-sm" htmlFor="text">
-            Message
-          </label>
-          <textarea
-            className="bg-accent/70 focus:outline-none text-back  transition px-3 py-2 h-65"
-            name="message"
-            id="text"
-          />
-        </div>
+        <Input label="Name" id="name" name="name" />
+        <Input label="Email" id="email" name="email" />
+
+        <Input label="Message" id="message" name="message" textarea />
+
         <Button className="rounded-none bg-back w-full text-text">
           Send Message
         </Button>
