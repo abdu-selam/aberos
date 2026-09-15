@@ -36,7 +36,7 @@ const ContactForm = () => {
           label="Name"
           id="name"
           name="name"
-          onKeyDown={(e) => {
+          onInput={(e) => {
             if (e.key !== "Enter") return;
             nextInput(e.currentTarget);
           }}
@@ -47,7 +47,7 @@ const ContactForm = () => {
           label="Email"
           id="email"
           name="email"
-          onKeyDown={(e) => {
+          onInput={(e) => {
             if (e.key !== "Enter") return;
             nextInput(e.currentTarget);
           }}
